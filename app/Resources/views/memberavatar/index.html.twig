@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>MemberAvatar list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Originalname</th>
+                <th>Path</th>
+                <th>Size</th>
+                <th>Mimetype</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for memberAvatar in memberAvatars %}
+            <tr>
+                <td><a href="{{ path('avatar_show', { 'id': memberAvatar.id }) }}">{{ memberAvatar.id }}</a></td>
+                <td>{{ memberAvatar.name }}</td>
+                <td>{{ memberAvatar.originalName }}</td>
+                <td>{{ memberAvatar.path }}</td>
+                <td>{{ memberAvatar.size }}</td>
+                <td>{{ memberAvatar.mimeType }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('avatar_show', { 'id': memberAvatar.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('avatar_edit', { 'id': memberAvatar.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('avatar_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

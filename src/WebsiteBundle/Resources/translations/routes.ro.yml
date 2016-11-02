@@ -1,0 +1,119 @@
+# Desc: /avatar/{id}
+avatar_delete: '/avatar/{id}'   # FIXME
+
+# Desc: /avatar/{id}/edit
+avatar_edit: '/avatar/{id}/edit'   # FIXME
+
+# Desc: /avatar/
+avatar_index: /avatar/   # FIXME
+
+# Desc: /avatar/new
+avatar_new: /avatar/new   # FIXME
+
+# Desc: /avatar/{id}
+avatar_show: '/avatar/{id}'   # FIXME
+
+# Desc: /centre/{id}
+centre_delete: '/centre/{id}'   # FIXME
+
+# Desc: /centre/{id}/edit
+centre_edit: '/centre/{id}/edit'   # FIXME
+
+# Desc: /centre/
+centre_index: /centre/   # FIXME
+
+# Desc: /centre/new
+centre_new: /centre/new   # FIXME
+
+# Desc: /centre/{id}
+centre_show: '/centre/{id}'   # FIXME
+
+# Desc: /evenimente/{id}
+evenimente_delete: '/evenimente/{id}'   # FIXME
+
+# Desc: /evenimente/{id}/edit
+evenimente_edit: '/evenimente/{id}/edit'   # FIXME
+
+# Desc: /evenimente/
+evenimente_index: /evenimente/   # FIXME
+
+# Desc: /evenimente/new
+evenimente_new: /evenimente/new   # FIXME
+
+# Desc: /evenimente/{id}
+evenimente_show: '/evenimente/{id}'   # FIXME
+
+# Desc: /evenimente/lista
+event_list: /evenimente/lista   # FIXME
+
+# Desc: /login
+login: /login   # FIXME
+
+# Desc: /logout
+logout: /logout   # FIXME
+
+# Desc: /membri/{id}
+membri_delete: '/membri/{id}'   # FIXME
+
+# Desc: /membri/{id}/modifica
+membri_edit: '/membri/{id}/modifica'   # FIXME
+
+# Desc: /membri/
+membri_index: /membri/   # FIXME
+
+# Desc: /membri/creaza
+membri_new: /membru-nou   # FIXME
+
+# Desc: /membri/{id}
+membri_show: '/membri/{id}'   # FIXME
+
+# Desc: /update_location/{id}
+membri_update_location: '/update_location/{id}'   # FIXME
+
+# Desc: /proiecte/{id}
+proiecte_delete: '/proiecte/{id}'   # FIXME
+
+# Desc: /proiecte/{id}/modifica
+proiecte_edit: '/proiecte/{id}/modifica'   # FIXME
+
+# Desc: /proiecte/
+proiecte_index: /proiecte/   # FIXME
+
+# Desc: /lista-proiecte
+website_projects_list: /lista-proiecte  # FIXME
+
+# Desc: /proiecte/creaza
+website_projects_new: /propune-proiect   # FIXME
+
+# Desc: /proiecte/{id}
+proiecte_show: '/proiecte/{id}'   # FIXME
+
+# Desc: /centru/{id}
+website_center: '/centru/{id}'   # FIXME
+
+# Desc: /centru/{id}/membri
+website_center_members: '/centru/{id}/membri'   # FIXME
+
+# Desc: /
+website_homepage: /   # FIXME
+
+# Desc: /membru-nou
+website_register_member: /membru-nou   # FIXME
+
+# Desc: /contact
+website_send_contact: /contact   # FIXME
+
+# Desc: /zone/{id}
+zone_delete: '/zone/{id}'   # FIXME
+
+# Desc: /zone/{id}/edit
+zone_edit: '/zone/{id}/edit'   # FIXME
+
+# Desc: /zone/
+zone_index: /zone/   # FIXME
+
+# Desc: /zone/new
+zone_new: /zone/new   # FIXME
+
+# Desc: /zone/{id}
+zone_show: '/zone/{id}'   # FIXME

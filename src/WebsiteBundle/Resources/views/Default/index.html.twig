@@ -1,0 +1,111 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block content %}
+    <section id="slider" class="hero slider-parallax force-full-screen full-screen">
+        <div class="slider-parallax-inner">
+            <div class="force-full-screen full-screen dark" style="background: url('/bundles/website/images/bgs/hero-bg.jpg')center center;">
+                <div class="container clearfix">
+                    <div class="slider-caption slider-caption-center">
+                        <h1 data-animate="fadeInDown">{{ 'content.title' | trans() }}</h1>
+                        <h2 data-animate="fadeInUp" data-delay="400">{{ 'content.subtitle' | trans() }}</h2>
+                        <a href="{{ path('website_register_member') }}" class="button button-desc button-3d button-rounded center"><div>{{ 'content.register' | trans() }}</div><span>{{ 'content.register_extra' | trans }}</span></a>
+                        <a href="{{ path('website_volunteer') }}" class="button button-desc button-3d button-rounded center"><div>{{ 'content.register_volunteer' | trans() }}</div><span>{{ 'content.register_volunteer_extra' | trans() }}</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content
+    ============================================= -->
+
+    <!-- Harta -->
+    <section id="content">
+        <div class="promo promo-border promo-full bottommargin banner-partnership">
+            <div class="container clearfix">
+                <div class="row">
+                    <div class="small-12 large-6 text-center">
+                        <h3>un proiect în colaborare cu</h3>
+                        <div class="small-12 large-3 partnership-logo">
+                            <img src="{{ asset('/bundles/website/images/logo-GRASP.png') }}" alt="Grasp" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <section id="section-harta" class="page-section">
+
+                <div class="container clearfix">
+                    <div class="heading-block center">
+                        <h2>{{ 'content.sections.members' | trans() |raw }}</h2>
+                        {{ 'content.sections.members_subtitle' | trans() |raw }}
+                    </div>
+                    <div id="map" style="height: 500px;"></div>
+                </div>
+             </section>
+
+            <!-- Misiune -->
+            {% include 'WebsiteBundle::Default/mission.html.twig' %}
+            {#{% include 'WebsiteBundle::Default/mission_old.html.twig' %}#}
+
+            <section id="video" class="page-section topmargin-lg section">
+            {% include 'WebsiteBundle::Default/video.html.twig' %}
+
+            {{ render(controller("WebsiteBundle:Default:numbers")) }}
+            </section>
+
+            {{ render(controller("WebsiteBundle:Default:zoneList")) }}
+
+                    <!-- PROIECTE -->
+            <section id="section-proiecte" class="page-section topmargin-lg section">
+                <div class="heading-block center">
+                    <h2>{{ 'content.sections.projects' | trans() }}</h2>
+                    <span>{{ 'content.sections.projects_subtitle' | trans() }}</span>
+                </div>
+
+                <div class="container bottommargin-lg common-height">
+                    <div class="col-md-6 projects-home project-home-1">
+                        <div class="dark ohidden">
+                            <h3 class="uppercase" style="font-weight: 600;">{{ 'content.sections.projects.get_involved' | trans() }}</h3>
+                            {{ 'content.sections.projects.get_involved_message' | trans() | raw }}
+                            <a href="{{ path('website_projects_list') }}" class="button button-border button-light button-rounded uppercase nomargin">{{ 'content.sections.projects.get_involved_btn' | trans() }}</a>
+                            <i class="icon-cog bgicon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 projects-home project-home-2">
+                        <div class="dark ohidden">
+                            <h3 class="uppercase" style="font-weight: 600;">{{ 'content.sections.projects.suggest' | trans() }}</h3>
+                            {{ 'content.sections.projects.suggest_message' | trans() | raw  }}
+                            <a href="{{ path('website_projects_new') }}" class="button button-border button-light button-rounded uppercase nomargin">{{ 'content.sections.projects.suggest' | trans() }}</a>
+                            <i class="icon-bulb bgicon"></i>
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+            </section>
+
+            {{ render(controller("WebsiteBundle:Default:listPartners")) }}
+
+            {{ render(controller("WebsiteBundle:Default:contact")) }}
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer_scripts %}
+{{ parent() }}
+
+{{  render(controller( 'WebsiteBundle:Default:membersMap' )) }}
+
+<script>
+    $( document ).ready(function() {
+
+        if ($('#map').length){
+            google.maps.event.addDomListener(window, 'load', newMap('map', false));
+        }
+
+    });
+</script>
+{% endblock %}

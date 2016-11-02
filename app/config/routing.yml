@@ -1,0 +1,56 @@
+website_avatar:
+    resource: "@WebsiteBundle/Controller/AvatarController.php"
+    type:     annotation
+
+website_zone:
+    resource: "@WebsiteBundle/Controller/ZoneController.php"
+    type:     annotation
+
+website_event:
+    resource: "@WebsiteBundle/Controller/EventController.php"
+    type:     annotation
+
+website_event:
+    resource: "@WebsiteBundle/Controller/EventController.php"
+    type:     annotation
+
+website_center:
+    resource: "@WebsiteBundle/Controller/CenterController.php"
+    type:     annotation
+
+website_project:
+    resource: "@WebsiteBundle/Controller/ProjectController.php"
+    type:     annotation
+
+website_member:
+    resource: "@WebsiteBundle/Controller/MemberController.php"
+    type:     annotation
+
+website_ambasador:
+    resource: "@WebsiteBundle/Controller/AmbasadorController.php"
+    type:     annotation
+
+website_partner:
+    resource: "@WebsiteBundle/Controller/PartnerController.php"
+    type:     annotation
+
+website_ajax:
+    resource: "@WebsiteBundle/Controller/AjaxController.php"
+    type:     annotation
+
+website_security:
+    resource: "@WebsiteBundle/Controller/SecurityController.php"
+    type:     annotation
+
+website:
+    resource: "@WebsiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+logout:
+    path: /logout
+
+# app:
+#     resource: "@AppBundle/Controller/"
+#     type:     annotation
+
+

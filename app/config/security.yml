@@ -1,0 +1,43 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+    providers:
+        in_memory:
+            memory:
+                users:
+                    admin:
+                        password: "%admin_pass%"
+                        roles: 'ROLE_ADMIN'
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+            http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            form_login:
+                login_path: login
+                check_path: login
+                csrf_token_generator: security.csrf.token_manager
+            logout:
+                path:   /logout
+                target: /
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+    access_control:
+        # - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/membri, roles: ROLE_ADMIN }
+         - { path: ^/proiecte, roles: ROLE_ADMIN }
+         - { path: ^/centre, roles: ROLE_ADMIN }
+         - { path: ^/evenimente, roles: ROLE_ADMIN }
+         - { path: ^/avatar, roles: ROLE_ADMIN }
+         - { path: ^/zone, roles: ROLE_ADMIN }
+         - { path: ^/parteneri, roles: ROLE_ADMIN }
+         - { path: ^/events, roles: ROLE_ADMIN }

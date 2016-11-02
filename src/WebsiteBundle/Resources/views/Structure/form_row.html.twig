@@ -1,0 +1,291 @@
+{% use 'form_div_layout.html.twig' %}
+
+{% block form_label %}
+{% spaceless %}
+    {{ parent() }}
+    {% if required %}
+        <span class="required" title="This field is required"> *</span>
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+
+{%- block textarea_widget -%}
+    <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+    <p class="help-block text-danger"></p>
+{%- endblock textarea_widget -%}
+
+{% block form_widget_simple %}
+{% spaceless %}
+    {% set classValue = 'form-control' %}
+    {% if class is defined %}
+        {% set classValue = classValue~' '~class %}
+    {% endif %}
+    {% set attr = attr|merge({ class: classValue }) %}
+    {% set type = type|default('text') %}
+    {{ parent() }}
+    {% if icon is defined %}
+    <i class="ace-icon fa fa-{{ icon }}"></i>
+    {% endif %}
+    <p class="help-block text-danger"></p>
+{% endspaceless %}
+{% endblock form_widget_simple %}
+
+{% block choice_widget_expanded %}
+{% spaceless %}
+    {% for child in form %}
+    <div {{ block('widget_container_attributes') }}>
+        <label>
+            {{ form_widget(child, { attr: { class: 'ace' } }) }}
+            <span class="lbl"> <span style="float: right; margin-top: 5px; margin-left: 10px;">{{ child.vars.label }}</span></span>
+        </label>
+    </div>
+    {% endfor %}
+{% endspaceless %}
+{% endblock choice_widget_expanded %}
+
+{% block choice_widget_options %}
+{% spaceless %}
+    {% for group_label, choice in options %}
+        {% if choice is iterable %}
+            <optgroup label="{{ group_label|trans({}, translation_domain) }}">
+                {% set options = choice %}
+                {{ block('choice_widget_options') }}
+            </optgroup>
+        {% else %}
+            <option value="{{ choice.value }}"{% if choice is selectedchoice(value) %} selected="selected"{% endif %}{% if values is defined %}{% if choice.value in values %} class="hide"{% endif %}{% endif %}>{{ choice.label|trans({}, translation_domain) }}</option>
+        {% endif %}
+    {% endfor %}
+{% endspaceless %}
+{% endblock choice_widget_options %}
+
+{% block choice_widget_collapsed %}
+{% spaceless %}
+    {% if required and (empty_value is defined and empty_value is null) and not empty_value_in_choices %}
+        {% set required = false %}
+    {% endif %}
+    <select {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
+        {% if (empty_value is defined and empty_value is not null) %}
+            <option value="" selected="selected" disabled="disabled">{{ empty_value|trans({}, translation_domain) }}</option>
+        {% endif %}
+        {% if preferred_choices|length > 0 %}
+            {% set options = preferred_choices %}
+            {{ block('choice_widget_options') }}
+            {% if choices|length > 0 and separator is not none %}
+                <option disabled="disabled">{{ separator }}</option>
+            {% endif %}
+        {% endif %}
+        {% set options = choices %}
+        {{ block('choice_widget_options') }}
+    </select>
+    <p class="help-block text-danger"></p>
+{% endspaceless %}
+{% endblock choice_widget_collapsed %}
+
+{% block integer_widget %}
+{% spaceless %}
+    {% set type = type|default('text') %}
+    {{ block('form_widget_simple') }}
+{% endspaceless %}
+{% endblock integer_widget %}
+
+{% block button_widget %}
+{% spaceless %}
+    {% if label is empty %}
+        {% set label = name|humanize %}
+    {% endif %}
+    <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>
+        {% if icon is defined %}
+        {% if 'icon-on-right' in icon %}
+        {{ label|trans({}, translation_domain) }}
+        <i class="ace-icon fa fa-{{ icon }}"></i>
+        {% else %}
+        <i class="ace-icon fa fa-{{ icon }}"></i>
+        {{ label|trans({}, translation_domain) }}
+        {% endif %}
+        {% else %}
+        {{ label|trans({}, translation_domain) }}
+        {% endif %}
+    </button>
+{% endspaceless %}
+{% endblock button_widget %}
+
+{%- block checkbox_widget -%}
+    <span style="line-height: 0;display: block;position: relative;">
+        {% set switchClass = class|default('ace-switch-7') %}
+        <input type="checkbox" class="ace ace-switch {{ switchClass }}" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+        <span class="lbl"></span>
+    </span>
+{%- endblock checkbox_widget -%}
+
+{% block submit_widget %}
+{% spaceless %}
+    {% if icon is not defined %}
+    {% set icon = 'check' %}
+    {% endif %}
+    {{ parent() }}
+{% endspaceless %}
+{% endblock submit_widget %}
+
+{% block widget_attributes %}
+{% spaceless %}
+    id="{{ id }}"
+    {%- if full_name %} name="{{ full_name }}"{% endif -%}
+    {%- if read_only is defined %} readonly="readonly"{% endif -%}
+    {%- if disabled %} disabled="disabled"{% endif -%}
+    {%- if required %} required="required"{% endif -%}
+    {%- if max_length is defined %} maxlength="{{ max_length }}"{% endif -%}
+    {%- if pattern is defined and pattern is not null %} pattern="{{ pattern }}"{% endif -%}
+    {%- for attrname, attrvalue in attr -%}
+        {{- " " -}}
+        {%- if attrname in ['placeholder', 'title'] -%}
+            {{- attrname }}="{{ attrvalue|trans({}, translation_domain) }}"
+        {%- elseif attrvalue is same as(true) -%}
+            {{- attrname }}="{{ attrname }}"
+        {%- elseif attrvalue is not same as(false) -%}
+            {{- attrname }}="{{ attrvalue }}"
+        {%- endif -%}
+    {%- endfor -%}
+{% endspaceless %}
+{% endblock widget_attributes %}
+
+{% block form_row %}
+{% spaceless %}
+    {% set classValue = 'width-100' %}
+    {% if class is defined %}
+        {% set classValue = 'width-100 '~class %}
+    {% endif %}
+    {% set attr = attr|merge({ class: classValue }) %}
+    {% if dateFormat is defined %}
+        {% set attr = attr|merge({ 'data-date-format': dateFormat }) %}
+    {% endif %}
+    <div class="form-group{% if form.vars.errors|length > 0 %} has-error{% endif %}">
+        {% if label is not same as(false) %}
+        <div class="control-label col-xs-12 {% if dialog is not defined %}col-sm-3 col-md-3{% else %}col-sm-4 col-md-4{% endif %} no-padding-right">
+            {{ form_label(form) }}
+        </div>
+        {% endif %}
+        {#<div class="col-xs-12 col-sm-6">#}
+            {#<span class="width-100{% if icon is defined or class is defined and class == 'colorpicker' %} input-icon input-icon-right{% endif %}">#}
+                {% if form.vars.overview is defined and form.vars.overview %}
+                <div class="img-container center cropper-bg">
+                    {% if form.vars.file_path %}
+                    <img alt="" src="{{ asset(form.vars.file_path) }}" style="max-width: 100%;max-height: 100%;">
+                    {% endif %}
+                    {% if croppable is defined and croppable == true %}
+                    <span class="img-toolbar hide">
+                        <div class="img-tools">
+                            <span data-method="rotate" data-option="-30" title="Rotate Left" data-toggle="tooltip">
+                                <i class="ace-icon fa fa-rotate-left bigger-130"></i>
+                            </span>
+                            <span data-method="rotate" data-option="30" title="Rotate Right" data-toggle="tooltip">
+                                <i class="ace-icon fa fa-rotate-right bigger-130"></i>
+                            </span>
+                            <span data-method="reset" title="Reset" data-toggle="tooltip">
+                                <i class="ace-icon fa fa-refresh bigger-130"></i>
+                            </span>
+                            <span data-method="getCroppedCanvas" title="Preview" data-toggle="tooltip">
+                                <i class="ace-icon fa fa-search bigger-130"></i>
+                            </span>
+                        </div>
+                    </span>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% if form.parent.vars.allow_delete is defined and form.parent.vars.allow_delete %}
+                <div class="input-group">
+                    {{ form_widget(form, { attr: attr }) }}
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-sm btn-danger deleteElementBtn">
+                            <i class="ace-icon fa fa-trash-o"></i>
+                        </button>
+                    </span>
+                </div>
+                {% elseif form.vars.clear_file is defined and form.vars.clear_file %}
+                    <div class="input-group col-lg-9">
+                        {{ form_widget(form, { attr: attr }) }}
+                        {#<span class="input-group-btn">#}
+                            {#<button type="button" class="btn btn-sm btn-danger eraseFileBtn" data-method="destroy">#}
+                                {#<i class="ace-icon fa fa-times"></i>#}
+                            {#</button>#}
+                        {#</span>#}
+                    </div>
+                    {% if file_name and form.vars.overview is defined and not form.vars.overview %}
+                        {% set fileId = form.parent.vars.value.id %}
+                        {% set className = form.parent.vars.value.className %}
+                        <div style="clear: both;"><a href="{{ path('download_file', { fileId: fileId, className: className }) }}">{{ file_name }}</a></div>
+                    {% endif %}
+                {% else %}
+                {{ form_widget(form, { attr: attr }) }}
+                {% if class is defined and class == 'colorpicker' %}
+                <i id="colorView" style="background-color: {{ form.vars.value }};"></i>
+                {% endif %}
+                {% endif %}
+            {#</span>#}
+            {% if form.vars.errors|length > 0 and dialog is defined %}
+                <div class="help-block col-xs-12 col-sm-reset inline">
+                    {{ form.vars.errors.0.messageTemplate }}
+                </div>
+            {% endif %}
+        {#</div>#}
+        {% if form.vars.errors|length > 0 and dialog is not defined %}
+            <div class="help-block col-xs-12 col-sm-reset inline">
+                {{ form.vars.errors.0.messageTemplate }}
+            </div>
+        {% endif %}
+    </div>
+{% endspaceless %}
+{% endblock form_row %}
+
+{%- block form_start -%}
+    {% set method = method|upper %}
+    {%- if method in ["GET", "POST"] -%}
+        {% set form_method = method %}
+    {%- else -%}
+        {% set form_method = "POST" %}
+    {%- endif -%}
+    <form name="{{ name }}" method="{{ form_method|lower }}"{% if action != '' %} action="{{ action }}"{% endif %}{% for attrname, attrvalue in attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}{% if multipart %} enctype="multipart/form-data"{% endif %} novalidate>
+    {%- if form_method != method -%}
+        <input type="hidden" name="_method" value="{{ method }}" />
+    {%- endif -%}
+{%- endblock form_start -%}
+
+{% block form_end %}
+{% spaceless %}
+    {% if not render_rest is defined or render_rest %}
+        <div class="hide">
+            {{ form_rest(form) }}
+        </div>
+    {% endif %}
+    </form>
+{% endspaceless %}
+{% endblock form_end %}
+
+{% block form_widget_compound %}
+{% spaceless %}
+    <div {{ block('widget_container_attributes') }}>
+        {% if form.parent is empty %}
+            {{ form_errors(form) }}
+        {% endif %}
+        {{ block('form_widgets') }}
+        {{ form_rest(form) }}
+    </div>
+{% endspaceless %}
+{% endblock form_widget_compound %}
+
+{% block form_widgets %}
+{% spaceless %}
+    {% for child in form %}
+        {{ form_widget(child, { attr: { class: 'width-100' } }) }}
+    {% endfor %}
+{% endspaceless %}
+{% endblock form_widgets %}
+
+{% block collection_widget %}
+{% spaceless %}
+    {% if prototype is defined %}
+        {% set attr = attr|merge({'data-prototype': form_row(prototype) }) %}
+        {% set attr = attr|merge({'class': 'collectionHolder' }) %}
+    {% endif %}
+    {{ block('form_widget') }}
+{% endspaceless %}
+{% endblock collection_widget %}

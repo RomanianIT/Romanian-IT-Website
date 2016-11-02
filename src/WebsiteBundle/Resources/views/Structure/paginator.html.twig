@@ -1,0 +1,44 @@
+<div class="center">
+    {% set route = app.request.attributes.get("_route") %}
+    {% set routeParams = app.request.attributes.get("_route_params") %}
+    {% set totalItems = paginator.count %}
+    {% set nbResultPerPage = paginator.query.maxResults %}
+    {% set nbPage = (totalItems/nbResultPerPage)|round(0, 'ceil') %}
+    {% set gap = 2 %}
+    {% set minPage = max(page - gap, 2) %}
+    {% set maxPage = min(page + gap, nbPage - 1) %}
+    {% set params = routeParams|merge(app.request.query.all) %}
+    <ul class="pagination">
+        <li{% if page == 1 %} class="disabled"{% endif %}>
+            <a{% if page > 1 %} href="{{ path(route, params|merge({ page: page - 1 })) }}"{% endif %}>
+                <i class="fa fa-angle-double-left"></i>
+            </a>
+        </li>
+        <li{% if page == 1 %} class="active disabled"{% endif %}>
+            <a{% if page != 1 %} href="{{ path(route, params|merge({ page: 1 })) }}"{% endif %}>1</a>
+        </li>
+        {% if minPage <= maxPage %}
+        {% if minPage >= 1 + gap %}
+        <li><a>...</a></li>
+        {% endif %}
+        {% for p in range(minPage, maxPage) %}
+        <li{% if p == page %} class="active disabled"{% endif %}>
+            <a{% if p != page %} href="{{ path(route, params|merge({ page: p })) }}"{% endif %}>{{ p }}</a>
+        </li>
+        {% endfor %}
+        {% if maxPage <= nbPage - gap %}
+        <li><a>...</a></li>
+        {% endif %}
+        {% endif %}
+        {% if nbPage > 1 %}
+        <li{% if page == nbPage %} class="active disabled"{% endif %}>
+            <a{% if page != nbPage %} href="{{ path(route, params|merge({ page: nbPage })) }}"{% endif %}>{{ nbPage }}</a>
+        </li>
+        {% endif %}
+        <li{% if page == nbPage or nbPage == 0 %} class="disabled"{% endif %}>
+            <a{% if page < nbPage %} href="{{ path(route, params|merge({ page: page + 1 })) }}"{% endif %}>
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ro">
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {% include 'WebsiteBundle::Partials/_meta_og.html.twig' %}
+    {% include 'WebsiteBundle::Partials/_meta_twitter.html.twig' %}
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Comunitatea globala a romanilor din tech; Ne propunem promovarea specialistilor IT romani, precum si crearea unui canal de comunicare si informare.">
+    <meta name="author" content="RomanianIT">
+    <meta name="keywords" content="diaspora it, romanianit, romaniantech, comunitate it, networking, proiecte open-source, evenimente" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+    <!-- Stylesheets
+    ============================================= -->
+    {#<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />#}
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway|Crete+Round" rel="stylesheet">
+
+    {% stylesheets 'bundles/website/css/style.css'
+                   'bundles/website/css/custom.css'
+            output='style' filter='cssrewrite' -%}
+    <link rel="stylesheet" type="text/css" media="screen, print" href="{{ asset_url }}" />
+    {% endstylesheets -%}
+
+    {% block custom_styles %}{% endblock %}
+
+    {% block custom_script %}{% endblock %}
+
+
+    <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://maps.google.fr/maps/api/js?language=ro&key=AIzaSyBZ3hzjzTCqiFED51f_lRENCd2LJ02Uo9I&libraries=places" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer_compiled.js"></script>
+
+    <!-- Document Title
+    ============================================= -->
+    <title>Romanian IT | Comunitatea globala a romanilor din tech</title>
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '235224693491853');
+        fbq('track', 'PageView');
+        {% block fb_event_tracking %}{% endblock %}
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=235224693491853&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+</head>
+
+<body class="stretched sticky-responsive-pagemenu">
+
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+    {% block body %}{% endblock %}
+
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- JavaScripts
+    ============================================= -->
+    {% javascripts
+        '@WebsiteBundle/Resources/public/js/jquery.js'
+        '@WebsiteBundle/Resources/public/js/plugins.js'
+        '@WebsiteBundle/Resources/public/js/functions.js'
+        '@WebsiteBundle/Resources/public/js/jquery.city-autocomplete.min.js'
+        '@WebsiteBundle/Resources/public/js/jqBootstrapValidation.js'
+        '@WebsiteBundle/Resources/public/js/contact.js'
+         -%}
+
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts -%}
+
+<!--
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js"></script>
+    <script type="text/javascript" src="js/jquery.gmap.js"></script>
+-->
+
+    {% block footer_scripts %}
+    {% endblock %}
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-78364213-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

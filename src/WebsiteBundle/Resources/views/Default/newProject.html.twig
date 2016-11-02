@@ -1,0 +1,68 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+
+{% block nav_bar_menu %}
+    <ul class="one-page-menu">
+        <li>
+            <a class="page-scroll" href="{{ path('website_homepage') }}">{{ 'menu.home' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_projects_list') }}">{{ 'menu.projects' | trans() }}</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>{{ 'content.suggest_project.title' | trans() }}</h1>
+            <span>{{ 'content.suggest_project.subtitle' | trans() | raw }}</span>
+            <ol class="breadcrumb">
+                <li><a href="/">{{ 'menu.home' | trans() }}</a></li>
+                <li class="active">{{ 'menu.suggest' | trans() }}</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="content" class="bottommargin">
+        <div class="content-wrap">
+            <div class="container clearfix">
+                <div class="col-lg-12">
+                    {% form_theme form "WebsiteBundle:Structure:form_row.html.twig" %}
+                    {% import "WebsiteBundle:Structure:macros.html.twig" as formMacros %}
+
+                    {{ formMacros.displayFormErrors(form) }}
+
+                    {{ form_start(form, {action: path('website_projects_new'), multipart: true, attr: {name: 'register', id: 'contactForm', class: '', novalidate:'' } }) }}
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form_row(form.firstname, {attr : {'data-validation-required-message' : 'Te rugăm  să îți introduci numele.' } }) }}
+                            {{ form_row(form.lastname, {attr : {'data-validation-required-message' : 'Te rugăm  să îți introduci prenumele.' } }) }}
+                            {{ form_row(form.email, {attr : {'data-validation-required-message' : 'Te rugăm  să îți introduci emailul.' } }) }}
+                            {{ form_row(form.position) }}
+                            {{ form_row(form.telephone) }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form_row(form.title, {attr : {'data-validation-required-message' : 'Te rugăm  să alegi un nume pentru proiect.' } }) }}
+                            {{ form_row(form.content, {class: 'form-control', attr : {'rows': 8, 'data-validation-required-message' : 'Vă rugăm să descriți idea proiectului.' } }) }}
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                        {{ formMacros.submitFormButton() }}
+                    </div>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer_scripts %}{% endblock %}

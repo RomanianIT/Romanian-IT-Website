@@ -1,0 +1,101 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+
+{% block nav_bar_menu %}
+    <ul class="one-page-menu">
+        <li>
+            <a class="page-scroll" href="{{ path('website_homepage') }}">{{ 'menu.home' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_center_events', {'id': center.id}) }}">{{ 'menu.events' | trans() }}</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>Membri</h1>
+            <span>Together we can go far</span>
+            <ol class="breadcrumb">
+                <li><a href="/">{{ 'menu.home' | trans() }}</a></li>
+                <li><a href="{{ path('website_zone', {'id': center.zone.id, 'name': center.zone.name|lower}) }}">{{ center.zone.name }}</a></li>
+                <li class="active">Membri</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="content" class="bottommargin">
+        <div class="content-wrap">
+            <div class="container clearfix">
+                <div class="row">
+                    {% if center.members | length > 0 %}
+                        {% for member in center.members %}
+                        <div class="col-md-2 col-sm-6 bottommargin" style="min-height: 365px;">
+                            <div class="team">
+                                <div class="team-image">
+                                    {% if member.avatar is null or member.avatar == '' %}
+                                        <img src="{{ asset('bundles/website/images//default-user.jpg') }}" class="img-responsive img-circle" alt=""/>
+                                    {% else %}
+                                        <img alt="" id="avatar" class="editable img-responsive img-circle" src="{{ asset(member.avatar.webPath) }}" />
+                                    {% endif %}
+                                </div>
+                                <div class="team-desc">
+                                    <div class="team-title"><h4>{{ member.firstname ~ ' ' ~ member.lastname }}</h4>
+                                        <span>{{ member.position }}</span>
+                                    </div>
+
+                                    {% if member.twitter is not null and member.twitter != '' %}
+                                        <a href="{{ member.twitter }}" class="social-icon inline-block si-small si-light si-rounded si-twitter">
+                                            <i class="icon-twitter"></i>
+                                            <i class="icon-twitter"></i>
+                                        </a>
+                                    {% endif %}
+                                    {% if member.facebook is not null and member.facebook != '' %}
+                                        <a href="{{ member.facebook }}" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                                            <i class="icon-facebook"></i>
+                                            <i class="icon-facebook"></i>
+                                        </a>
+                                    {% endif %}
+                                    {% if member.linkedin is not null and member.linkedin != '' %}
+                                        <a href="{{ member.linkedin }}" class="social-icon inline-block si-small si-light si-rounded si-twitter">
+                                            <i class="icon-twitter"></i>
+                                            <i class="icon-twitter"></i>
+                                        </a>
+                                    {% endif %}
+                                    {#{% if member.linkedin is not null and member.linkedin != '' %}#}
+                                        {#<a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">#}
+                                            {#<i class="icon-gplus"></i>#}
+                                            {#<i class="icon-gplus"></i>#}
+                                        {#</a>#}
+                                    {#{% endif %}#}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <section id="timeline">
+                            <div class="container">
+                                <div class="col-lg-12 text-center">
+                                    {{ 'content.center.members.no_members' | trans() | raw() }}
+                                    <br/>
+                                    <div class="clearfix">
+                                        <a href="{{ path('website_register_member') }}" class="page-scroll btn btn-xl">{{ 'btn.register' | trans() }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Team Section -->
+
+{% endblock %}
+
+{% block footer_scripts %}{% endblock %}

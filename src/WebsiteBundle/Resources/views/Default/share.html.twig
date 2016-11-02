@@ -1,0 +1,62 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+{% block custom_script %}
+    {% include 'WebsiteBundle::Partials/_twitter_js_async.html.twig' %}
+{% endblock %}
+
+{% block nav_bar_menu %}
+    <ul class="one-page-menu">
+        <li>
+            <a class="page-scroll" href="{{ path('website_homepage') }}">{{ 'menu.home' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_projects_new') }}">{{ 'menu.suggest' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_projects_list') }}">{{ 'menu.projects' | trans() }}</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>{{ 'content.share.title' | trans() }}</h1>
+            <span>{{ 'content.share.subtitle' | trans() }}</span>
+            <ol class="breadcrumb">
+                <li><a href="/">{{ 'menu.home' | trans() }}</a></li>
+                <li class="active">{{ 'content.share.title' | trans() }}</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="content" class="bottommargin">
+        <div class="content-wrap">
+            <div class="container clearfix">
+                <div class="col-lg-3">
+                    <!-- Your share button code -->
+                    <span>Distribuie pe Facebook</span>
+                    <div class="fb-share-button"
+                         data-href="http://www.romanianit.com"
+                         data-layout="button_count">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <span>Distribuie pe Twitter</span>
+                    <div>
+                        <a class="twitter-share-button"
+                               href="https://twitter.com/intent/tweet?text=Romanian IT - comunitatea globala a romanilor din tech"
+                               data-size="large">
+                            Tweet
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer_scripts %}{% endblock %}

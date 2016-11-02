@@ -1,0 +1,33 @@
+<!-- CENTRE -->
+<section id="section-centre" class="page-section topmargin-lg">
+    <div class="heading-block center">
+        <h2>{{ 'content.sections.centers.title' | trans() }}</h2>
+        <span>{{ 'content.sections.centers.subtitle' | trans() }}</span>
+    </div>
+
+    <div class="container clearfix center">
+        <div id="portfolio" class="portfolio grid-container clearfix">
+
+            {% for zone in zones %}
+            <article class="portfolio-item" >
+                <div class="portfolio-image">
+                    <a href="{{ path('website_zone', {'name': zone.name, 'id': zone.id}) }}">
+                        <img src="{{ asset('bundles/website/images/flags/'~zone.flag~'.jpg') }}" class="img-responsive" alt=""/>
+                    </a>
+                    <div class="portfolio-overlay">
+                        <a href="{{ path('website_zone', {'name': zone.name|replace(' ', '-'), 'id': zone.id}) }}" class="center-icon"><i class="icon-line-plus"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-desc">
+                    <h3><a href="{{ path('website_zone', {'name': zone.name|replace(' ', '-'), 'id': zone.id}) }}">{{ zone.name }}</a></h3>
+                </div>
+            </article>
+            {% endfor %}
+
+        </div><!-- #portfolio end -->
+    </div>
+
+    <div class="topmargin-lg center">
+        <h4>{{ 'content.sections.centers.message' | trans() }}</h4>
+    </div>
+</section>

@@ -1,0 +1,161 @@
+Avatar: Avatar
+Conferință: Conferință
+Facebook: Facebook
+GitHub: GitHub
+'GitHub *': 'GitHub *'
+LinkedIn: LinkedIn
+Meetup: Meetup
+Repository: Repository
+Twitter: Twitter
+
+btn:
+    register: Înregistrează-te
+    save: Salvează
+
+content:
+    center:
+        members:
+            message: 'Devino și tu membru al comunității Romanian IT.'
+            no_members: "<h3 class=\"section-subheading text-muted\"> Nu exisă încă membri în cadrul acestui centru.</h3> <p> Înregistrează-te și devino coordonatorul acestui nou centru.</p>\n"
+            subtitle: 'Membri ai comunității Romanian IT'
+            title: 'Membri Romanian IT'
+
+    contact:
+        btn: Trimite
+        email: 'Email'
+        message: 'Conținutul mesajului'
+        name: 'Nume Prenume'
+        subject: 'Subiect'
+        subtitle: 'Ai o sugestie sau o idee de proiect, sau vrei pur si simplu să te implici? Scrie-ne și revenim în cel mai scurt timp posibil.'
+        title: Contactează-ne
+
+    events:
+        subtitle: 'Gasesti aici toate meetup-urile si evenimetele Romanian IT din'
+        title: Evenimente
+        future_events_title: 'Evenimentele următoare'
+
+    projects:
+        btn_label: Implică-te
+        description_label: Descriere
+        subtitle: 'Let''s work together to build a more impactful social entrepreneurship ecosystem'
+        title: Proiecte
+
+    partners:
+        title: Ne susțin
+        subtitle: Au văzut și cred în potențialul proiectului Romanian IT
+        message: Dacă dorești să susții proiectul nostru scrie-ne folosind formularul de contact.
+
+    register: Devino membru
+    register_extra: Alătură-te comunității noastre
+    register_ambasador: Devino ambasador
+    register_ambasador_extra: Implică-te în dezvoltarea comunității
+    register_volunteer: Devino voluntar
+    register_volunteer_extra: Implică-te în dezvoltarea comunității
+    register.subtitle: "Îți mulțumim că te-ai decis să te înregistrezi și te încurajăm să te implici. <br/> Avem nevoie de oameni specialiști, determinați să ia atitudine.\n"
+    register.title: 'Înregistrare membru'
+    register.step_1_title: 'Domenii de expertiză'
+    ambasador.subtitle: "Îți mulțumim că te-ai decis să ne susții și te încurajăm să te implici. <br/> În calitate de ambasador vei avea posibilitatea de a participa la organizarea evenimentelor din centrele Romanian-IT"
+    ambasador.title: 'Înregistrare ambasador'
+
+    share.title: 'Share'
+    share.subtitle: 'Îți multumim pentru încrederea acordată și te rugăm să ne ajuți să creștem comunitatea.'
+
+    sections:
+        center:
+            meetups: Meetups
+            memebers: Membri
+            no_member_message: "<h2>ÎN CURÂND.</h2> <p>Pentru lansarea unui centru este necesară înscrierea unui număr de cel puțin 20 de persoane.</p> <p>Dacă nu te-ai înscris încă, te invităm să te înscrii.</p>\n"
+            projects: Proiecte
+
+        centers:
+            title: Centre
+            subtitle: 'Centrele de dezvoltare ale comunității.'
+            message: 'În curând și în alte locații...'
+            list:
+                title: 'Lista locațiilor'
+
+        members: 'Membri <span>Romanian IT</span>'
+        members_subtitle: '<span>Împreună mergem departe</span>'
+        mission: Misiune
+        mission_subtitle: 'Uniți de tehnologie și nu numai'
+
+        mission.objective1_title: 'Promovare si informare'
+        mission.objective1_subtitle: 'Canalul principal de comunicare'
+        mission.objective1_description: >
+          <p>Pe langa promovarea profesionistilor romani de pretutindeni, ne propunem ca acesta comunitate sa devina o sursa principala de informare.</p>
+          <p> Vom pune la dispozitie canale de comunicare cu clustere, centre de competență și instituții ale statului.</p>
+
+        mission.objective2_title: 'The more the merrier'
+        mission.objective2_subtitle: Networking
+        mission.objective2_description: >
+          <p>Un mare avantaj al comunitatii il reprezinta posibilitatea de networking cu membri din toate locatiile Romanian IT. </p>
+          <p>Scopul comunitatii este de a facilita crearea contactelor, dezvoltarea de colaborari si relații de business.</p>
+
+        mission.objective3_title: 'Give back'
+        mission.objective3_subtitle: 'Implicare'
+        mission.objective3_description: >
+          <p>Ne propunem totodată crearea unei comunități care prin suport în proiecte open-source cu caracter public sau umanitar să permită implicarea specialiștilor IT în societatea românească.</p>
+
+        projects: Proiecte
+        projects.get_involved: 'Vrei să te implici ?'
+        projects.get_involved_btn: Implică-te
+        projects.get_involved_message: >
+          <p style="line-height: 1.8;">Dacă te atrage idea implicarii in îmbunătățirea serviciilor publice și a societății, te invităm să ni te alături.</p>
+          <p> Proiectele au fost selectate, astfel încat doar cele cu un real aport de valoare vor fi implementate. Alege proiectul care ti se potriveste, impreuna putem sa reusim in tot ceea ce ne propunem.</p>
+
+        projects.suggest: 'Vrei să propui un proiect ?'
+        projects.suggest_btn: Implică-te
+        projects.suggest_message: >
+          <p style="line-height: 1.8;">Pentru a putea îmbunătății mediul în care trăim este intotdeauna nevoie de oameni implicați si idei geniale pe care ulterior să le implementăm în proiecte software. Implică-te acum, prin expunerea nevoilor reale și înregistrarea unui proiect împreună cu posibile soluții sau sugestii. </p>
+          <p style="line-height: 1.8;">Vei putea să te concentrezi pe partea offline, iar de implementare se ocupă comunitatea.</p>
+
+        projects_subtitle: 'Ne implicăm în dezvoltarea societății cu ce știm face cel mai bine....IT.'
+
+    subtitle: 'Comunitatea globală a românilor din tech'
+
+    suggest_project:
+        subtitle: 'Ai o sugestie sau o idee de proiect, sau vrei pur si simplu să te implici? Scrie-ne și revenim în cel mai scurt timp posibil.'
+        title: 'Propune o idee de proiect'
+
+    title: 'Romanian IT'
+
+form:
+    label:
+        city: 'Oraș *'
+        country: Țară
+        description: 'Descrierea propunerii de proiect. *'
+        email: 'Email *'
+        firstname: 'Nume *'
+        lastname: 'Prenume *'
+        phone: Telefon
+        position: 'Profesie *'
+        expertise: Expertiza
+        project_title: 'Nume proiect'
+        reason: 'Motivul pentru care vă înregistrați'
+        contribution: 'Cu ce pot sa contribui'
+        name: 'Denumire'
+        description: 'Descriere'
+
+last_events:
+    more: '<h4>Vezi<br>lista<br>completă!</h4>'
+    subtitle: 'Timeline-ul ultimelor evenimente în cadrul comunității.'
+    title: 'Ultimele evenimente'
+
+menu:
+    centers: Centre
+    contact: Contact
+    events: Evenimente
+    home: Acasă
+    map: Hartă
+    mission: Misiune
+    projects: Proiecte
+    suggest: Propune
+    partners: NE SUSȚIN
+    members: Membri
+
+poi:
+    map:
+        voir_en_detail: poi.map.voir_en_detail
+
+privacy_policy: 'Politica de confidențialitate'
+'Țara *': 'Țara *'

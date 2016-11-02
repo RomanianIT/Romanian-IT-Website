@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ambasador list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Reason</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ambasador in ambasadors %}
+            <tr>
+                <td><a href="{{ path('ambasadori_show', { 'id': ambasador.id }) }}">{{ ambasador.id }}</a></td>
+                <td>{{ ambasador.firstname }}</td>
+                <td>{{ ambasador.lastname }}</td>
+                <td>{{ ambasador.country }}</td>
+                <td>{{ ambasador.city }}</td>
+                <td>{{ ambasador.email }}</td>
+                <td>{{ ambasador.telephone }}</td>
+                <td>{{ ambasador.reason }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('ambasadori_show', { 'id': ambasador.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('ambasadori_edit', { 'id': ambasador.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('website_register_ambasador') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,311 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+{% block nav_bar_menu %}
+    <ul class="one-page-menu">
+        <li>
+            <a class="page-scroll" href="{{ path('website_homepage') }}">{{ 'menu.home' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_projects_list') }}">{{ 'menu.projects' | trans() }}</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>Devino voluntar Romanian IT!</h1>
+            <span>Suntem tineri si entuziasti, dar avem nevoie de ajutorul tau!</span>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Voluntariat</li>
+            </ol>
+        </div>
+    </section>
+
+    <div class="container clearfix">
+        <div class="row clearfix ">
+            <div class="col-lg-12">
+                <div class="heading-block topmargin">
+                    <h1>Profită de această şansă şi implică-te!</h1>
+                </div>
+                <p>Oriunde ai fi în lume, alătură-te azi echipei de voluntari Romanian IT! Avem nevoie de ajutorul vostru! Suntem la început de drum așa încât avem o mulțime de lucruri de făcut, nevoile de organizare şi coordonare s-au multiplicat rapid. Sperăm să colaborăm cu câţi mai mulţi dintre voi. Credem că este o şansă unică de a participarea la construirea comunitatii globale a romanilor din tech şi o ocazie de a vă îmbogăţi experienţa şi dezvolta spiritul antreprenorial. Activitatea în Romanian IT se desfășoară pe bază de voluntariat.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container clearfix bottommargin">
+        <div class="row clearfix ">
+
+            <div class="col-lg-7 col-small-12">
+                <h4>Lista pozitiilor disponibile</h4>
+
+                <div class="toggle toggle-bg">
+                    <div class="togglet"><i class="toggle-closed icon-ok-circle"></i>
+                        <i class="toggle-open icon-remove-circle"></i>Web Developer
+                    </div>
+                    <div class="togglec" style="display: none;">
+                        <h5>Departament: <span>departamentul IT</span></h5>
+                        <h5>Locatia: <span>Online</span></h5>
+                        <h5>Descriere poziție:</h5>
+                        <ul class="job-list">
+                            <li>Gaseste si implementeaza solutii web pentru diverse proiecte RomanianIT</li>
+                            <li>Raspunde prompt intrebarilor si eventualelor probleme tehnice </li>
+                            <li>Ramai deschis noilor provocari si indrazneste sa vii cu propuneri</li>
+                            <li>Work but also try have fun</li>
+                        </ul>
+
+                        <h5>Candidatul ideal:</h5>
+                        <ul class="job-list">
+                            <li>Open minded si comunicativ</li>
+                            <li>De incredere si responsabil</li>
+                            <li>Dispus sa invete zilnic</li>
+                            <li>Saritor sa ajute echipa</li>
+                        </ul>
+
+                        <h5>Timp necesar: <span>Disponibilitate 5-6h/săptămână</span></h5>
+                        <a href="mailto:office@romanianit.com?subject=Voluntariat">
+                            <button data-brackets-id="532" class="button button-3d nomargin">Aplica</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="toggle toggle-bg">
+                    <div class="togglet"><i class="toggle-closed icon-ok-circle"></i>
+                        <i class="toggle-open icon-remove-circle"></i>Voluntar Program Mentorat
+                    </div>
+                    <div class="togglec" style="display: none;">
+                        <h5>Departament: <span>Proiecte</span></h5>
+                        <h5>Locatia: <span>Online</span></h5>
+                        <h5>Descriere poziție:</h5>
+                        <ul class="job-list">
+                            <li>Oferă suport în toate activitățile echipei Mentorat (creare perechi etc).</li>
+                            <li>Propune și conduce campanii de popularizare ale programului de Mentorat </li>
+                            <li>Conduce campanii de recrutare de mentori si mentees</li>
+                            <li>Colaborează cu coordonatorii celorlalte proiecte și departamente din comunitate</li>
+                        </ul>
+
+                        <h5>Candidatul ideal:</h5>
+                        <ul class="job-list">
+                            <li>Persoană entuziastă și cu inițiativă</li>
+                            <li>Capacități de organizare, comunicare, responsabilitate și time-management</li>
+                            <li>Student sau absolvent al unei universități atât din România cât și din străinătate.</li>
+                        </ul>
+
+                        <h5>Timp necesar: <span>Disponibilitate 4-5h/săptămână</span></h5>
+                        <a href="mailto:office@romanianit.com?subject=Voluntariat">
+                            <button data-brackets-id="533" class="button button-3d nomargin">Aplica</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="toggle toggle-bg">
+                    <div class="togglet"><i class="toggle-closed icon-ok-circle"></i>
+                        <i class="toggle-open icon-remove-circle"></i>Voluntar Relatia cu Diaspora UK
+                    </div>
+                    <div class="togglec" style="display: none;">
+                        <h5>Departament: <span>Filiala UK Londra</span></h5>
+                        <h5>Locatia: <span>UK (Londra)</span></h5>
+                        <h5>Descriere poziție:</h5>
+                        <ul class="job-list">
+                            <li>Se implică și participă activ în comunitatea de IT pentru a identifica necesitățile grupului</li>
+                            <li>Responsabil in executia taskurilor care ii sunt acordate </li>
+                            <li>Vine cu noi idei, dorință și entuziam pentru îmbunătățirea relațiilor cu Diaspora</li>
+                            <li>Pastreaza permanent legatura cu conducerea filialei</li>
+                        </ul>
+
+                        <h5>Candidatul ideal:</h5>
+                        <ul class="job-list">
+                            <li>Domiciliu in UK</li>
+                            <li>Student sau absolvent</li>
+                            <li>Abilitati de leadership, lucru in echipa si comunicare</li>
+                        </ul>
+
+                        <h5>Timp necesar: <span>Disponibilitate 4-5h/săptămână</span></h5>
+                        <a href="mailto:office@romanianit.com?subject=Voluntariat">
+                            <button data-brackets-id="533" class="button button-3d nomargin">Aplica</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="toggle toggle-bg">
+                    <div class="togglet"><i class="toggle-closed icon-ok-circle"></i>
+                        <i class="toggle-open icon-remove-circle"></i>Voluntar Relatia cu Diaspora Franta
+                    </div>
+                    <div class="togglec" style="display: none;">
+                        <h5>Departament: <span>Filiala Franta</span></h5>
+                        <h5>Locatia: <span>Paris / Lyon</span></h5>
+                        <h5>Descriere poziție:</h5>
+                        <ul class="job-list">
+                            <li>Se implică și participă activ în comunitatea de IT pentru a identifica necesitățile grupului</li>
+                            <li>Responsabil in executia taskurilor care ii sunt acordate </li>
+                            <li>Vine cu noi idei, dorință și entuziam pentru îmbunătățirea relațiilor cu Diaspora</li>
+                            <li>Pastreaza permanent legatura cu conducerea filialei</li>
+                        </ul>
+
+                        <h5>Candidatul ideal:</h5>
+                        <ul class="job-list">
+                            <li>Domiciliu in Franta</li>
+                            <li>Student sau absolvent</li>
+                            <li>Abilitati de leadership, lucru in echipa si comunicare</li>
+                        </ul>
+
+                        <h5>Timp necesar: <span>Disponibilitate 4-5h/săptămână</span></h5>
+                        <a href="mailto:office@romanianit.com?subject=Voluntariat">
+                            <button data-brackets-id="533" class="button button-3d nomargin">Aplica</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="toggle toggle-bg">
+                    <div class="togglet"><i class="toggle-closed icon-ok-circle"></i>
+                        <i class="toggle-open icon-remove-circle"></i>Voluntar Relatia cu Diaspora SUA - San Francisco
+                    </div>
+                    <div class="togglec" style="display: none;">
+                        <h5>Departament: <span>Filiala San Fracisco</span></h5>
+                        <h5>Locatia: <span>San Fracisco</span></h5>
+                        <h5>Descriere poziție:</h5>
+                        <ul class="job-list">
+                            <li>Se implică și participă activ în comunitatea de IT pentru a identifica necesitățile grupului</li>
+                            <li>Responsabil in executia taskurilor care ii sunt acordate </li>
+                            <li>Vine cu noi idei, dorință și entuziam pentru îmbunătățirea relațiilor cu Diaspora</li>
+                            <li>Pastreaza permanent legatura cu conducerea filialei</li>
+                        </ul>
+
+                        <h5>Candidatul ideal:</h5>
+                        <ul class="job-list">
+                            <li>Domiciliu in SUA - San Francisco</li>
+                            <li>Student sau absolvent</li>
+                            <li>Abilitati de leadership, lucru in echipa si comunicare</li>
+                        </ul>
+
+                        <h5>Timp necesar: <span>Disponibilitate 4-5h/săptămână</span></h5>
+                        <a href="mailto:office@romanianit.com?subject=Voluntariat">
+                            <button data-brackets-id="533" class="button button-3d nomargin">Aplica</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="toggle toggle-bg">
+                    <div class="togglet"><i class="toggle-closed icon-ok-circle"></i>
+                        <i class="toggle-open icon-remove-circle"></i>Voluntar Relatia cu Diaspora Germania
+                    </div>
+                    <div class="togglec" style="display: none;">
+                        <h5>Departament: <span>Filiala Germania</span></h5>
+                        <h5>Locatia: <span>Germania (Berlin)</span></h5>
+                        <h5>Descriere poziție:</h5>
+                        <ul class="job-list">
+                            <li>Se implică și participă activ în comunitatea de IT pentru a identifica necesitățile grupului</li>
+                            <li>Responsabil in executia taskurilor care ii sunt acordate </li>
+                            <li>Vine cu noi idei, dorință și entuziam pentru îmbunătățirea relațiilor cu Diaspora</li>
+                            <li>Pastreaza permanent legatura cu conducerea filialei</li>
+                        </ul>
+
+                        <h5>Candidatul ideal:</h5>
+                        <ul class="job-list">
+                            <li>Domiciliu in Germania</li>
+                            <li>Student sau absolvent</li>
+                            <li>Abilitati de leadership, lucru in echipa si comunicare</li>
+                        </ul>
+
+                        <h5>Timp necesar: <span>Disponibilitate 4-5h/săptămână</span></h5>
+                        <a href="mailto:office@romanianit.com?subject=Voluntariat">
+                            <button data-brackets-id="533" class="button button-3d nomargin">Aplica</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-small-12 col-lg-5 job-list-form">
+                <div id="contact-form-overlay-mini" class="clearfix">
+
+                    <div class="fancy-title title-dotted-border">
+                        <h3>Aplica aici</h3>
+                    </div>
+
+                    <div class="contact-widget">
+
+                        <div class="contact-form-result"></div>
+
+                        <label for="template-contactform-message">
+                            Asteptam emailul tau la adresa: <a href="mailto:office@romanianit.com?subject=Voluntariat">office@romanianit.com</a> <br /><br />
+                            Te rugam sa incluzi urmatoarele informatii:<br />
+                                - Pozitia vizata <br />
+                                - Nume si Prenume<br />
+                                - De ce vrei să te implici în RomanianIT şi în ce fel crezi că poţi contribui la dezvoltarea comunitatii? (maxim 100 cuvinte)*<br />
+                                - Cât timp vei putea dedica, în medie, pe săptămână, pentru activităţile legate de RomanianIT? (estimativ)<br />
+
+                            <br /><br />
+                            Iti multumim anticipat pentru suport.
+
+                        </label>
+
+                        <!-- Contact Form
+                                  ============================================= -->
+                        {#<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post" novalidate="novalidate">#}
+
+                            {#<div class="col_full">#}
+                                {#<label for="template-contactform-service">Pozitia vizata</label>#}
+                                {#<select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">#}
+                                    {#<option value="">-- Alege pozitia dorita --</option>#}
+                                    {#<option value="Wordpress">Front-end developer</option>#}
+                                    {#<option value="PHP / MySQL">Graphic designer</option>#}
+                                    {#<option value="HTML5 / CSS3">Project maanger</option>#}
+                                    {#<option value="Graphic Design">Back-end developer</option>#}
+                                {#</select>#}
+                            {#</div>#}
+                            {#<div class="col_full">#}
+                                {#<label for="template-contactform-name">Nume <small>*</small></label>#}
+                                {#<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" aria-required="true">#}
+                            {#</div>#}
+
+                            {#<div class="col_full">#}
+                                {#<label for="template-contactform-email">Email <small>*</small></label>#}
+                                {#<input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" aria-required="true">#}
+                            {#</div>#}
+
+                            {#<div class="clear"></div>#}
+
+                            {#<div class="col_full">#}
+                                {#<label for="template-contactform-message">De ce vrei să te implici în RomanianIT şi în ce fel crezi că poţi contribui la dezvoltarea organizaţiei? (maxim 100 cuvinte)<small>*</small></label>#}
+                                {#<textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30" aria-required="true"></textarea>#}
+                            {#</div>#}
+
+                            {#<div class="col_full">#}
+                                {#<label for="template-contactform-service">#}
+                                    {#Cât timp vei putea dedica, în medie, pe săptămână, pentru activităţile legate de RomanianIT? (estimativ)</label>#}
+                                {#<select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">#}
+                                    {#<option value="">-- Pot dedica --</option>#}
+                                    {#<option value="Wordpress">0-3h/saptamana</option>#}
+                                    {#<option value="PHP / MySQL">3-6h/saptamana</option>#}
+                                    {#<option value="HTML5 / CSS3">3-6h/saptamana</option>#}
+                                    {#<option value="Graphic Design">6-9h/saptamana</option>#}
+                                    {#<option value="Graphic Design">9-12h/saptamana</option>#}
+                                    {#<option value="Graphic Design">12h+/saptamana</option>#}
+                                {#</select>#}
+                            {#</div>#}
+
+                            {#<div class="col_full">#}
+                                {#<label for="template-contactform-name">Încarcă CV-ul (PDF, DOC sau DOCX) <small>*</small></label>#}
+                                {#<input type="file" id="myFile" name="template-file-upload" value="" class="sm-form-control required" aria-required="true">#}
+                            {#</div>#}
+
+                            {#<div class="col_full">#}
+                                {#<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Aplica acum</button>#}
+                            {#</div>#}
+
+                        {#</form>#}
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

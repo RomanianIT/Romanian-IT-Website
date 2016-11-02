@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>MemberAvatar</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ memberAvatar.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ memberAvatar.name }}</td>
+            </tr>
+            <tr>
+                <th>Originalname</th>
+                <td>{{ memberAvatar.originalName }}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ memberAvatar.path }}</td>
+            </tr>
+            <tr>
+                <th>Size</th>
+                <td>{{ memberAvatar.size }}</td>
+            </tr>
+            <tr>
+                <th>Mimetype</th>
+                <td>{{ memberAvatar.mimeType }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('avatar_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('avatar_edit', { 'id': memberAvatar.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

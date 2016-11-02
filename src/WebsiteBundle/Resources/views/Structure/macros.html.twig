@@ -1,0 +1,27 @@
+{% macro displayFormErrors(form) %}
+{% if not form.vars.valid %}
+    <div class="alert alert-danger">
+        <button data-dismiss="alert" class="close" type="button">
+            <i class="ace-icon fa fa-times"></i>
+        </button>
+        <strong>
+            <i class="ace-icon fa fa-times"></i>
+            Error!
+        </strong>
+        {{ form_errors(form) }}
+    </div>
+{% endif %}
+{% endmacro %}
+
+{% macro submitFormButton(name, class) %}
+    <button class="button button-3d nomargin {{ class }}" type="submit">
+        {{ name|default('btn.save'| trans()) }}
+    </button>
+{% endmacro %}
+
+{% macro cancelFormButton(path, options = {}) %}
+    <a href="{% if path is not null %}{{ path(path, options) }}{% else %}{{ app.request.headers.get('referer') }}{% endif %}" class="btn btn-danger">
+        <i class="fa fa-times"></i>
+        Cancel
+    </a>
+{% endmacro %}

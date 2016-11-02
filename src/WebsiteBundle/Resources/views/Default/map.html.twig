@@ -1,0 +1,209 @@
+<script>
+
+    var newMap;
+
+    Member = function(id, fn, ln, country, city, fb, tw, lk, lat, long){
+        this.id = id;
+        this.firstname = fn;
+        this.lastname = ln;
+        this.country = country;
+        this.city = city;
+        this.facebook = fb;
+        this.twitter = tw;
+        this.linkedIn = lk;
+        this.lat = lat;
+        this.lng = long;
+    };
+
+    function updateLocation(id, lat, long) {
+        $.post( "/update_location/"+id, { lat: lat, long: long }, function() {
+            console.log('location updated');
+        }).fail(function() {
+            console.log('location update error');
+        });
+    };
+
+    function createHtmlContent(oi){
+
+        var img = (oi.imageUrl === '') ? '' : '<img src="'+oi.imageUrl+'" alt="'+oi.title+'" style="float:left; margin:0 5px 0 0; width:75px;">';
+
+        return '<div style="width:200px; overflow:auto;">'+ img +
+                '<div style="float:left; width:120px; color:#393939; font-size:14px;">'+
+                '<span style="color:#9f9f9f; font-size:10px; text-transform:uppercase;">'+oi.type+'</span><br>'+
+                '<strong>'+oi.title+'</strong><br>'+
+                '<a href="'+oi.url+'" style="color:#338ef4; font-size:12px;">{{ 'poi.map.voir_en_detail' | trans() }}</a>'+
+                '</div></div>';
+    };
+
+    function roitMap(id){
+        this.id = id;
+        this.map = null;
+        this.delay = 100;
+        this.center = new google.maps.LatLng(50,9);
+        this.geocoder = new google.maps.Geocoder();
+        this.markers = [];
+        this.members = [];
+        this.nextAddress = 0;
+        this.clusterOptions = {
+            gridSize: 40,
+            maxZoom: 16,
+            styles: [{
+                url: '/bundles/website/images/cluster.png',
+                width: 45,
+                height: 40,
+                anchor: [5, 0],
+                textFont: 'Oswald',
+                textSize: 16
+            }, {
+                url: '/bundles/website/images/cluster.png',
+                width: 45,
+                height: 40,
+                anchor: [5, 0],
+                textFont: 'Oswald',
+                textSize: 16
+            }, {
+                url: '/bundles/website/images/cluster.png',
+                width: 45,
+                height: 40,
+                anchor: [5, 0],
+                textFont: 'Oswald',
+                textSize: 16
+            }, {
+                url: '/bundles/website/images/cluster.png',
+                width: 45,
+                height: 40,
+                anchor: [5, 0],
+                textFont: 'Oswald',
+                textSize: 16
+            }]
+        };
+        this.init = function() {
+            var position = [30.0,-35.0];
+            var zoom = 3;
+            var latLng = new google.maps.LatLng(position[0], position[1]);
+            var options = {
+                'zoom': zoom,
+                'center': latLng,
+                'mapTypeId': google.maps.MapTypeId.ROADMAP,
+                'scrollwheel': false
+            };
+
+            this.map = new google.maps.Map(document.getElementById(this.id), options);
+        };
+        this.resize = function() {
+            var $this = this;
+            google.maps.event.trigger($this.map, "resize");
+            var center = $this.center;
+            $this.map.setCenter(center);
+        };
+    // ======= Function to call the next Geocode operation when the reply comes back
+        this.theNext = function() {
+            //as we are using setTimeout the context changes so we can't use this anymore as it will become Window
+            if (newMap.nextAddress < newMap.members.length) {
+                if (newMap.members[newMap.nextAddress].lat == "0" && newMap.members[newMap.nextAddress].lng == "0") {
+                    var address = newMap.members[newMap.nextAddress].city + ',' + newMap.members[newMap.nextAddress].country;
+                    var id = newMap.members[newMap.nextAddress].id;
+                    setTimeout('newMap.getAddress("' + address + '",newMap.theNext,' + id + ')', newMap.delay);
+                    newMap.nextAddress++;
+                } else {
+                    newMap.createMarker('', newMap.members[newMap.nextAddress].lat, newMap.members[newMap.nextAddress].lng);
+                    newMap.nextAddress++;
+                    newMap.theNext();
+                }
+            } else {
+                // We're done
+                console.log('All positions places');
+                new MarkerClusterer(newMap.map, newMap.markers, newMap.clusterOptions);
+            }
+        };
+        this.getAddress = function(search, next, memberId) {
+            var $this = this;
+            $this.geocoder.geocode({address: search}, function (results, status) {
+            // If that was successful
+            if (status == google.maps.GeocoderStatus.OK) {
+                // Lets assume that the first marker is the one we want
+                var p = results[0].geometry.location;
+                var lat = p.lat();
+                var lng = p.lng();
+
+                //update the member coordinates so we don't need to use geocoding next time
+                updateLocation(memberId, lat, lng);
+
+                // Output the data
+                var msg = 'address="' + search + '" lat=' + lat + ' lng=' + lng + '(delay=' + $this.delay + 'ms)<br>';
+                console.log(msg);
+                // Create a marker
+                $this.createMarker('', lat, lng);
+            }
+            // ====== Decode the error status ======
+            else {
+                // === if we were sending the requests to fast, try this one again and increase the delay
+                if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+                    nextAddress--;
+                    delay++;
+                } else {
+                    var reason = "Code " + status;
+                    var msg = 'address="' + search + '" error=' + reason + '(delay=' + $this.delay + 'ms)<br>';
+                    console.log(msg);
+                }
+            }
+            next();
+        }
+            );
+        };
+        // ======= Function to create a marker
+        this.createMarker = function(add,lat,lng) {
+            var $this = this;
+            var contentString = add;
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat,lng),
+                map: $this.map
+            });
+
+            $this.markers.push(marker);
+
+            //in case we want to display information
+//            google.maps.event.addListener(marker, 'click', function() {
+//                infowindow.setContent(contentString);
+//                infowindow.open(map,marker);
+//            });
+
+        };
+        this.initialize = function() {
+            var $this = this;
+
+            {% for member in members %}
+                {% verbatim %} $this.members.push(new Member( {% endverbatim %}
+                    "{{ member.id }}",
+                    "{{ member.firstname }}",
+                    "{{ member.lastname }}",
+                    "{{ member.country }}",
+                    "{{ member.city }}",
+                    "{{ member.facebook }}",
+                    "{{ member.twitter }}",
+                    "{{ member.linkedIn ?: '' }}",
+                    "{{ member.lat ?: 0 }}",
+                    "{{ member.lng ?: 0 }}"
+                {% verbatim %} )); {% endverbatim %}
+            {% endfor %}
+
+            var infowindow = new google.maps.InfoWindow({
+                content: 'Loading...'
+            });
+
+            $this.theNext();
+
+        };
+    };
+
+    function newMap(id, resize){
+        newMap = new roitMap(id);
+        newMap.init();
+        newMap.initialize();
+
+        if (resize) {
+            setTimeout( function(){newMap.resize();} , 400);
+        }
+    };
+
+</script>

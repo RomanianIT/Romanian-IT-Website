@@ -1,0 +1,68 @@
+{% use 'AppBundle:Main:form_row.html.twig' %}
+
+{% block collection_widget %}
+{% spaceless %}
+    <div class="tags width-100">
+        {% if prototype is defined %}
+            {% set fullNameValue = form.vars.full_name~'['~prototype.vars.name~']' %}
+            {% set idValue = 'object_'~prototype.vars.name %}
+            {% set dataPrototype = block('tag_prototype') %}
+        {% endif %}
+        <div id="collectionTags" data-prototype="{{ dataPrototype }}">
+        {% for object in form %}
+            {% set fullNameValue = object.vars.full_name %}
+            {% set idValue = 'object_'~object.vars.value %}
+            {% set dataValue = object.vars.data %}
+            {% set objectId = object.vars.value %}
+            {{ block('tag_prototype') }}
+        {% endfor %}
+        </div>
+        <div>
+            {% set arrayValues = [] %}
+            {% for data in form.vars.data %}
+                {% set arrayValues = arrayValues|merge([data.id]) %}
+            {% endfor %}
+{#        {% if form.vars.allow_add is defined %}#}
+{#            {{ form_widget(prototype, { id: 'selectCollection', full_name: false, attr: { class: 'width-100' }, values: arrayValues }) }}#}
+{#        {% endif %}#}
+        </div>
+    </div>
+    {% if form.vars.allow_add is defined %}
+    {% set projectId = form.parent.vars.value.id %}
+    <a class="btn btn-xs btn-inverse" style="margin-top: 3px;"
+        data-remote="{{ path('project_user_add', { id: projectId }) }}"
+        onclick="return loadModal(this, { onsuccess: function() { 
+            $('.date-picker').datepicker({
+                autoclose: true,
+                dateFormat: 'yyyy-mm-dd'
+            });
+        }, title: 'Add new resource to project', btn: 'Add' });">
+        <i class="ace-icon fa fa-plus"></i>
+    </a>
+    {% endif %}
+{% endspaceless %}
+{% endblock collection_widget %}
+
+{% block tag_prototype %}
+    <span class="tag">
+        <span id="{{ idValue }}_span">{% if dataValue is defined %}{{ dataValue }}{% endif %}</span>
+        <input type="hidden" name="{{ fullNameValue }}" id="{{ idValue }}_input"{% if objectId is defined %} value="{{ objectId }}"{% endif %}/>
+        {% if objectId is defined %}
+        <button class="button edit"
+            data-remote="{{ path('project_user_edit', { id: objectId }) }}"
+            onclick="return loadModal(this, { onsuccess: function() { 
+                $('.date-picker').datepicker({
+                    autoclose: true,
+                    dateFormat: 'yyyy-mm-dd'
+                });
+            }, title: 'Edit resource', btn: 'Edit' });">
+            <i class="ace-icon fa fa-pencil icon-only"></i>
+        </button>
+        {% endif %}
+        {% if form.vars.allow_delete is defined %}
+        <button class="button delete" type="button" onclick="return deleteCollectionElement(this);">
+            <i class="ace-icon fa fa-trash-o icon-only"></i>
+        </button>
+        {% endif %}
+    </span>
+{% endblock %}

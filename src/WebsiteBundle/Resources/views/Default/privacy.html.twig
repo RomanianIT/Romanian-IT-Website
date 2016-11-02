@@ -1,0 +1,34 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+{% block nav_bar_menu %}
+    <ul class="one-page-menu">
+        <li>
+            <a class="page-scroll" href="{{ path('website_homepage') }}">{{ 'menu.home' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_projects_list') }}">{{ 'menu.projects' | trans() }}</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>Politica de confidentialitate!</h1>
+            <span></span>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Politica de confidentialitate</li>
+            </ol>
+        </div>
+    </section>
+
+    <div class="container clearfix">
+    </div>
+
+
+
+{% endblock %}

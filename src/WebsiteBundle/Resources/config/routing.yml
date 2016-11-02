@@ -1,0 +1,67 @@
+website_homepage:
+    path:     /
+    defaults: { _controller: WebsiteBundle:Default:index }
+
+website_events_list:
+    path:     /lista-evenimente
+    defaults: { _controller: WebsiteBundle:Default:listEvents }
+
+website_projects_list:
+    path:     /lista-proiecte
+    defaults: { _controller: WebsiteBundle:Default:listProjects }
+
+website_projects_new:
+    path:     /propune-proiect
+    defaults: { _controller: WebsiteBundle:Default:newProject }
+
+website_register_member:
+    path:     /membru-nou
+    defaults: { _controller: WebsiteBundle:Default:registerMember }
+
+website_register_ambasador:
+    path:     /ambasador-nou
+    defaults: { _controller: WebsiteBundle:Default:registerAmbasador }
+
+website_send_contact:
+    path:     /contact
+    defaults: { _controller: WebsiteBundle:Default:sendContact }
+
+website_zone:
+    path:     /zona/{name}/{id}
+    defaults: { _controller: WebsiteBundle:Default:zone }
+
+website_center_members:
+    path:     /centru/{id}/membri
+    defaults: { _controller: WebsiteBundle:Default:centerMembers }
+
+website_center_events:
+    path:     /centru/{id}/evenimente
+    defaults: { _controller: WebsiteBundle:Default:centerEvents }
+
+website_step:
+    path:     /step
+    defaults: { _controller: WebsiteBundle:Default:step }
+
+website_share:
+    path:     /share
+    defaults: { _controller: WebsiteBundle:Default:share }
+
+website_merge_index:
+    path:   /merge/index
+    defaults: { _controller: WebsiteBundle:Default:mergeIndex }
+
+website_register_index:
+    path:   /register/index
+    defaults: { _controller: WebsiteBundle:Default:registerIndex }
+
+website_merge_code_factory:
+    path:   /merge/code-factory
+    defaults: { _controller: WebsiteBundle:Default:mergeCodeFactory }
+
+website_volunteer:
+    path:   /voluntariat
+    defaults: { _controller: WebsiteBundle:Default:volunteer }
+
+website_privacy:
+    path:   /politica-de-confidentialitate
+    defaults: { _controller: WebsiteBundle:Default:privacy }

@@ -1,0 +1,51 @@
+{% if partners | length > 0 %}
+    <!-- PARTENERI -->
+    <section id="section-ne-sustin" class="page-section">
+        <div class="heading-block title-center">
+            <h2>{{ 'content.sections.partners.title' | trans() }}</h2>
+            <span>{{ 'content.sections.partners.subtitle' | trans() }}.</span>
+        </div>
+        <div class="container">
+            <div class="row">
+
+            {% set count = (partners | length)  %}
+            {% if count > 4 %}
+                {% set cols = 2 %}
+            {% else %}
+                {% set cols = 12 / count %}
+            {% endif %}
+
+            {% for partner in partners %}
+                <div class="col-md-3 col-sm-6 bottommargin">
+                    <div class="team">
+                        <div class="team-image">
+                            <a target="_blank" href="{{ partner.website }}" title="{{ partner.name }}">
+                                {% if partner.avatar is null or partner.avatar == '' %}
+                                    <img src="{{ asset('bundles/website/images//default-user.jpg') }}" class="img-responsive img-circle" alt=""/>
+                                {% else %}
+                                    <img alt="" class="editable img-responsive" src="{{ asset(partner.avatar.webPath) }}" />
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="team-desc">
+                            {% if partner.facebook is not null and partner.facebook != '' %}
+                                <a target="_blank" href="{{ partner.facebook }}" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                                    <i class="icon-facebook"></i>
+                                    <i class="icon-facebook"></i>
+                                </a>
+                            {% endif %}
+                            {% if partner.linkedin is not null and partner.linkedin != '' %}
+                                <a target="_blank"  href="{{ partner.linkedin }}" class="social-icon inline-block si-small si-light si-rounded si-linkedin">
+                                    <i class="icon-linkedin"></i>
+                                    <i class="icon-linkedin"></i>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            </div>
+        </div>
+    </section>
+{% endif %}

@@ -1,0 +1,64 @@
+{% use 'AppBundle:Main:form_row.html.twig' %}
+
+{% block collection_widget %}
+{% spaceless %}
+    {% set projectId = form.parent.vars.value.id %}
+    <div class="tags width-100" id="collectionTags">
+    {% for projectUserForm in form %}
+        {% set formValues = {
+            project: { var: 'project', name: projectUserForm.vars.full_name~'[project]', value: projectId },
+            user: { var: 'user', name: projectUserForm.vars.full_name~'[user]', value: projectUserForm.vars.value.user.id },
+            price: { var: 'price', name: projectUserForm.vars.full_name~'[price]', value: projectUserForm.vars.value.price },
+            startDateYear: { var: 'startDateYear', name: projectUserForm.vars.full_name~'[startDate][year]', value: projectUserForm.vars.value.startDate|date('Y') },
+            startDateMonth: { var: 'startDateMonth', name: projectUserForm.vars.full_name~'[startDate][month]', value: projectUserForm.vars.value.startDate|date('n') },
+            startDateDay: { var: 'startDateDay', name: projectUserForm.vars.full_name~'[startDate][day]', value: projectUserForm.vars.value.startDate|date('j') },
+            endDateYear: { var: 'endDateYear', name: projectUserForm.vars.full_name~'[endDate][year]', value: projectUserForm.vars.value.endDate|date('Y') },
+            endDateMonth: { var: 'endDateMonth', name: projectUserForm.vars.full_name~'[endDate][month]', value: projectUserForm.vars.value.endDate|date('n') },
+            endDateDay: { var: 'endDateDay', name: projectUserForm.vars.full_name~'[endDate][day]', value: projectUserForm.vars.value.endDate|date('j') },
+        } %}
+        {% set objectId = projectUserForm.vars.data.id %}
+        {% set dataValue = projectUserForm.vars.data.user %}
+        {% set idValue = 'object_'~objectId %}
+        {{ block('tag_prototype') }}
+    {% endfor %}
+    </div>
+    <div>
+    {% if form.vars.allow_add is defined %}
+        <a class="btn btn-xs btn-inverse" style="margin-top: 3px;"
+            data-remote="{{ path('project_user_add', { id: projectId }) }}"
+            onclick="return loadModal(this, { onsuccess: function() { 
+                $('.date-picker').datepicker({
+                    autoclose: true,
+                    dateFormat: 'yyyy-mm-dd'
+                });
+            }, title: 'Add new resource to project', btn: 'Add' });">
+            <i class="ace-icon fa fa-plus"></i>
+        </a>
+    {% endif %}
+    </div>
+{% endspaceless %}
+{% endblock collection_widget %}
+
+{% block tag_prototype %}
+    <span class="tag">
+        <span id="{{ idValue }}_span">{{ dataValue }}</span>
+        {% for element in formValues %}
+        <input type="hidden" name="{{ element.name }}" id="{{ idValue }}_input_{{ element.var }}" value="{{ element.value }}"/>
+        {% endfor %}
+        <button class="button edit"
+            data-remote="{{ path('project_user_edit', { id: objectId }) }}"
+            onclick="return loadModal(this, { onsuccess: function() { 
+                $('.date-picker').datepicker({
+                    autoclose: true,
+                    dateFormat: 'yyyy-mm-dd'
+                });
+            }, title: 'Edit resource', btn: 'Edit' });">
+            <i class="ace-icon fa fa-pencil icon-only"></i>
+        </button>
+        {% if form.vars.allow_delete is defined %}
+        <button class="button delete" type="button" onclick="return deleteCollectionElement(this);">
+            <i class="ace-icon fa fa-trash-o icon-only"></i>
+        </button>
+        {% endif %}
+    </span>
+{% endblock %}

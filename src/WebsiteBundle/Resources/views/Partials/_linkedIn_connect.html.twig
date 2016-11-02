@@ -1,0 +1,36 @@
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key:   77eopmhi9eq3kj
+    onLoad:    onLinkedInLoad
+    authorize: true
+    lang:      ro_RO
+</script>
+
+<script type="text/javascript">
+
+    // Setup an event listener to make an API call once auth is complete
+    function onLinkedInLoad() {
+        IN.Event.on(IN, "auth", getProfileData);
+    }
+
+    // Handle the successful return from the API call
+    function onSuccess(data) {
+        console.log(data);
+        $('#member_firstname').val(data.firstName);
+        $('#member_lastname').val(data.lastName);
+        $('#member_position').val(data.headline);
+    }
+
+    // Handle an error response from the API call
+    function onError(error) {
+        console.log(error);
+    }
+
+    // Use the API call wrapper to request the member's basic profile data
+    function getProfileData() {
+        IN.API.Raw("/people/~").result(onSuccess).error(onError);
+    }
+
+</script>
+
+{#77eopmhi9eq3kj#}
+{#QKzOXGTUF8QRz5es#}

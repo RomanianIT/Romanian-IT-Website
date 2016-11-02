@@ -1,0 +1,49 @@
+/* ----------------------------------------------------------------
+	Custom styles
+-----------------------------------------------------------------*/
+/* line 5, ../sass/custom.scss */
+#section-contact {
+  border-top: 5px solid rgba(0, 0, 0, 0.2);
+  padding: 60px 0 80px 0;
+}
+
+/* line 15, ../sass/custom.scss */
+.center-info {
+  list-style-type: none;
+}
+/* line 17, ../sass/custom.scss */
+.center-info li {
+  border-bottom: 1px solid #E5E5E5;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 18px 0;
+}
+/* line 22, ../sass/custom.scss */
+.center-info li span {
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* line 36, ../sass/custom.scss */
+.project-info h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/* line 43, ../sass/custom.scss */
+.mission-statement {
+  padding: 100px;
+  background-color: #232E64;
+}
+/* line 48, ../sass/custom.scss */
+.mission-statement .heading-block h2 {
+  text-transform: none;
+  color: #fff;
+  font-weight: 400;
+}
+.partnership-logo img {
+  max-width: 100%;
+  max-height: 100px;
+}

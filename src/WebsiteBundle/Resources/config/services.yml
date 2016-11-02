@@ -1,0 +1,24 @@
+services:
+#    website.example:
+#        class: WebsiteBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+
+    file.type_extension:
+        class: WebsiteBundle\TypeExtension\FileTypeExtension
+        tags:
+          - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\FileType }
+
+    twig.extension.file:
+       class: WebsiteBundle\Twig\FileExtension
+       arguments: ["@file.helper", "%ged_dir%"]
+       tags:
+           - { name: twig.extension }
+
+    file.helper:
+        class: WebsiteBundle\Helper\FileHelper
+        arguments: ["%media_dir%"]

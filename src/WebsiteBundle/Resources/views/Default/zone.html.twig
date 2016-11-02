@@ -1,0 +1,57 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+{% block nav_bar_menu %}
+    <ul class="one-page-menu">
+        <li>
+            <a class="page-scroll" href="{{ path('website_homepage') }}">{{ 'menu.home' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_projects_list') }}">{{ 'menu.projects' | trans() }}</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>{{ zone.name }}</h1>
+            <span>Lista centrelor existenta in {{ zone.name }}</span>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">{{ zone.name }}</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="content" class="bottommargin">
+        <div class="content-wrap">
+            <div class="container clear-bottommargin clearfix">
+                <div class="row topmargin-sm clearfix">
+
+                    {% for center in zone.centers %}
+                    <div class="col-md-4 bottommargin">
+                        <div class="title-block">
+                            <h2>{{ center.name }}</h2>
+                        </div>
+                        <ul class="center-info">
+                            <li><span>{{ 'content.sections.center.memebers' | trans() }}: </span>{{ center.members | length }}
+                                <a href="{{ path('website_center_members', {'id': center.id }) }}" class="fright"><i class="i-plain i-medium icon-line-arrow-right"></i></a>
+                            </li>
+                            <li><span>{{ 'content.sections.center.meetups' | trans() }}: </span> {{ center.events | length }}
+                                <a href="{{ path('website_center_events', {'id': center.id }) }}" class="fright"><i class="i-plain i-medium icon-line-arrow-right"></i></a>
+                            </li>
+                            {#<li><span>Proiecte: </span> 3#}
+                                {#<a href="cluj-proiecte.html" class="fright"><i class="i-plain i-medium icon-line-arrow-right"></i></a>#}
+                            {#</li>#}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

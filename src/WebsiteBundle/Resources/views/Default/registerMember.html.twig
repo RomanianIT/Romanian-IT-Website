@@ -1,0 +1,388 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block title %}RoIT: Membru Nou{% endblock %}
+
+{% block fb_event_tracking %}
+    fbq('track', 'ViewContent');
+{% endblock %}
+
+{% block custom_styles %}
+    {% stylesheets
+    'bundles/website/css/city-autocomplete.css'
+    'bundles/website/css/components/radio-checkbox.css'
+    output='page-style' filter='cssrewrite' -%}
+
+    <link rel="stylesheet" type="text/css" media="screen, print" href="{{ asset_url }}" />
+    {% endstylesheets -%}
+{% endblock %}
+
+{% block custom_script %}
+    {% include 'WebsiteBundle::Partials/_linkedIn_connect.html.twig' %}
+{% endblock %}
+
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+
+{% block nav_bar_menu %}
+    <ul class="one-page-menu">
+        <li class="hidden">
+            <a href="#page-top"></a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_homepage') }}">{{ 'menu.home' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_projects_list') }}">{{ 'menu.projects' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_projects_new') }}">{{ 'menu.suggest' | trans() }}</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <section id="page-title">
+
+        <div class="container clearfix">
+            {% if is_ambasador is defined %}
+                <h1>{{ 'content.ambasador.title' | trans() }}</h1>
+                <span>{{ 'content.ambasador.subtitle' | trans() | raw }}</span>
+            {% else %}
+                <h1>{{ 'content.register.title' | trans() }}</h1>
+                <span>{{ 'content.register.subtitle' | trans() | raw }}</span>
+            {% endif %}
+            <ol class="breadcrumb">
+                <li><a href="#">Acasă</a></li>
+                <li><a href="#">Înregistrare</a></li>
+                {% if is_ambasador is defined %}
+                <li class="active">Ambasador</li>
+                {% else %}
+                <li class="active">Membru</li>
+                {% endif %}
+            </ol>
+        </div>
+
+    </section>
+
+    <section id="content">
+
+        <div class="content-wrap">
+
+            <div class="container clearfix">
+
+                <div id="processTabs">
+                    <ul class="process-steps bottommargin clearfix">
+                        <li>
+                            <a href="#ptab1" class="i-circled i-bordered i-alt divcenter">1</a>
+                            <h5>Ocupație</h5>
+                        </li>
+                        <li>
+                            <a href="#ptab2" class="i-circled i-bordered i-alt divcenter">2</a>
+                            <h5>Profil</h5>
+                        </li>
+                        <li>
+                            <a href="#ptab3" class="i-circled i-bordered i-alt divcenter">3</a>
+                            <h5>Social</h5>
+                        </li>
+                        <li>
+                            <a href="#ptab4" class="i-circled i-bordered i-alt divcenter">4</a>
+                            <h5>Interese</h5>
+                        </li>
+                    </ul>
+                    <div>
+                        {% form_theme form "WebsiteBundle:Structure:form_row.html.twig" %}
+                        {% import "WebsiteBundle:Structure:macros.html.twig" as formMacros %}
+
+                        {{ form_start(form, {action: path('website_register_member'), multipart: true, attr: {name: 'register', id: 'contactForm', class: '', novalidate:'' } }) }}
+
+                        {% if is_ambasador is defined %}
+                            {{ form_widget(form.isAmbasador, {'value': '1'}) }}
+                        {% endif %}
+
+                        <div id="ptab1">
+                            <h3 class="center">{{ 'content.register.step_1_title' | trans() }}</h3>
+
+                            <div class="col-md-6 position">
+                                <div>
+                                    <input id="checkbox-0" class="checkbox-style" name="checkbox-0" type="checkbox" value="0">
+                                    <label for="checkbox-0" class="checkbox-style-1-label">Student</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-100" class="checkbox-style" name="checkbox-100" type="checkbox" value="100">
+                                    <label for="checkbox-100" class="checkbox-style-1-label">Investments & Mentorship</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-101" class="checkbox-style" name="checkbox-101" type="checkbox" value="101">
+                                    <label for="checkbox-101" class="checkbox-style-1-label">Incubators & Accelerators</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-1" class="checkbox-style" name="checkbox-1" type="checkbox" value="1">
+                                    <label for="checkbox-1" class="checkbox-style-1-label">Web Development</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-2" class="checkbox-style" name="checkbox-2" type="checkbox" value="2">
+                                    <label for="checkbox-2" class="checkbox-style-1-label">Mobile Development</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-3" class="checkbox-style" name="checkbox-3" type="checkbox" value="3">
+                                    <label for="checkbox-3" class="checkbox-style-1-label">Servers Administration</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-4" class="checkbox-style" name="checkbox-4" type="checkbox" value="4">
+                                    <label for="checkbox-4" class="checkbox-style-1-label">Analyst</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-5" class="checkbox-style" name="checkbox-5" type="checkbox" value="5">
+                                    <label for="checkbox-5" class="checkbox-style-1-label">DB Development & Administration</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-6" class="checkbox-style" name="checkbox-6" type="checkbox" value="6">
+                                    <label for="checkbox-6" class="checkbox-style-1-label">Network/System Design & Administration</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-7" class="checkbox-style" name="checkbox-7" type="checkbox" value="7">
+                                    <label for="checkbox-7" class="checkbox-style-1-label">Programming/Software Engineering</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 position">
+
+                                <div>
+                                    <input id="checkbox-8" class="checkbox-style" name="checkbox-8" type="checkbox" value="8" >
+                                    <label for="checkbox-8" class="checkbox-style-1-label">Technical Support</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-9" class="checkbox-style" name="checkbox-9" type="checkbox" value="9" >
+                                    <label for="checkbox-9" class="checkbox-style-1-label">QA/Testing</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-10" class="checkbox-style" name="checkbox-10" type="checkbox" value="10">
+                                    <label for="checkbox-10" class="checkbox-style-1-label">Security</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-11" class="checkbox-style" name="checkbox-11" type="checkbox" value="11">
+                                    <label for="checkbox-11" class="checkbox-style-1-label">Business Intelligence</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-12" class="checkbox-style" name="checkbox-12" type="checkbox" value="12">
+                                    <label for="checkbox-12" class="checkbox-style-1-label">Health IT</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-13" class="checkbox-style" name="checkbox-13" type="checkbox" value="13">
+                                    <label for="checkbox-13" class="checkbox-style-1-label">Management & Project Management</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-14" class="checkbox-style" name="checkbox-14" type="checkbox" value="14">
+                                    <label for="checkbox-14" class="checkbox-style-1-label">Product Management</label>
+                                </div>
+
+                                <div>
+                                    <input id="checkbox-15" class="checkbox-style" name="checkbox-15" type="checkbox" value="15">
+                                    <label for="checkbox-15" class="checkbox-style-1-label">Technical Writing</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-16" class="checkbox-style" name="checkbox-16" type="checkbox" value="16">
+                                    <label for="checkbox-16" class="checkbox-style-1-label">Idea thrower, Evangelist</label>
+                                </div>
+                                <div>
+                                    <input id="checkbox-102" class="checkbox-style" name="checkbox-102" type="checkbox" value="102">
+                                    <label for="checkbox-102" class="checkbox-style-1-label">Other crazy awesome stuff</label>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+
+                            <a href="#" class="button button-3d nomargin fright tab-linker next" rel="2">Mai departe</a>
+                        </div>
+                        <div id="ptab2">
+
+                            <h3 class="center">Spune-ne despre tine</h3>
+
+                            <div class="col-md-6 text-right">
+                                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                                </fb:login-button>
+
+                                <div id="status"> </div>
+                            </div>
+
+                            <div class="col-md-6 text-left">
+                                <script type="in/Login"></script>
+                            </div>
+                            <div class="clearfix"></div><br>
+                            <div class="col-md-6">
+                                {{ form_row(form.avatar.file, { id: 'inputImage', attr: { accept: 'image/*' }, croppable: true }) }}
+                                {{ form_row(form.firstname, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Te rugăm introduceți numele.'}}) }}
+                                {{ form_row(form.lastname, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Te rugăm introduceți prenumele.'}}) }}
+                                {{ form_row(form.position, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Te rugăm introduceți ocupatia actuala.'}}) }}
+                                {{ form_widget(form.expertise) }}
+                                {{ form_row(form.email, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Te rugăm introduceți emailul.'}}) }}
+                            </div>
+
+                            <div class="col-md-6">
+                                {{ form_row(form.telephone) }}
+                                {{ form_row(form.country, {class: 'form-control' }) }}
+                                {{ form_row(form.city, {attr : {'data-validation-required-message' : 'Te rugăm  să îți introduci orașul.', 'data-country' : 'RO' } }) }}
+                                {{ form_row(form.center, {'label': 'Centru',class: 'form-control' }) }}
+                            </div>
+
+                            <div class="line"></div>
+                            <a href="#" class="button button-3d nomargin tab-linker" rel="1">Precedent</a>
+                            <a href="#" class="button button-3d nomargin fright tab-linker" rel="3">Continua</a>
+
+                        </div>
+                        <div id="ptab3">
+                            <h3 class="center">Unde te putem gasi?</h3>
+
+                            <div class="col-md-6">
+                                {{ form_row(form.twitter) }}
+                                {{ form_row(form.facebook) }}
+                                {{ form_row(form.linkedIn) }}
+                            </div>
+
+                            <div class="col-md-6">
+                                {{ form_row(form.behance) }}
+                                {{ form_row(form.git) }}
+                                {{ form_row(form.website) }}
+                            </div>
+
+
+                            <div class="line"></div>
+                            <a href="#" class="button button-3d nomargin tab-linker" rel="2">Previous</a>
+                            <a href="#" class="button button-3d nomargin fright tab-linker" rel="4">Go on</a>
+                        </div>
+                        <div id="ptab4">
+                            <h3 class="center">Cum ne-ai găsit și ce te-ar interesa?</h3>
+
+                            <div class="col-md-6">
+                                {{ form_row(form.reason, {class: 'form-control', attr : {'rows': 6, 'data-validation-required-message' : 'Vă rugăm introduceți un motiv.' } }) }}
+                            </div>
+
+                            <div class="col-md-6">
+                                <p style="margin-bottom:10px;">
+                                    Ce subiecte te-ar interesa să găsești pe websiteul și blogul Romanian IT
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6 interests">
+                                        <div>
+                                            <input id="checkbox-17" class="checkbox-style" name="checkbox-17" type="checkbox" value="17">
+                                            <label for="checkbox-17" class="checkbox-style-1-label">Antreprenoriat</label>
+                                        </div>
+                                        <div>
+                                            <input id="checkbox-18" class="checkbox-style" name="checkbox-18" type="checkbox" value="18">
+                                            <label for="checkbox-18" class="checkbox-style-1-label">Webinarii</label>
+                                        </div>
+                                        <div>
+                                            <input id="checkbox-19" class="checkbox-style" name="checkbox-19" type="checkbox" value="19">
+                                            <label for="checkbox-19" class="checkbox-style-1-label">Meetups</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 interests">
+                                        <div>
+                                            <input id="checkbox-20" class="checkbox-style" name="checkbox-20" type="checkbox" value="20">
+                                            <label for="checkbox-20" class="checkbox-style-1-label">Networking</label>
+                                        </div>
+                                        <div>
+                                            <input id="checkbox-21" class="checkbox-style" name="checkbox-21" type="checkbox" value="21">
+                                            <label for="checkbox-21" class="checkbox-style-1-label">Working abroad</label>
+                                        </div>
+                                        <div>
+                                            <input id="checkbox-22" class="checkbox-style" name="checkbox-22" type="checkbox" value="22">
+                                            <label for="checkbox-22" class="checkbox-style-1-label">Startups</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <a href="#" class="button button-3d nomargin tab-linker" rel="3">Previous</a>
+                            {{ formMacros.submitFormButton('btn.save'| trans(), 'fright') }}
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="divider divider-center"><i class="icon-circle"></i></div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer_scripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+
+        $(function() {
+            var posVal = [];
+            var interestsVal = [];
+
+            $('.interests input.checkbox-style').change(function() {
+
+                if($(this).is(":checked")) {
+                    interestsVal.push($(this).val());
+                } else {
+                    var index = interestsVal.indexOf($(this).val());
+                    if (index > -1) {
+                        interestsVal.splice(index, 1);
+                    }
+                }
+
+                $('#member_interests').val(interestsVal.join());
+            });
+
+            $('.position input.checkbox-style').change(function() {
+
+                if($(this).is(":checked")) {
+                    posVal.push($(this).val());
+                } else {
+                    var index = posVal.indexOf($(this).val());
+                    if (index > -1) {
+                        posVal.splice(index, 1);
+                    }
+                }
+
+                $('#member_expertise').val(posVal.join());
+            });
+
+
+            $( "#processTabs" ).tabs({ show: { effect: "fade", duration: 400 } });
+            $( ".tab-linker" ).click(function(e) {
+
+                if ($(this).attr('rel') == '3') {
+                    var $form = $('#contactForm');
+                    var warningsFound = 0;
+                    var $inputs = $form.find("input[type=text],input[type=email],select");
+                    $inputs.trigger("submit.validation").trigger("validationLostFocus.validation");
+
+                    $inputs.each(function (i, el) {
+                        var $this = $(el),
+                        $controlGroup = $this.parents(".form-group").first();
+                        if ( $controlGroup.hasClass("warning") ) {
+                            $controlGroup.removeClass("warning").addClass("error");
+                            warningsFound++;
+                        }
+                    });
+
+                    $inputs.trigger("validationLostFocus.validation");
+
+                    if (warningsFound) {
+                        e.preventDefault();
+                        $form.addClass("error");
+                        return false;
+                    } else {
+                        $form.removeClass("error");
+                    }
+                }
+
+                $( "#processTabs" ).tabs("option", "active", $(this).attr('rel') - 1);
+                return false;
+            });
+        });
+
+        $( "#member_country" ).change(function() {
+            var countryCode = $( "#member_country option:selected").val();
+            $('input#member_city').data('country', countryCode);
+        });
+
+        $('input#member_city').cityAutocomplete();
+    </script>
+{% endblock %}

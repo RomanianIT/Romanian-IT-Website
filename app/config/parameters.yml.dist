@@ -1,0 +1,38 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+1
+    admin_pass:        ~
+
+    mailer_transport:  sendmail
+    mailer_user:       ~
+    mailer_password:   ~
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    # Contact form test email
+    contact.test_email: ~
+
+    # File uploader
+    ged_dir:      %kernel.root_dir%/../web/uploads/avatar
+    document_dir: /media/roit/document
+    public_dir:   %kernel.root_dir%/../web/uploads
+    media_dir:    %kernel.root_dir%/../web/media
+    image_dir:    %kernel.root_dir%/../web/bundles/website/images
+
+    # Google client ID
+   google_client_id: ~
+   google_client_secret: ~
+
+   # Index API
+   index_api_url: ~
+   index_client_id: ~
