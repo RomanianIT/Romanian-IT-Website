@@ -15048,6 +15048,7 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-desc {
 .portfolio-nomargin .portfolio-item,
 .portfolio-full .portfolio-item {
   padding: 0 !important;
+  height: 250px;
 }
 
 /* line 339, ../sass/elements/portfolio.scss */
@@ -15454,14 +15455,14 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-desc {
 -----------------------------------------------------------------*/
 /* line 723, ../sass/elements/portfolio.scss */
 .portfolio-6.portfolio-notitle .portfolio-desc {
-  height: 68px;
+  height: 80px;
   bottom: -69px;
 }
 
 /* line 728, ../sass/elements/portfolio.scss */
 .portfolio-6.portfolio-full.portfolio-notitle .portfolio-desc,
 .portfolio-6.portfolio-nomargin.portfolio-notitle .portfolio-desc {
-  bottom: -68px;
+  bottom: 0px;
 }
 
 /* line 733, ../sass/elements/portfolio.scss */
