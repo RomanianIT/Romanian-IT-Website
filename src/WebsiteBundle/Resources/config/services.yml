@@ -22,3 +22,8 @@ services:
     file.helper:
         class: WebsiteBundle\Helper\FileHelper
         arguments: ["%media_dir%"]
+
+    twig.md5:
+        class: WebsiteBundle\Twig\Md5
+        tags :
+            - { name: twig.extension }
