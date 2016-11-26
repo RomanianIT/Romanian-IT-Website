@@ -37,7 +37,7 @@ class Zone
     private $flag;
 
     /**
-     * @ORM\OneToMany(targetEntity="Center", mappedBy="zone", indexBy="zone", cascade={"all"})
+     * @ORM\OneToMany(targetEntity="Center", mappedBy="zone")
      */
     private $centers;
 

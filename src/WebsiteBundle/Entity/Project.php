@@ -78,12 +78,8 @@ class Project
     private $title;
 
     /**
-     * @var \Center
-     *
-     * @ORM\ManyToOne(targetEntity="Center")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="center_id", referencedColumnName="id")
-     * })
+     * @ORM\ManyToOne(targetEntity="Center", inversedBy="projects")
+     * @ORM\JoinColumn(name="center_id", referencedColumnName="id")
      */
     private $center;
 
