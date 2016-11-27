@@ -44,12 +44,8 @@ class Event
     private $link;
 
     /**
-     * @var \Center
-     *
-     * @ORM\ManyToOne(targetEntity="Center")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="center_id", referencedColumnName="id")
-     * })
+     * @ORM\ManyToOne(targetEntity="Center", inversedBy="events")
+     * @ORM\JoinColumn(name="center_id", referencedColumnName="id")
      */
     private $center;
 

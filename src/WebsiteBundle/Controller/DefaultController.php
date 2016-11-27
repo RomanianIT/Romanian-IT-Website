@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 use WebsiteBundle\Entity\Contact;
+use WebsiteBundle\Entity\Event;
 use WebsiteBundle\Entity\Member;
 use WebsiteBundle\Entity\Ambasador;
 use WebsiteBundle\Entity\Project;
@@ -19,25 +20,26 @@ class DefaultController extends Controller
 
     public function zoneAction($name, $id)
     {
-        $zone = $this->getDoctrine()->getManager()->getRepository('WebsiteBundle:Zone')->findOneById($id);
 
+        $zone = $this->getDoctrine()->getManager()->getRepository('WebsiteBundle:Zone')->findOneBy(['id'=>$id]);
         return $this->render('WebsiteBundle:Default:zone.html.twig', array('zone' => $zone));
     }
 
     public function centerMembersAction($id)
     {
-        $center = $this->getDoctrine()->getManager()->getRepository('WebsiteBundle:Center')->findOneById($id);
+        $center = $this->getDoctrine()->getManager()->getRepository('WebsiteBundle:Center')->findOneBy(['id'=>$id]);
 
         return $this->render('WebsiteBundle:Default:centerMembers.html.twig', array('center' => $center));
     }
 
     public function centerEventsAction($id)
     {
-        $center = $this->getDoctrine()->getManager()->getRepository('WebsiteBundle:Center')->findOneById($id);
+        $center = $this->getDoctrine()->getManager()->getRepository('WebsiteBundle:Center')->findOneBy(['id'=>$id]);
 
         $futureEvents = [];
         $today = $now    = new \DateTime();
 
+        /** @var Event $event */
         foreach ($center->getEvents() as $event)
         {
             if ($event->getDate() > $today ) {

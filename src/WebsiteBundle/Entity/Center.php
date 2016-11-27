@@ -45,12 +45,8 @@ class Center
     private $projects;
 
     /**
-     * @var \Zone
-     *
-     * @ORM\ManyToOne(targetEntity="Zone")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="zone_id", referencedColumnName="id")
-     * })
+     * @ORM\ManyToOne(targetEntity="Zone", inversedBy="centers")
+     * @ORM\JoinColumn(name="zone_id", referencedColumnName="id")
      */
     private $zone;
 

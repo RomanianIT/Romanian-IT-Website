@@ -9,7 +9,7 @@ parameters:
     database_password: ~
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
-1
+
     admin_pass:        ~
 
     mailer_transport:  sendmail
@@ -30,9 +30,9 @@ parameters:
     image_dir:    %kernel.root_dir%/../web/bundles/website/images
 
     # Google client ID
-   google_client_id: ~
-   google_client_secret: ~
+    google_client_id: ~
+    google_client_secret: ~
 
-   # Index API
-   index_api_url: ~
-   index_client_id: ~
+    # Index API
+    index_api_url: ~
+    index_client_id: ~
