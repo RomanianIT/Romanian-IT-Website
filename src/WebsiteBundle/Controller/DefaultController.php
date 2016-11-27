@@ -195,7 +195,7 @@ class DefaultController extends Controller
                 //Send email to user
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Bine ai venit in Romanian IT')
-                    ->setFrom('no_reply@romanianit.com')
+                    ->setFrom('office@romanianit.com', 'Echipa Romanian IT')
                     ->setTo(array($member->getEmail()))
                     ->setBody(
                         $this->renderView(
@@ -322,4 +322,5 @@ class DefaultController extends Controller
     {
         return $this->render('WebsiteBundle:Default:privacy.html.twig');
     }
+
 }
