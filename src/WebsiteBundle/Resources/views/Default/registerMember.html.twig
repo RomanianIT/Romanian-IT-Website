@@ -14,6 +14,12 @@
 
     <link rel="stylesheet" type="text/css" media="screen, print" href="{{ asset_url }}" />
     {% endstylesheets -%}
+    <style>
+        .inactive-tab {
+            pointer-events: none;
+            cursor: default;
+        }
+    </style>
 {% endblock %}
 
 {% block custom_script %}
@@ -82,11 +88,11 @@
                             <h5>Profil</h5>
                         </li>
                         <li>
-                            <a href="#ptab3" class="i-circled i-bordered i-alt divcenter">3</a>
+                            <a href="#ptab3" class="i-circled i-bordered i-alt divcenter inactive-tab" id="step3">3</a>
                             <h5>Social</h5>
                         </li>
                         <li>
-                            <a href="#ptab4" class="i-circled i-bordered i-alt divcenter">4</a>
+                            <a href="#ptab4" class="i-circled i-bordered i-alt divcenter inactive-tab" id="step4">4</a>
                             <h5>Interese</h5>
                         </li>
                     </ul>
@@ -246,8 +252,8 @@
 
 
                             <div class="line"></div>
-                            <a href="#" class="button button-3d nomargin tab-linker" rel="2">Previous</a>
-                            <a href="#" class="button button-3d nomargin fright tab-linker" rel="4">Go on</a>
+                            <a href="#" class="button button-3d nomargin tab-linker" rel="2">Precedent</a>
+                            <a href="#" class="button button-3d nomargin fright tab-linker" rel="4">Continua</a>
                         </div>
                         <div id="ptab4">
                             <h3 class="center">Cum ne-ai găsit și ce te-ar interesa?</h3>
@@ -370,6 +376,8 @@
                         return false;
                     } else {
                         $form.removeClass("error");
+                        $('#step3').removeClass('inactive-tab');
+                        $('#step4').removeClass('inactive-tab');
                     }
                 }
 
