@@ -108,9 +108,3 @@ jms_i18n_routing:
 #        en: %roit.host.url.en%
 #        fr: %roit.host.url.fr%
 #    redirect_to_host: true
-
-doctrine_migrations:
-    dir_name: "%kernel.root_dir%/DoctrineMigrations"
-    namespace: Application\Migrations
-    table_name: migration_versions
-    name: Application Migrations
