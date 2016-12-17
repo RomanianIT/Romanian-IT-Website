@@ -51,6 +51,9 @@ content:
     ambasador.subtitle: "Îți mulțumim că te-ai decis să ne susții și te încurajăm să te implici. <br/> În calitate de ambasador vei avea posibilitatea de a participa la organizarea evenimentelor din centrele Romanian-IT"
     ambasador.title: 'Înregistrare ambasador'
 
+    share.title: 'Share'
+    share.subtitle: 'Îți multumim pentru încrederea acordată și te rugăm să ne ajuți să creștem comunitatea.'
+
     sections:
         center:
             meetups: Meetups
