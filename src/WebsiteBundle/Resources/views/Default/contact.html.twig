@@ -36,6 +36,12 @@
                         {{ form_row(form.message, {'attr' : {'class': 'required sm-form-control', 'rows' : '6', 'cols': 30, 'placeholder': 'content.contact.message' | trans(), 'data-validation-required-message' : 'Vă rugăm introduceți un mesaj.'}}) }}
                     </div>
 
+                    <div class="col_one_third col_last">
+                        <!-- Now add the widget with the sitekey that you retrieve in the registration -->
+                        <div class="g-recaptcha" data-sitekey="{{ google_recaptca_site_key }}" data-callback="enableBtn"></div>
+                    </div>
+
+
                     <div class="col_full hidden">
                         <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
                     </div>
