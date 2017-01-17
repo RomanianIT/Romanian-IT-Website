@@ -1,4 +1,5 @@
 $(function() {
+    document.getElementById("button1").disabled = true;
 
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
         preventSubmit: false,
@@ -58,6 +59,10 @@ $(function() {
             return $(this).is(":visible");
         }
     });
+
+    function enableBtn(){
+        document.getElementById("button1").disabled = false;
+    }
 });
 
 
