@@ -10,6 +10,7 @@ use WebsiteBundle\Entity\Event;
 use WebsiteBundle\Entity\Member;
 use WebsiteBundle\Entity\Ambasador;
 use WebsiteBundle\Entity\Project;
+use ReCaptcha\ReCaptcha;
 
 class DefaultController extends Controller
 {
@@ -89,9 +90,31 @@ class DefaultController extends Controller
 
     public function sendContactAction(Request $request)
     {
+
+        //Get new instance of ReCaptcha
+        $recaptcha = new ReCaptcha($this->getParameter('google_recaptca_secret_key'));
+        $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+
         $contactModel = new Contact();
         $contactForm = $this->createForm('WebsiteBundle\Form\ContactType', $contactModel);
         $contactForm->handleRequest($request);
+
+        //Validate the google captcha
+        if (!$resp->isSuccess()) {
+            $this->get('session')->getFlashBag()->set(
+                'error',
+                array(
+                    'title' => 'EROARE!',
+                    'message' => 'Validatea nu este completa. Te rugam sa folosite captcha '
+                )
+            );
+
+            //Get Back to the same page if error
+            return $this->render('@Website/Default/index.html.twig', array(
+                'form' => $contactForm->createView()
+            ));
+        }
+
 
         if ($contactForm->isValid()) {
             $message = \Swift_Message::newInstance()
@@ -109,6 +132,8 @@ class DefaultController extends Controller
                         )
                     ), 'text/html'
                 );
+
+
 
             $sent = $this->get('mailer')->send($message);
 

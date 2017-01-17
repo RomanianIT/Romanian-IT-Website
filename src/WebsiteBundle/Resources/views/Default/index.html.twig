@@ -165,7 +165,10 @@
 {% block footer_scripts %}
 {{ parent() }}
 
-{{  render(controller( 'WebsiteBundle:Default:membersMap' )) }}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+    {{  render(controller( 'WebsiteBundle:Default:membersMap' )) }}
 
 <script>
     $( document ).ready(function() {
