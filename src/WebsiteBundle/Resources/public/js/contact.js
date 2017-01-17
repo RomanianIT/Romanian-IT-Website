@@ -1,5 +1,5 @@
 $(function() {
-    document.getElementById("button1").disabled = true;
+    $("#template-contactform-submit").prop("disabled",true);
 
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
         preventSubmit: false,
@@ -60,10 +60,12 @@ $(function() {
         }
     });
 
-    function enableBtn(){
-        document.getElementById("button1").disabled = false;
-    }
+
 });
+
+function enableBtn(){
+    $("#template-contactform-submit").prop("disabled",false);
+}
 
 
 /*When clicking on Full hide fail/success boxes */
