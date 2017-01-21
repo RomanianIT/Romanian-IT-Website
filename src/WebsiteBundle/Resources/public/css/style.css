@@ -10215,19 +10215,34 @@ body.stretched #header.full-header .container {
 	Logo
 -----------------------------------------------------------------*/
 /* line 85, ../sass/layout/header.scss */
+
+/*#logo {*/
+  /*position: relative;*/
+  /*float: left;*/
+  /*font-family: "Raleway", sans-serif;*/
+  /*font-size: 36px;*/
+  /*line-height: 100%;*/
+  /*margin-right: 30px;*/
+/*}*/
+
 #logo {
-  position: relative;
-  float: left;
-  font-family: "Raleway", sans-serif;
   font-size: 36px;
   line-height: 100%;
-  margin-right: 40px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* line 94, ../sass/layout/header.scss */
 #header.full-header #logo {
-  padding-right: 30px;
-  margin-right: 30px;
+  max-width: 30%;
+  line-height: 2.5;
+}
+
+#header.full-header.sticky-header #logo{
+  line-height: 1.5!important;
+  height: auto !important;
 }
 
 /* line 99, ../sass/layout/header.scss */
@@ -10249,10 +10264,17 @@ body.stretched #header.full-header .container {
   display: none;
 }
 /* line 108, ../sass/layout/header.scss */
+/*#logo img {*/
+  /*display: inline-block;*/
+  /*max-width: 100%;*/
+  /*padding: 10px 0;*/
+/*}*/
+
 #logo img {
   display: block;
   max-width: 100%;
-  padding: 10px 0;
+  height: auto!important;
+  /* padding: 10px 0; */
 }
 
 /* ----------------------------------------------------------------
@@ -10906,6 +10928,10 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
     height: 100px;
   }
 
+  #header.full-header #logo {
+    float: left;
+  }
+
   /* line 623, ../sass/layout/header.scss */
   #header.split-menu #logo a.standard-logo {
     display: inline-block;
@@ -11421,7 +11447,7 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #header.transparent-header
 #header,
 #header-wrap,
 #logo img {
-  height: 100px;
+  /*height: 100px;*/
   -webkit-transition: height 0.4s ease, opacity 0.3s ease;
   -o-transition: height 0.4s ease, opacity 0.3s ease;
   transition: height 0.4s ease, opacity 0.3s ease;
@@ -11526,6 +11552,8 @@ body.top-search-open #top-account {
 #header.sticky-header:not(.static-sticky) #header-wrap,
 #header.sticky-header:not(.static-sticky):not(.sticky-style-2):not(.sticky-style-3) #logo img {
   height: 60px;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* line 1087, ../sass/layout/header.scss */
@@ -21110,10 +21138,12 @@ body:not(.device-touch) .clients-grid li a {
 }
 
 /* line 17, ../sass/shortcodes/team.scss */
-.team-image > a,
-.team-image img {
+.team-image > a, .team-image img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-height: 150px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* line 24, ../sass/shortcodes/team.scss */
@@ -37493,7 +37523,7 @@ body #side-panel.dark #side-panel-trigger-close a {
     pointer-events: auto;
     top: 25px;
     margin-top: 0;
-    left: 0;
+    left: -40px;
     z-index: 1;
   }
 
@@ -39322,6 +39352,10 @@ body #side-panel.dark #side-panel-trigger-close a {
   /* line 1632, ../sass/responsive/responsive.scss */
   #header, #header-wrap, #logo img {
     height: 80px !important;
+  }
+
+  #logo {
+    max-width: 100% !important;
   }
 
   /* line 1636, ../sass/responsive/responsive.scss */
