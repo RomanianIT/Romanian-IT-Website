@@ -1,0 +1,105 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+{% block nav_bar_menu %}
+    <ul class="one-page-menu">
+        <li>
+            <a class="page-scroll" href="{{ path('website_homepage') }}">{{ 'menu.home' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_projects_list') }}">{{ 'menu.projects' | trans() }}</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>Ajută-ne să dezvoltăm comunitatea!</h1>
+            <span>Suntem tineri și entuziaști, dar avem nevoie de ajutorul tău!</span>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Susține</li>
+            </ol>
+        </div>
+    </section>
+
+    <div class="container clearfix bottommargin">
+        <div class="row clearfix ">
+            <div class="col-lg-12">
+                <div class="heading-block topmargin">
+                    {#<h2>#}
+                        {#Redirectionare 20% din profit pentru companii sau 2% din impozit#}
+                    {#</h2>#}
+                    <h2>
+                        Direcționați până la 20% din impozitul pe profit sau 2% din impozit
+                    </h2>
+                    <h4>– o sponsorizare care nu vă costă nimic</h4>
+                </div>
+                <p>
+                    1. Companiile pot redirectiona 20% din impozitul pe profit catre  ”Asociatia ROMANIAN IT GLOBAL COMMUNITY”.
+                </p>
+                <p>
+                    Suma redirectionata nu poate fi mai mare de trei la mie din cifra de afaceri, iar platile trebuie facute pana la 31 decembrie, pentru ca suma sa poata fi scazuta din impozitul pe profit aferent anului fiscal.
+                </p>
+                <p>
+                    Codul Fiscal permite inca din 2004 ca firmele sa redirectioneze 20% din impozitul pe profit datorat statului catre un ONG ( ”Asociatia ROMANIAN IT GLOBAL COMMUNITY” ), fara nici o cheltuiala suplimentara.
+                </p>
+                <p>
+                    Cum pot companiile redirectiona 20% din impozitul pe profit?
+                </p>
+                <p>
+                    Modalitatea de redirectionare este foarte simpla. Compania isi calculeaza suma aferenta celor 20% din impozitul pe profit, apoi incheie cu contract de sponsorizare cu ONG-ul pe care isi doreste sa il sustina, iar cheltuielile sunt deductibile.
+                </p>
+                <p>
+                    2. Formularul 230 se completează de contribuabilii care realizează venituri din salarii  şi asimilate acestora, în următoarele situaţii:
+                </p>
+                    <ul>
+                        <li>
+                            au efectuat în anul  de raportare cheltuieli pentru acordarea de burse private, şi solicită  restituirea acestora;
+                        </li>
+                        <li>
+                            doresc ca o sumă din impozitul anual să fie  destinată pentru sponsorizarea organizaţiilor nonprofit. Se poate  nominaliza o singură entitate nonprofit sau unitate de cult si anume: ”Asociatia ROMANIAN IT GLOBAL COMMUNITY”.
+                        </li>
+                        <li>
+                            solicită  deducerea din veniturile impozabile din salarii, obţinute la funcţia de  bază, a cheltuielilor efectuate pentru economisire în sistem colectiv  pentru domeniul locativ, în limita unei sume maxime de 300 lei pe an.
+                        </li>
+                    </ul>
+                <p>
+                    Se  completeazã de mânã, în douã exemplare, din care unul rãmâne la  contribuabil. Cererea se depune direct la registratura organului fiscal  sau la oficiul poştal, prin scrisoare recomandatã.
+                </p>
+                <p>
+                    Puteţi descărca Declaratia 230, pentru persoanele fizice:
+                </p>
+
+                <h3>Ce aveți de făcut? (2 pași simpli)</h3>
+                <p>
+                1.    Vă rugăm să completați contractul de sponsorizare (pe care il puteti descarca accesând link-ul de mai jos) cu datele firmei și cu suma de sponsorizare și să îl trimiteți în format word la adresa office@romanianit.com
+                </p>
+                <p>
+                2.    Vă vom trimite contractul în 2 exemplare semnat și ștampilat în original, la adresa indicată.
+                </p>
+
+                <h3>
+                    Care sunt beneficiile redirectionării a 20% din impozitul pe profit al afacerii dumneavoastră?
+                </h3>
+
+                Compania dumneavoastră alege unde să fie directionați cei 20% din impozitul pe profit;
+                </p>
+                <p>
+                Ca sponsor aveți posibilitatea de a verifica felul în care s-au folosit banii;
+                </p>
+                <p>
+                Directionarea celor 20% din impozitul pe profit poate reprezenta un suport în dezvoltarea comunității sau un sprijin pentru celelalte proiecte desfășurate
+                </p>
+                <p>
+                Redirectionând 20% din impozitul pe profit către Asociatia ROMANIAN IT GLOBAL COMMUNITY puteți fi inclus în lista de sponsori.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
