@@ -40,7 +40,7 @@
                         <div class="portfolio-item pf-media pf-icons">
                             <div class="img-responsive">
                                 {% if member.avatar is null or member.avatar == '' %}
-                                    <img class="img-responsive" src="{{ 'http://www.gravatar.com/avatar/'~((member.email |lower) | md5 )~'?s=250&d=identicon&r=PG' }}" />
+                                    <img class="img-responsive" src="{{ 'https://www.gravatar.com/avatar/'~((member.email |lower) | md5 )~'?s=250&d=identicon&r=PG' }}" />
                                 {% else %}
                                     <img alt="" id="avatar" class="" src="{{ asset(member.avatar.webPath) }}" />
                                 {% endif %}

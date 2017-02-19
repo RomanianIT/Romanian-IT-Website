@@ -73,6 +73,8 @@ content:
             title: Ne susțin
             subtitle: Au văzut și cred în potențialul proiectului Romanian IT
             message: Dacă dorești și tu să susții proiectul nostru, te invităm să ne contactezi folosind formularul de contact.
+            media_partners: Parteneri Media
+            articles: Au scris despre noi
 
         members: 'Membri Romanian IT'
         members_subtitle: '<span>Împreună mergem departe</span>'
@@ -96,6 +98,9 @@ content:
           <p style="line-height: 1.8;">Pentru a putea îmbunătății mediul în care trăim este intotdeauna nevoie de oameni implicați si idei geniale pe care ulterior să le implementăm în proiecte software. Implică-te acum, prin expunerea nevoilor reale și înregistrarea unui proiect împreună cu posibile soluții sau sugestii. </p>
           <p style="line-height: 1.8;">Vei putea să te concentrezi pe partea offline, iar de implementare se ocupă comunitatea.</p>
         projects_subtitle: 'Ne implicăm în dezvoltarea societății cu ce știm face cel mai bine....IT.'
+
+    donate.button: 'Donează'
+    donate.button_subtitle: 'Susține dezvoltarea comunității'
 
     subtitle: 'Comunitatea globală a românilor din tech'
 

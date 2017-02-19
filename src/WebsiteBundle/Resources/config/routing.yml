@@ -62,6 +62,10 @@ website_volunteer:
     path:   /voluntariat
     defaults: { _controller: WebsiteBundle:Default:volunteer }
 
+website_donate:
+    path:   /doneaza
+    defaults: { _controller: WebsiteBundle:Default:donate }
+
 website_privacy:
     path:   /politica-de-confidentialitate
     defaults: { _controller: WebsiteBundle:Default:privacy }

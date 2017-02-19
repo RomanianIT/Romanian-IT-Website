@@ -10413,6 +10413,17 @@ body.stretched #header.full-header .container {
   transition: margin 0.4s ease, padding 0.4s ease;
 }
 
+@media (min-width: 768px) {
+
+  .sticky-header #primary-menu ul li div a.button {
+    margin-top: 10px;
+  }
+
+  #primary-menu ul li div a.button {
+    margin-top: 30px;
+  }
+}
+
 /* line 218, ../sass/layout/header.scss */
 #primary-menu ul li > a span {
   display: none;
@@ -21141,7 +21152,7 @@ body:not(.device-touch) .clients-grid li a {
 .team-image > a, .team-image img {
   display: block;
   width: auto;
-  max-height: 150px;
+  max-height: 80px;
   margin: 0 auto;
   text-align: center;
 }
