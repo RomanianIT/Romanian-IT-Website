@@ -34,6 +34,10 @@ website_partner:
     resource: "@WebsiteBundle/Controller/PartnerController.php"
     type:     annotation
 
+website_companies:
+    resource: "@WebsiteBundle/Controller/CompanyController.php"
+    type:     annotation
+
 website_ajax:
     resource: "@WebsiteBundle/Controller/AjaxController.php"
     type:     annotation

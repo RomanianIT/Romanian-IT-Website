@@ -8,15 +8,15 @@
         <div class="container">
             <div class="row">
 
-            {% set count = (partners | length)  %}
-            {% if count > 4 %}
-                {% set cols = 2 %}
-            {% else %}
-                {% set cols = 12 / count %}
-            {% endif %}
+            {% for partner in partners[constant('WebsiteBundle\\Entity\\Partner::PUBLIC_INSTITUTE')] %}
+                {% set count = (partners[constant('WebsiteBundle\\Entity\\Partner::PUBLIC_INSTITUTE')] | length)  %}
+                {% if count > 4 %}
+                    {% set cols = 2 %}
+                {% else %}
+                    {% set cols = 12 / count %}
+                {% endif %}
 
-            {% for partner in partners %}
-                <div class="col-md-3 col-sm-6 bottommargin">
+                <div class="col-md-{{ cols }} col-sm-6 bottommargin">
                     <div class="team">
                         <div class="team-image">
                             <a target="_blank" href="{{ partner.website }}" title="{{ partner.name }}">
@@ -44,6 +44,145 @@
                     </div>
                 </div>
             {% endfor %}
+
+            {% for partner in partners[constant('WebsiteBundle\\Entity\\Partner::PARTNER')] %}
+                {% set count = (partners[constant('WebsiteBundle\\Entity\\Partner::PARTNER')] | length)  %}
+                {% if count > 4 %}
+                    {% set cols = 2 %}
+                {% else %}
+                    {% set cols = 12 / count %}
+                {% endif %}
+
+                <div class="col-md-{{ cols }} col-sm-6 bottommargin">
+                    <div class="team">
+                        <div class="team-image">
+                            <a target="_blank" href="{{ partner.website }}" title="{{ partner.name }}">
+                                {% if partner.avatar is null or partner.avatar == '' %}
+                                    <img src="{{ asset('bundles/website/images//default-user.jpg') }}" class="img-responsive img-circle" alt=""/>
+                                {% else %}
+                                    <img alt="" class="editable img-responsive" src="{{ asset(partner.avatar.webPath) }}" />
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="team-desc">
+                            {% if partner.facebook is not null and partner.facebook != '' %}
+                                <a target="_blank" href="{{ partner.facebook }}" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                                    <i class="icon-facebook"></i>
+                                    <i class="icon-facebook"></i>
+                                </a>
+                            {% endif %}
+                            {% if partner.linkedin is not null and partner.linkedin != '' %}
+                                <a target="_blank"  href="{{ partner.linkedin }}" class="social-icon inline-block si-small si-light si-rounded si-linkedin">
+                                    <i class="icon-linkedin"></i>
+                                    <i class="icon-linkedin"></i>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if  partners[constant('WebsiteBundle\\Entity\\Partner::MEDIA_PARTNER')] is defined %}
+
+                {% set countPartners = (partners[constant('WebsiteBundle\\Entity\\Partner::MEDIA_PARTNER')] | length)  %}
+
+                {% if countPartners > 0 %}
+                <div class="topmargin-lg center">
+                    <h4>{{ 'content.sections.partners.media_partners' | trans }}</h4>
+                </div>
+
+                {% for partner in partners[constant('WebsiteBundle\\Entity\\Partner::MEDIA_PARTNER')] %}
+
+                    {% if countPartners > 4 %}
+                        {% set cols = 2 %}
+                    {% else %}
+                        {% set cols = 12 / countPartners %}
+                    {% endif %}
+
+                    <div class="col-md-{{ cols }} col-sm-6 bottommargin">
+                        <div class="team">
+                            <div class="team-image">
+                                <a target="_blank" href="{{ partner.website }}" title="{{ partner.name }}">
+                                    {% if partner.avatar is null or partner.avatar == '' %}
+                                        <img src="{{ asset('bundles/website/images//default-user.jpg') }}" class="img-responsive img-circle" alt=""/>
+                                    {% else %}
+                                        <img alt="" class="editable img-responsive" src="{{ asset(partner.avatar.webPath) }}" />
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="team-desc">
+                                {% if partner.facebook is not null and partner.facebook != '' %}
+                                    <a target="_blank" href="{{ partner.facebook }}" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                {% endif %}
+                                {% if partner.linkedin is not null and partner.linkedin != '' %}
+                                    <a target="_blank"  href="{{ partner.linkedin }}" class="social-icon inline-block si-small si-light si-rounded si-linkedin">
+                                        <i class="icon-linkedin"></i>
+                                        <i class="icon-linkedin"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                {% endif %}
+
+            {% endif %}
+
+            <!-- ARTICOLE -->
+
+            {% if  partners[constant('WebsiteBundle\\Entity\\Partner::ARTICLES')] is defined %}
+
+                {% set countArticles= (partners[constant('WebsiteBundle\\Entity\\Partner::ARTICLES')] | length)  %}
+
+                {% if countArticles > 0 %}
+
+                <div class="topmargin-lg center">
+                    <h4>{{ 'content.sections.partners.articles' | trans }}</h4>
+                </div>
+                {% for partner in partners[constant('WebsiteBundle\\Entity\\Partner::ARTICLES')] %}
+
+                    {% if countArticles > 4 %}
+                        {% set cols = 2 %}
+                    {% else %}
+                        {% set cols = 12 / countArticles %}
+                    {% endif %}
+
+                    <div class="col-md-{{ cols }} col-sm-6 bottommargin">
+                        <div class="team">
+                            <div class="team-image">
+                                <a target="_blank" href="{{ partner.website }}" title="{{ partner.name }}">
+                                    {% if partner.avatar is null or partner.avatar == '' %}
+                                        <img src="{{ asset('bundles/website/images//default-user.jpg') }}" class="img-responsive img-circle" alt=""/>
+                                    {% else %}
+                                        <img alt="" class="editable img-responsive" src="{{ asset(partner.avatar.webPath) }}" />
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="team-desc">
+                                {% if partner.facebook is not null and partner.facebook != '' %}
+                                    <a target="_blank" href="{{ partner.facebook }}" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                {% endif %}
+                                {% if partner.linkedin is not null and partner.linkedin != '' %}
+                                    <a target="_blank"  href="{{ partner.linkedin }}" class="social-icon inline-block si-small si-light si-rounded si-linkedin">
+                                        <i class="icon-linkedin"></i>
+                                        <i class="icon-linkedin"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                {% endif %}
+
+            {% endif %}
 
             </div>
         </div>

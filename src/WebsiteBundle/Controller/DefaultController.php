@@ -183,7 +183,13 @@ class DefaultController extends Controller
 
         $partners = $em->getRepository('WebsiteBundle:Partner')->findAll();
 
-        return $this->render('WebsiteBundle:Default:listPartners.html.twig', ['partners' => $partners]);
+        $groupedPartners = [];
+
+        foreach ($partners as $partner) {
+            $groupedPartners[$partner->getType()][] = $partner;
+        }
+
+        return $this->render('WebsiteBundle:Default:listPartners.html.twig', ['partners' => $groupedPartners]);
     }
 
     public function registerMemberAction(Request $request)
@@ -344,6 +350,10 @@ class DefaultController extends Controller
         return $this->render('WebsiteBundle:Default:volunteer.html.twig');
     }
 
+    public function donateAction()
+    {
+        return $this->render('WebsiteBundle:Default:donate.html.twig');
+    }
 
     public function privacyAction()
     {

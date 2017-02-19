@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Partner
 {
+
+    const PUBLIC_INSTITUTE = '0';
+    const PARTNER = '1';
+    const SUPPORTER = '2';
+    const MEDIA_PARTNER = '3';
+    const ARTICLES = '4';
+
     /**
      * @var int
      *

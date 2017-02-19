@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class PartnerType extends AbstractType
 {
@@ -49,7 +50,7 @@ class PartnerType extends AbstractType
             ->add('email', EmailType::class, array(
                 'translation_domain' => 'messages',
                 'label' => false,
-                'required' => true,
+                'required' => false,
                 'attr' => array('placeholder' => 'form.label.email')
             ))
             ->add('telephone', TextType::class, array(
@@ -73,10 +74,16 @@ class PartnerType extends AbstractType
                 'required' => false,
                 'attr' => array('placeholder' => 'LinkedIn')
             ))
-            ->add('type', TextType::class, array(
+            ->add('type', ChoiceType::class, array(
+                'choices'  => array(
+                    'Sprijin institutional' => '0',
+                    'Parteneri' => '1',
+                    'Sustinatori' => '2',
+                    'Parteneri Media' => '3',
+                    'Articole' => '4'
+                ),
                 'label' => false,
-                'required' => false,
-                'attr' => array('placeholder' => 'Tip colaborare')
+                'attr' => array ('placeholder' => 'Tip colaborare')
             ))
             ->add('description', TextareaType::class, array(
                 'translation_domain' => 'messages',
