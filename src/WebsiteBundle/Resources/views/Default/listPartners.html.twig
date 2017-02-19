@@ -45,6 +45,8 @@
                 </div>
             {% endfor %}
 
+            <div class="clearfix"></div>
+
             {% for partner in partners[constant('WebsiteBundle\\Entity\\Partner::PARTNER')] %}
                 {% set count = (partners[constant('WebsiteBundle\\Entity\\Partner::PARTNER')] | length)  %}
                 {% if count > 4 %}
@@ -81,6 +83,8 @@
                     </div>
                 </div>
             {% endfor %}
+
+            <div class="clearfix"></div>
 
             {% if  partners[constant('WebsiteBundle\\Entity\\Partner::MEDIA_PARTNER')] is defined %}
 
@@ -131,6 +135,8 @@
                 {% endif %}
 
             {% endif %}
+
+            <div class="clearfix"></div>
 
             <!-- ARTICOLE -->
 
