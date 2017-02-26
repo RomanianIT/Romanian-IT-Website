@@ -18,6 +18,7 @@ class Partner
     const SUPPORTER = '2';
     const MEDIA_PARTNER = '3';
     const ARTICLES = '4';
+    const TECHNICAL_PARTNER = '5';
 
     /**
      * @var int

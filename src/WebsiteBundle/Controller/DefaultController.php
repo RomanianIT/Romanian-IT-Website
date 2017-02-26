@@ -4,6 +4,7 @@ namespace WebsiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 use WebsiteBundle\Entity\Contact;
 use WebsiteBundle\Entity\Event;
@@ -360,4 +361,32 @@ class DefaultController extends Controller
         return $this->render('WebsiteBundle:Default:privacy.html.twig');
     }
 
+    public function campaignTwoAction()
+    {
+        return $this->render('WebsiteBundle:Default:campaignTwo.html.twig');
+    }
+
+    public function downloadFileAction(Request $request, $filename)
+    {
+        $response = new Response();
+        $filePath = $this->get('kernel')->getRootDir(). '/../web/download/'.$filename;
+
+        if (!file_exists($filePath)) {
+            $response->setStatusCode(404, "File not found");
+
+            return $response;
+        }
+
+        $response->headers->set('Cache-Control', 'private');
+        $response->headers->set('Content-type', mime_content_type($filePath));
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($filePath) . '";');
+        $response->headers->set('Content-length', filesize($filePath));
+
+        // Send headers before outputting anything
+        $response->sendHeaders();
+
+        $response->setContent(file_get_contents($filePath));
+
+        return $response;
+    }
 }
