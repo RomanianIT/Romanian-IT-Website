@@ -77,10 +77,11 @@ class PartnerType extends AbstractType
             ->add('type', ChoiceType::class, array(
                 'choices'  => array(
                     'Sprijin institutional' => '0',
-                    'Parteneri' => '1',
+                    'Partener' => '1',
                     'Sustinatori' => '2',
-                    'Parteneri Media' => '3',
-                    'Articole' => '4'
+                    'Partener Media' => '3',
+                    'Articole' => '4',
+                    'Partner Tehnic' => '5'
                 ),
                 'label' => false,
                 'attr' => array ('placeholder' => 'Tip colaborare')

@@ -66,6 +66,14 @@ website_donate:
     path:   /doneaza
     defaults: { _controller: WebsiteBundle:Default:donate }
 
+website_campaign_2:
+    path:   /campania-2-la-suta
+    defaults: { _controller: WebsiteBundle:Default:campaignTwo }
+
 website_privacy:
-    path:   /politica-de-confidentialitate
+    path:   /termeni-si-conditii
     defaults: { _controller: WebsiteBundle:Default:privacy }
+
+website_download:
+    path:   /download/{filename}
+    defaults: { _controller: WebsiteBundle:Default:downloadFile }

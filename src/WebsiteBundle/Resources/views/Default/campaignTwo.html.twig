@@ -1,0 +1,89 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+{% block content %}
+
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>Campania 'Redirectionează 2%'</h1>
+            <span>Avem planuri ambițioase, dar avem nevoie de ajutorul tău!</span>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Campania 2%</li>
+            </ol>
+        </div>
+    </section>
+
+    <div class="container clearfix bottommargin">
+        <div class="row clearfix ">
+            <div class="col-lg-12">
+                <div class="heading-block topmargin">
+                    <h1>REDIRECŢIONEAZĂ 2% din impozitul pe venit către RomanianIT și susține dezvoltarea comunității!</h1>
+                </div>
+                <p>Conform art. 84, alin. 2 din Codul Fiscal, orice contribuabil, poate dispune direcţionarea a 2% din impozitul pe venit, plătit statului,
+                    către orice organizaţie non-guvernamentală (asociaţie, fundaţie etc.) doreşte. Practic în acest fel dvs. transmiteţi statului modul în
+                    care doriţi să fie cheltuită o parte din impozitul dvs. pe venit. Redirecţionarea  este  gratuită,  adică  nu  duce  la  nici  o cheltuială
+                    suplimentară  pentru persoana care completează formularul respectiv. Suma NU reprezintă o sponsorizare sau o donaţie, ci este o parte a
+                    bugetului de stat care este direcţionată de către fiecare cetăţean în parte către sectorul neguvernamental.
+                </p>
+
+                <p>Daca doriţi ca, prin redirecţionarea a 2% din impozitul pe care dumneavoastră l-ati plătit statului pentru salariul din anul 2016, să sprijiniţi activitatea ROMANIAN IT,
+                    urmaţi în ordine paşii de mai jos, până la data de 25 MAI 2017.</p>
+
+                <span style="text-decoration: underline;">Pasul 1:</span><br><br>
+                <p>
+                a).  Persoanele cu venituri doar din salariu: Descărcaţi  formularul 230 precompletat cu datele RomanianIT: <a href="{{ path('website_download', {'filename':'Formular-230.pdf'}) }}">Formular 230 RomanianIT</a> (este precompletat anul 2016 deoarece se face referire la impozitul pe venit din anul financiar încheiat, 2016)
+                sau<br>
+                b).  Persoanele care au avut alte venituri în afara salariului: Descărcaţi formularul 200 precompletat cu datele RomanianIT: <a href="{{ path('website_download', {'filename':'Formular-200.pdf'}) }}">Formular 200 RomanianIT</a> (este precompletat anul 2016 deoarece se face referire la impozitul pe venit din anul financiar încheiat, 2016)
+                Exemple de alte venituri:<br>
+                – Activităţi independente
+                – Cedarea folosinţei bunurilor mobile şi imobile, realizate în calitate de proprietar, uzufructuar sau alt deţinător legal<br>
+                – Activităţi agricole pentru care venitul net se stabileşte în sistem real<br>
+                – Câştiguri rezultate din transferul dreptului de proprietate asupra titlurilor de valoare<br>
+                – Câştiguri din operaţiuni de vânzare-cumpărare de valută la termen, pe bază de contract.<br>
+                </p>
+
+                <span style="text-decoration: underline;">Pasul 2:</span><br><br>
+
+                <p>
+                Completaţi cu datele personale doar unul din cele două formulare de mai sus, în funcţie de situaţia în care vă aflati. Formularul se completează de mână, în două exemplare, dintre care unul rămâne la dvs. cu numărul de înregistrare primit la depunere de la administraţia finanţelor publice.<br>
+                a). Formularul 230 (venituri doar din salarii): Completaţi cu datele de identificare (pct. I) şi semnatură. Restul rubricilor nu sunt obligatoriu a fi completate (se completează doar dacă este cazul).
+                    Instrucţiuni detaliate puteţi găsi aici: <a href="{{ path('website_download', {'filename':'Instructiuni-Formular-230.pdf'}) }}">Instructiuni Formular 230</a><br>
+                b). Formularul 200 (alte venituri decât salariale): Citiţi cu atenţie instrucţiunile de mai jos, la toate capitolele aferente tipului de venit obţinut. <br>
+                Instrucţiuni detaliate găsiţi <a href="{{ path('website_download', {'filename':'Instructiuni-Formular-2001.pdf'}) }}">Instructiuni Formular 200</a>, iar un scurt ghid poate fi consultat <a target="_blank" href="http://static.anaf.ro/static/10/Anaf/Contribuabili/scurt_ghid.htm">AICI</a>.<br>
+                </p>
+
+
+                <span style="text-decoration: underline;">Pasul 3:</span><br><br>
+                <p>
+                Depuneţi formularul direct la registratura organului fiscal sau trimiteţi formularul prin poştă, cu scrisoare recomandată, la Administraţia Finanţelor Publice a localităţii de domiciliu  sau la Administraţia Finanţelor Publice corespunzătoare sursei de venit (de ex. adresa companiei/instituţiei angajatoare). Potrivit legii este acceptată şi adresa unde locuieşte efectiv deponentul, în cazul în care aceasta este diferită de domiciliu, pentru persoanele fizice care au domiciliul fiscal în România.
+                Formularele se mai pot depune la sediul RomanianIT (iar noi le ducem la registratura organului fiscal), caz în care trebuie  să  aibă  anexate:  fişa  fiscală  a  persoanei  şi  copie  după  actul  de  identitate  a persoanei fizice respective.
+                Adresele Administratiilor Financiare Publice le găsiţi <a href="http://www.dreptonline.ro/institutii/adm_finante.php">AICI</a>.<br>
+                Programul majorităţii oficiilor poştale este unul destul de flexibil: Luni-Vineri: 08:00-19:00, iar unele lucrează şi Sâmbătă: 08:00-14:00.<br>
+                </p>
+
+                <p>
+                Alte informaţii utile:
+                Modelul standard de formular necompletat cu datele Romanian IT, disponibil pe pagina ANAF, se găseşte aici: <a target="_blank"  href="http://static.anaf.ro/static/10/Anaf/formulare/cerere_230_2013.pdf">Formular 230</a>/<a target="_blank"  href="http://static.anaf.ro/static/10/Anaf/formulare/dec_200_2014.pdf">Formular 200</a>.
+                </p>
+
+                <p>
+                Datele asociației RomanianIT de completare a formularelor sunt următoarele:<br><br>
+                Denumire entitate nonprofit: Asociatia Romanian IT Global Community<br>
+                Cod de identificare fiscală a entitătii non-profit: 36871250<br>
+                Cont bancar (IBAN): RO 47 BTRL RONCRT0375444101<br>
+                Sediu RomanianIT: B-dul Nicolae Titulescu, Nr. 14, bl. P6, ap. 42, Cluj-Napoca<br>
+                </p>
+
+                <p>
+                Daca doriţi mai multe informaţii în legătură cu această procedură vă rugăm să nu ezitaţi să ne contactaţi.
+                </p>
+                <p>
+                E-mail: <a href="mailto:office@romanianit.com">office@romanianit.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
