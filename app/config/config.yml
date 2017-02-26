@@ -110,3 +110,15 @@ jms_i18n_routing:
 #        en: %roit.host.url.en%
 #        fr: %roit.host.url.fr%
 #    redirect_to_host: true
+
+guzzle:
+    logging: "%kernel.debug%"
+
+    clients:
+        slack_api:
+            base_url: "https://slack.com/api/"
+
+            options:
+                timeout: 30
+                headers:
+                    Accept: "application/json"
