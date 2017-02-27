@@ -11,6 +11,7 @@
 namespace WebsiteBundle\Services;
 
 use GuzzleHttp\Client;
+use Symfony\Bridge\Monolog\Logger;
 use Symfony\Component\DependencyInjection\Container;
 use WebsiteBundle\Entity\Member;
 
@@ -38,17 +39,27 @@ class Slack
     protected $channel;
 
     /**
+     * @var Logger
+     */
+    protected $logger;
+
+    /**
      * Slack constructor.
      *
      * @param $container
      * @param $token
      * @param $channel
+     * @param $logger
      */
-    public function __construct($container, $token, $channel)
+    public function __construct($container, $token, $channel, $logger)
     {
         $this->container = $container;
         $this->token = $token;
         $this->channel = $channel;
+        $this->logger = $logger;
+
+        $this->logger->debug($token);
+        $this->logger->debug($channel);
     }
 
 
@@ -57,19 +68,25 @@ class Slack
      *
      * @param Member $member
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return bool
      */
     public function inviteUser($member)
     {
         /** @var Client $client */
         $client = $this->container->get('guzzle.client.slack_api');
-        $response = $client->get('/users.admin.invite', [
-            'query' => $this->__getParameters([
-                'email' => $member->getEmail()
-            ])
-        ]);
 
-        return $response;
+        try {
+            $response = $client->get('/api/users.admin.invite', [
+                'query' => $this->__getParameters([
+                    'email' => $member->getEmail()
+                ])
+            ]);
+        } catch (\Exception $e){
+            $this->logger->critical('Error sending invite to: ' . $member->getEmail() . '. Error message: ' . $e->getMessage());
+            return false;
+        }
+
+        return true;
     }
 
 

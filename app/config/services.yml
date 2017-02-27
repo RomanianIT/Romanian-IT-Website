@@ -9,4 +9,4 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
   slack:
     class: WebsiteBundle\Services\Slack
-    arguments: ["@service_container", "%%slack_token%%", "%slack_channel%"]
+    arguments: ["@service_container", "%slack_token%", "%slack_channel%", "@logger"]
