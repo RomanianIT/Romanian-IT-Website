@@ -13139,7 +13139,7 @@ body:not(.side-header) .slider-parallax .slider-parallax-inner {
   letter-spacing: 2px;
   font-weight: 400;
   line-height: 1;
-  margin-bottom: 64px;
+  margin-bottom: 30px;
 }
 /* line 469, ../sass/sliders.scss */
 .slider-caption p {
