@@ -13133,7 +13133,7 @@ body:not(.side-header) .slider-parallax .slider-parallax-inner {
   font-weight: bold;
   text-transform: uppercase;
   line-height: 1.2;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   z-index: 31;
 }
 /*  font-size: 64px;
