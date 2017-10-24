@@ -103,13 +103,13 @@ content:
     donate.button: 'Donează'
     donate.button_subtitle: 'Susține dezvoltarea comunității'
 
-    subtitle: 'Comunitatea globală a românilor din tech'
+    subtitle: 'Vom lansa în curând noua platformă Romanian IT.'
 
     suggest_project:
         subtitle: 'Ai o sugestie sau o idee de proiect, sau vrei pur si simplu să te implici? Scrie-ne și revenim în cel mai scurt timp posibil.'
         title: 'Propune o idee de proiect'
 
-    title: 'Romanian IT'
+    title: '\"Coming soon\"'
 
 form:
     label:

@@ -77,13 +77,13 @@ content:
         projects.suggest_message: "Noi suntem IT-iști și suntem buni la asta, dar avem nevoie de idei strălucite și oameni implicați pentru a putea îmbunătății mediul în care trăim pe care ulterior să le implementăm în proiecte software. Implică-te acum, prin expunerea nevoilor reale și înregistrarea unui proiect împreună cu posibile soluții sau sugestii. <br/> <br/> Vei putea să te concentrezi pe partea offline, iar de implementare se ocupă comunitatea.\n"
         projects_subtitle: 'Ne implicăm în dezvoltarea societății cu ce știm face cel mai bine....IT.'
 
-    subtitle: 'Comunitatea românilor IT-iști de pretutindeni'
+    subtitle: 'Vom lansa în curând noua platformă Romanian IT.'
 
     suggest_project:
         subtitle: 'Ai o sugestie sau o idee de proiect, sau vrei pur si simplu să te implici? Scrie-ne și revenim în cel mai scurt timp posibil.'
         title: 'Propune o idee de proiect'
 
-    title: 'Romanian IT (Ro-IT)'
+    title: '\"Coming soon\"'
 
 form:
     label:
