@@ -394,4 +394,10 @@ class DefaultController extends Controller
     {
         return $this->render('WebsiteBundle:Default:mentorship.html.twig');
     }
+
+
+    public function clujEventAction()
+    {
+        return $this->render('WebsiteBundle:Default:cluj_event.html.twig');
+    }
 }
