@@ -85,3 +85,7 @@ website_mentorship:
 website_cluj_event:
     path:   /romanianit-2-0
     defaults: { _controller: WebsiteBundle:Default:clujEvent }
+
+website_20_impozit:
+    path: /20-din-impozit
+    defaults: { _controller: WebsiteBundle:Default:campaignTwenty }

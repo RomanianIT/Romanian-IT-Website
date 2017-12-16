@@ -366,6 +366,10 @@ class DefaultController extends Controller
         return $this->render('WebsiteBundle:Default:campaignTwo.html.twig');
     }
 
+    public function campaignTwentyAction()
+    {
+        return $this->render('WebsiteBundle:Default:campaignTwenty.html.twig');
+    }
     public function downloadFileAction(Request $request, $filename)
     {
         $response = new Response();
