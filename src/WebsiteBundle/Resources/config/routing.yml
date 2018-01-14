@@ -89,3 +89,7 @@ website_cluj_event:
 website_20_impozit:
     path: /20-din-impozit
     defaults: { _controller: WebsiteBundle:Default:campaignTwenty }
+
+website_celebro:
+    path: /celebro
+    defaults: { _controller: WebsiteBundle:Default:celebro }

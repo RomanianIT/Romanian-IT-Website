@@ -117,3 +117,36 @@
 .mentorship-contact {
   text-align: center;
 }
+
+.sponsored-by-logo {
+  max-width: 200px;
+  vertical-align: text-bottom;
+}
+
+.sponsored-by-text {
+  font-size: 25px;
+  font-style: italic;
+  margin-right: 20px;
+}
+
+.yellow-celebro {
+  color: #fdc048;
+}
+
+.short-text-area {
+  padding: 0px 55px;
+}
+
+.max-w-70 {
+  max-width: 70%;
+}
+
+.italic {
+  font-style: italic;
+}
+
+/*#celebro-logo img {*/
+  /*max-width: 50%;*/
+  /*height: auto!important;*/
+  /*padding: 10px 0;*/
+/*}*/
