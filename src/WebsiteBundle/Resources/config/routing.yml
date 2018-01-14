@@ -81,3 +81,15 @@ website_download:
 website_mentorship:
     path:   /find-my-mentor
     defaults: { _controller: WebsiteBundle:Default:mentorship }
+
+website_cluj_event:
+    path:   /romanianit-2-0
+    defaults: { _controller: WebsiteBundle:Default:clujEvent }
+
+website_20_impozit:
+    path: /20-din-impozit
+    defaults: { _controller: WebsiteBundle:Default:campaignTwenty }
+
+website_celebro:
+    path: /celebro
+    defaults: { _controller: WebsiteBundle:Default:celebro }

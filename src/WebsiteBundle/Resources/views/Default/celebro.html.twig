@@ -1,0 +1,308 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+{% block nav_bar_menu %} {% endblock %}
+
+{% block custom_styles %}
+    {% stylesheets 'bundles/website/font-awesome/css/font-awesome.min.css'
+    output='fontawesome' filter='cssrewrite' -%}
+    <link rel="stylesheet" type="text/css" media="screen, print" href="{{ asset_url }}" />
+    {% endstylesheets -%}
+{% endblock %}
+
+{% block header %} {% endblock %}
+
+{#{% block logo %}#}
+    {#<!-- Logo#}
+    {#============================================= -->#}
+    {#<div id="logo">#}
+        {#<a href="#" class="standard-logo" data-dark-logo="/bundles/website/images/celebro/logo.png">#}
+            {#<img src="/bundles/website/images/celebro/logo.png" alt="Canvas Logo">#}
+        {#</a>#}
+        {#<a href="#" class="retina-logo" data-dark-logo="/bundles/website/images/celebro/logo@2x.png">#}
+            {#<img src="/bundles/website/images/celebro/logo@2x.png" alt="Canvas Logo">#}
+        {#</a>#}
+    {#</div><!-- #logo end -->#}
+{#{% endblock %}#}
+
+
+{% block content %}
+
+    <section class="tcenter" style="padding: 150px 0px 120px; background-image: url('/bundles/website/images/celebro/cover_photo.jpg'); background-size: content; background-position: top center; background-repeat: no-repeat;" data-stellar-background-ratio="0.4">
+
+        <div class="mentorship-hero">
+            <div class="container clearfix">
+                <h1 class="yellow-celebro uppercase">Celebro</h1>
+                <h2 class="white">O istorie de buzunar prin Parisul românilor</h2>
+
+                <a href="#sponsor" class="button button-desc button-border button-rounded center">
+                    <div>Susține proiectul<span>Află cum poți contribui</span></div>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <div class="promo promo-border bottommargin banner-partnership">
+            <div class="container clearfix">
+                <div class="row">
+                    <div class="small-12 large-6 text-center">
+                        <div class="small-12 large-3 sponsored-by-text">
+                            <span> Proiect susținut de</span>
+                            <a target="_blank" href="http://www.romanianit.com">
+                                <img class="sponsored-by-logo" src="{{ asset('/bundles/website/images/logo@2x.png') }}" alt="Romanian IT" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="adreseaza">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6  col-lg-6 ">
+                    <div class="heading-block ">
+                        <h2>Despre proiect</h2>
+                    </div>
+                    <p>
+                        Proiectul își propune promovarea patrimoniului cultural românesc prin metode originale. Este vorba de o aplicație gratuită care oferă o 'hartă românească a Parisului' prin geolocalizarea adreselor si locurilor prin care au trecut personalitățile cunoscute sau cele care au ramas in anonimat pana acum.
+                    </p>
+                    <p>
+                        Sunteti prin Paris si vreti sa aflati unde a fost facuta celebra poza in care apar Eliade, Cioran si Ionescu ? Sau unde era cafeneaua Riche, în care aveau loc dineurile impresionistilor finantate de sustinatorul lor, George Bellu ? Cand treceti pe la Odeon o sa aflati si despre Jean Yonnel, profesor de dicție al generalului de Gaulle.
+                    </p>
+                </div>
+
+
+                <div class="col-sm-12 col-md-6  col-lg-6 ">
+                    <h3 class="uppercase">
+                        Obiective
+                    </h3>
+
+                    <ul class="iconlist">
+                        <li><i class="icon-ok-sign"></i>cresterea vizibilitatii patrimoniului cultural al României; </li>
+                        <li><i class="icon-ok-sign"></i>crearea unei istorii de buzunar, accesibila tuturor; </li>
+                        <li><i class="icon-ok-sign"></i>reînnoirea unei imagini pozitive a românilor din Paris; </li>
+                        <li><i class="icon-ok-sign"></i>implicarea atât a unui public tânar cât si a celui adult; </li>
+                        <li><i class="icon-ok-sign"></i>prezentarea legăturii profunde dintre cele două culturi: franceza și română. </li>
+
+                    </ul>
+                    <hr>
+                    <h3 class="uppercase">
+                        Public țintă
+                    </h3>
+
+                    <ul class="iconlist">
+                        <li><i class="icon-ok-sign"></i>români din Paris, turiști sau rezidenți;</li>
+                        <li><i class="icon-ok-sign"></i>francezi parizieni;</li>
+                        <li><i class="icon-ok-sign"></i>alte nationalitati interesate de cultura noastra;</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <section class="aplicatie">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 bottommargin-lg topmargin text-center">
+                    <img class="bottommargin" data-animate="fadeInLeftBig" src="{{ asset('/bundles/website/images/celebro/phone_1.jpg') }}" alt="" class="fadeInLeftBig animated">
+
+                    <h3 class="uppercase">
+                        ISTORIE DE BUZUNAR
+                    </h3>
+                    <p class="short-text-area">
+                        Aplicația ne va permite să vedem locuri din apropiere, plimbări propuse sau să construim propriul traseu.
+                    </p>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 bottommargin-lg topmargin text-center">
+                    <img class="bottommargin" data-animate="fadeInLeftBig" src="{{ asset('/bundles/website/images/celebro/phone_2.jpg') }}" alt="" class="fadeInLeftBig animated">
+
+                    <h3 class="uppercase">
+                        RECOMANDĂRI
+                    </h3>
+                    <p class="short-text-area">
+                        Vom putea accesa trasee recomandate, construite în funcție de timp sau tematică.
+                    </p>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 bottommargin-lg topmargin text-center">
+                    <img class="bottommargin" data-animate="fadeInLeftBig" src="{{ asset('/bundles/website/images/celebro/phone_3.jpg') }}" alt="" class="fadeInLeftBig animated">
+
+                    <h3 class="uppercase">
+                        GEOLOCALIZARE
+                    </h3>
+                    <p class="short-text-area">
+                        Indicarea adreselor prin geolocalizare va fi însoțită de o descriere, de poze și, eventual, muzică sau filme.
+                    </p>
+                </div>
+            </div>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <section class="activities">
+        <div class="container clearfix">
+            <div class="heading-block center">
+                <h2>ACTIVITĂȚI</h2>
+                <span>
+                    Din august până în noiembrie 2017, am făcut vizite ghidate.<br>
+                    Mai multe, pe pagina noastră Facebook: <a target="_blank" href="https://www.facebook.com/leParisdesRoumains">Le Paris des Roumains</a>
+                </span>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12 bottommargin-lg topmargin text-center">
+                <img class="bottommargin" data-animate="fadeInLeftBig" src="{{ asset('/bundles/website/images/celebro/activitati.jpg') }}" alt="" >
+            </div>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <section class="members">
+        <div class="container clearfix">
+            <div class="col-sm-12 col-md-6 col-lg-6 ">
+                <div class="heading-block ">
+                    <h2>MEMBRII PROIECTULUI</h2>
+                </div>
+
+                <p>Inițiatori: Maria și Michiel</p>
+                <p><strong>Romanian IT</strong>: Valentin, Oana, Adrian, Andrei și Ijay</p>
+                <p>Jean-Yves Conrad, autorul cartii “Paris, capitala... României”</p>
+                <p class="italic">Daca aveți informații sau poze inedite, vă rugăm să ne scrieți la adresa <a href="mailto:roumanie.paris@gmail.com">roumanie.paris@gmail.com</a></p>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 topmargin">
+                <p>Proiect susținut de Ambasada României în Republica Franceză</p>
+                <img class="max-w-70 bottommargin"  src="{{ asset('/bundles/website/images/celebro/logo_ambasada.jpg') }}" alt="" >
+            </div>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <section class="info">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-sm-12 col-md-6  col-lg-6 ">
+                    <div class="heading-block ">
+                        <h2>ȘTIAI CĂ ...</h2>
+                    </div>
+
+                    <ul class="iconlist">
+                        <li>
+                            <i class="icon-ok-sign"></i>
+                            Sainte-Geneviève, protectoarea Parisului, este infatisata in interiorul Panteonului dupa modelul Mariei Cantacuzino, sotia pictorului ?
+                        </li>
+                        <br>
+                        <li>
+                            <i class="icon-ok-sign"></i>
+                            Carol Davila se numea Charles D’Avila si era de origine franco-italiana?
+                        </li>
+                        <br>
+                        <li>
+                            <i class="icon-ok-sign"></i>
+                            primul zbor cu un aparat mai greu decât aerul, al lui Traian Vuia, s-a petrecut pe câmpia Montesson din jurul Parisului, în 1906 ?
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-12 col-md-6  col-lg-6 topmargin">
+                    <img class="bottommargin"  src="{{ asset('/bundles/website/images/celebro/stiati_ca.jpg') }}" alt="" >
+                </div>
+            </div>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <section class="support">
+        <div class="container clearfix text-center">
+            <div class="heading-block center">
+                <h2>DE CE AVEM NEVOIE DE AJUTORUL TĂU?</h2>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <img class="bottommargin" data-animate="fadeInLeftBig" src="{{ asset('/bundles/website/images/celebro/de_ce_ajutor.jpg') }}" alt="" >
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                <h3 class="uppercase"> 1. DEZVOLTARE</h3>
+                <p>Dezvoltarea aplicatiei pentru Android, în prima faza, si apoi pentru iOS.</p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                <h3 class="uppercase"> 2. DOCUMENTARE</h3>
+                <p>Documentarea si achiziționarea drepturilor de autor ale pozelor folosite.</p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                <h3 class="uppercase"> 3. PROMOVARE</h3>
+                <p>Nici un proiect nu este util dacă nu nimeni nu știe că există.</p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                <h3 class="uppercase"> 4. EXTINDERE</h3>
+                <p>Dezvoltarea ideii în alte mari orașe și crearea unei comunități.</p>
+            </div>
+
+            {#<a target="_blank" href="https://docs.google.com/forms/d/141-E7ivQEyDdOruxD1aI1C2LHx2v28lCSse_e7tL0nE/viewform" class="button button-desc button-border button-rounded center">#}
+                {#<div>Susține proiectul<span>Află cum poți contribui</span></div>#}
+            {#</a>#}
+
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <section id="sponsor" class="support">
+        <div class="container clearfix text-center">
+            <div class="heading-block center">
+                <h2>SUSȚINE PROIECTUL</h2>
+                <span>
+                    Vom lansa în curând o campanie de crowdfunding. <br>
+                    Între timp ne poți susține prin sponsorizare.
+                </span>
+            </div>
+
+            <h4>Datele asociației RomanianIT</h4>
+
+            <p>
+                Denumire entitate nonprofit: Asociatia Romanian IT Global Community<br>
+                Cod de identificare fiscală a entitătii non-profit: 36871250<br>
+                Cont bancar RON (IBAN): RO 47 BTRL RONCRT0375444101<br>
+                Cont bancar EURO(IBAN): RO 94 BTRL EURCRT0375444101<br>
+                Sediu RomanianIT: B-dul Nicolae Titulescu, Nr. 14, bl. P6, ap. 42, Cluj-Napoca<br><br>
+
+                <a target="_blank" href="{{ path('website_download', {'filename':'Contract_sponsorizare_20%.docx'}) }}">
+                    <i class="fa fa-3x fa-download"></i>   Descarcă și completează formularul de sponsorizare
+                </a>
+                <br><br>
+
+                Pentru detalii suplimentare ne puteți contact prin
+                    <a target="_blank"href="https://www.facebook.com/romanianit/">Facebook Messenger</a>
+                sau prin email la <a href="mailto:office@romanianit.com">office@romanianit.com</a>
+
+            </p>
+
+            <h4>Vă mulțumim.</h4>
+
+            <div class="line"></div>
+        </div>
+    </section>
+
+
+
+    <section class="share">
+        <div class="container clearfix text-center bottommargin">
+            <h3 class="uppercase"> DĂ MAI DEPARTE ȘI VORBEȘTE DESPRE PROIECT</h3>
+
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center col-md-offset-5 col-lg-offset-5">
+                <a target="_blank" href="https://www.facebook.com/leParisdesRoumains" class="social-icon si-large si-borderless si-facebook">
+                    <i class="icon-facebook"></i>
+                    <i class="icon-facebook"></i>
+                </a>
+
+                <a target="_blank" href="https://twitter.com/romanian_it" class="social-icon si-large si-borderless si-twitter">
+                    <i class="icon-twitter"></i>
+                    <i class="icon-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

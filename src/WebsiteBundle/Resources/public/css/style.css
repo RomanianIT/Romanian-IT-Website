@@ -13125,22 +13125,40 @@ body:not(.side-header) .slider-parallax .slider-parallax-inner {
   text-shadow: none;
 }
 /* line 452, ../sass/sliders.scss */
+
 .slider-caption h1 {
-  font-size: 64px;
+  font-size: 78px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  z-index: 31;
+}
+/*  font-size: 64px;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1;
   margin-bottom: 30px;
-}
+}*/
+
 /* line 461, ../sass/sliders.scss */
 .slider-caption h2 {
-  font-size: 32px;
+  font-size: 25.585px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  color: rgb(254, 254, 254);
+  line-height: 25px;
+  z-index: 32;
+}
+  /*font-size: 32px;
   letter-spacing: 2px;
   font-weight: 400;
   line-height: 1;
   margin-bottom: 30px;
-}
+}*/
 /* line 469, ../sass/sliders.scss */
 .slider-caption p {
   margin-bottom: 10px;
@@ -16927,7 +16945,8 @@ body:not(.device-touch) .button {
 
 /* line 206, ../sass/shortcodes/buttons.scss */
 .button.button-3d:hover {
-  background-color: #01A9E1 !important;
+  /*background-color: #01A9E1 !important;*/
+  background-color: rgb(238, 37, 23)!important;
   opacity: 0.9;
 }
 
@@ -39380,7 +39399,7 @@ body #side-panel.dark #side-panel-trigger-close a {
   #logo img {
     display: block;
     max-width: 100%;
-    padding: 15px 0 10px 0 !important;
+    padding: 20px 0 20px 0 !important;
   }
 
   /* line 1642, ../sass/responsive/responsive.scss */

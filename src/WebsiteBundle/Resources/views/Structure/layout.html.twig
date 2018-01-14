@@ -17,6 +17,7 @@
         </div>
     {% endfor %}
 
+    {% block header %}
     <!-- Header
     ============================================= -->
     <header id="header" class="page-section full-header">
@@ -27,18 +28,22 @@
 
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
+                    {% block logo %}
                     <!-- Logo
                     ============================================= -->
                     <div id="logo">
                         <a href="/" class="standard-logo" data-dark-logo="/bundles/website/images/logo-dark.png"><img src="/bundles/website/images/logo.png" alt="Canvas Logo"></a>
                         <a href="/" class="retina-logo" data-dark-logo="/bundles/website/images/logo-dark@2x.png"><img src="/bundles/website/images/logo@2x.png" alt="Canvas Logo"></a>
                     </div><!-- #logo end -->
+                    {% endblock %}
 
                     <!-- Primary Navigation
                     ============================================= -->
-                    <nav id="primary-menu">
+
                     
                     {% block nav_bar_menu %}
+                        <nav id="primary-menu">
+
                         <ul class="one-page-menu">
                             <li><a href="#" data-href="#section-harta"><div>Harta</div></a></li>        
                             <li><a href="#" data-href="#section-misiune"><div>Misiune</div></a></li>
@@ -47,7 +52,7 @@
                             <li><a href="#" data-href="#section-ne-sustin"><div>Ne sustin</div></a></li>
                             {#<li><a href="{{ path('website_volunteer') }}"><div>Voluntariat</div></a></li>#}
                             <li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>
-                            <li><div><a href="{{ path('website_donate') }}" class="button button-3d button-rounded button-green">Donează</a></div></li>
+                            <li><div><a href="{{ path('website_20_impozit') }}" class="button button-3d button-rounded button-green">20% din impozit</a></div></li>
                         </ul>
                     {% endblock %}
 
@@ -65,6 +70,8 @@
             </div>
         </header><!-- #header end -->
 
+        {% endblock %}
+
     {% block content %} {% endblock %}
 
     {% block footer %}
@@ -79,7 +86,7 @@
                 <div class="container clearfix">
 
                     <div class="col_half">
-                        Copyrights &copy; 2016 Romanian IT <br>
+                        Copyrights &copy; 2018 Romanian IT <br>
                         <div class="copyright-links"><a href="{{ path('website_privacy') }}">Termeni si Conditii</a></div>
                     </div>
 

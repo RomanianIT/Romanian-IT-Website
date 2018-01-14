@@ -366,6 +366,16 @@ class DefaultController extends Controller
         return $this->render('WebsiteBundle:Default:campaignTwo.html.twig');
     }
 
+    public function campaignTwentyAction()
+    {
+        return $this->render('WebsiteBundle:Default:campaignTwenty.html.twig');
+    }
+
+    public function celebroAction()
+    {
+        return $this->render('WebsiteBundle:Default:celebro.html.twig');
+    }
+
     public function downloadFileAction(Request $request, $filename)
     {
         $response = new Response();
@@ -393,5 +403,11 @@ class DefaultController extends Controller
     public function mentorshipAction()
     {
         return $this->render('WebsiteBundle:Default:mentorship.html.twig');
+    }
+
+
+    public function clujEventAction()
+    {
+        return $this->render('WebsiteBundle:Default:cluj_event.html.twig');
     }
 }

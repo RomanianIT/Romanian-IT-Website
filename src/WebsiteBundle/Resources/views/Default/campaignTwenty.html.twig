@@ -1,0 +1,101 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+ {% block custom_styles %}
+     {% stylesheets 'bundles/website/font-awesome/css/font-awesome.min.css'
+     output='fontawesome' filter='cssrewrite' -%}
+     <link rel="stylesheet" type="text/css" media="screen, print" href="{{ asset_url }}" />
+     {% endstylesheets -%}
+ {% endblock %}
+
+
+{% block content %}
+
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>Redirecționează 20% din impozitul pe profit al companiei tale</h1>
+            <span>Avem planuri ambițioase, și avem nevoie de ajutorul tău!</span>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Campania 20%</li>
+            </ol>
+        </div>
+    </section>
+
+    <div class="container clearfix bottommargin">
+        <div class="row clearfix ">
+            <div class="col-lg-12">
+                <div class="heading-block topmargin">
+                    <h4>Contribuie la misiunea Romanian IT directionand pana la 20% din impozitul pe profit catre Asociatia Romanian IT Global Community*</h4>
+                </div>
+                <p>
+                    Codul Fiscal si Legea nr. 32/1994 privind sponsorizarea permit companiilor comerciale platitoare de impozit pe profit sa directioneze pana la 20% din suma datorata anual bugetului de stat catre organizatii non-guvernamentale. Suma oferita cu titlu de sponsorizare care se deduce din impozitul pe profit datorat statului nu poate depasi 20% din impozitul pe profit sau 0,5% din cifra de afaceri**
+                </p>
+
+                <a target="_blank" href="{{ path('website_download', {'filename':'Contract_sponsorizare_20%.docx'}) }}">
+                    <i class="fa fa-3x fa-download"></i>   Descarcă și completează formularul de sponsorizare
+                </a>
+                <br><br>
+
+                <i>*procedura nu presupune costuri suplimentare din partea companiei!</i><br>
+                <i>** Codul Fiscal 2012 – Titlul 2, Cap. II, articolul 21, alineatul (4), litera p.</i>
+
+                <div class="heading-block topmargin">
+                    <h4>Cum poți sprijini?</h4>
+                </div>
+
+                <p>
+                    La baza colaborării noastre stă contractul de sponsorizare. Te rugam sa il descarci, sa il completezi cu datele firmei si cu suma cu care doresti sa sponsorizezi Romanian IT, iar apoi sa ni-l trimiti in format word (.doc/docx) colegilor nostri, la adresa <a target="_blank" href="mailto:office@romanianit.com">office@romanianit.com</a> Noi il vom tipari in doua exemplare si vom trimite o variata semnata si stampilata in original la adresa mentionata in contract.
+                </p>
+                </p>
+                    Pentru a fi inclus în calcul impozitului pe profit pe anul respectiv, contractul de sponsorizare trebuie încheiat înainte de sfârșitul anului calendaristic, iar tranzacția trebuie efectuată până la 31 Decembrie 2017.
+                </p>
+
+                <div class="heading-block topmargin">
+                    <h4>Ce impact are sponsorizarea asupra companiei?</h4>
+                </div>
+
+                <p>
+                    Directionarea unei cote parte din impozitul pe profit prin sponsorizare <b>nu afecteaza profitul net al companiei.</b> În plus, legea sponsorizării prevede şi o altă facilitate fiscală, aceea a creditului fiscal. Aceasta permite practic sponsorului să realizeze sponsorizări chiar dacă nu obţine profit în anul curent, suma fiind acoperită de un credit fiscal disponibil pe o perioada de 7 ani. În acest interval, compania are timp să îşi îmbunătăţească rezultatele financiare şi să deducă din impozitul pe profitul viitor sponsorizările realizate în anii fără profit, acumulate în creditul fiscal.
+                </p>
+
+
+                <div class="heading-block topmargin">
+                    <h4>Care este valoarea sponsorizării tale?</h4>
+                </div>
+
+                <p>
+                    Exemplu de calcul:<br>
+                    Cifra de afaceri (total venituri) = 2.000.000 lei<br>
+                    Profit impozitabil = 200.000 lei<br>
+                    Impozitul aferent acestui profit (16%) = 32.000 lei<br>
+                    Se poate directiona suma cea mai mica dintre<br>
+                    0,5% din cifra de afaceri = 10.000 lei<br>
+                    20% din impozit = 6.400 lei<br>
+                    In acest caz, se poate deduce din impozit o sponsorizare de pana la 6.400 lei.<br>
+                </p>
+
+                <div class="heading-block topmargin">
+                    <h4>Datele asociației RomanianIT</h4>
+                </div>
+
+                <p>
+                Denumire entitate nonprofit: Asociatia Romanian IT Global Community<br>
+                Cod de identificare fiscală a entitătii non-profit: 36871250<br>
+                Cont bancar RON (IBAN): RO 47 BTRL RONCRT0375444101<br>
+                Cont bancar EURO(IBAN): RO 94 BTRL EURCRT0375444101<br>
+                Sediu RomanianIT: B-dul Nicolae Titulescu, Nr. 14, bl. P6, ap. 42, Cluj-Napoca<br>
+                </p>
+
+                <p>
+                Daca doriţi mai multe informaţii în legătură cu această procedură vă rugăm să nu ezitaţi să ne contactaţi.
+                </p>
+                <p>
+                E-mail: <a target="_blank" href="mailto:office@romanianit.com">office@romanianit.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
