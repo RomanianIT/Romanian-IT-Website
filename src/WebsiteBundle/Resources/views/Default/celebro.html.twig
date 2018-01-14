@@ -1,5 +1,21 @@
 {% extends "WebsiteBundle::Structure/layout.html.twig" %}
 
+{% block custom_metas %}
+    <meta property="og:url"           content="http://www.romanianit.com/celebro" />
+    <meta property="og:type"          content="mobile application" />
+    <meta property="og:title"         content="Celebro App - by Romanian IT" />
+    <meta property="og:description"   content="Proiectul își propune promovarea patrimoniului cultural românesc prin metode originale. Este vorba de o aplicație gratuită care oferă o 'hartă românească a Parisului' prin geolocalizarea adreselor si locurilor prin care au trecut personalitățile cunoscute sau cele care au ramas in anonimat pana acum." />
+    <meta property="og:image"         content="http://www.romanianit.com/bundles/website/images/celebro/meta_image.jpg" />
+
+    <meta name="twitter:card" content="Celebro - by Romanian IT">
+    <meta name="twitter:site" content="@romanian_it">
+    <meta name="twitter:title" content="Celebro - by Romanian IT">
+    <meta name="twitter:description" content="Promovarea patrimoniului cultural românesc prin metode originale. Este vorba de o aplicație gratuită care oferă o 'hartă românească a Parisului' prin geolocalizarea adreselor si locurilor prin care au trecut personalitățile cunoscute sau cele care au ramas in anonimat pana acum.">
+    <meta name="twitter:creator" content="@romanian_it">
+    <meta name="twitter:image" content="http://www.romanianit.com/bundles/website/images/celebro/meta_image.jpg">
+    <meta name="twitter:domain" content="www.romanianit.com">
+{% endblock %}
+
 {% block menu_class %} navbar-shrink {% endblock %}
 
 {% block nav_bar_menu %} {% endblock %}
