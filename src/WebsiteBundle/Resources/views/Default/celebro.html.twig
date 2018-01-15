@@ -27,6 +27,10 @@
     {% endstylesheets -%}
 {% endblock %}
 
+{% block fb_event_tracking %}
+    fbq('track', 'ViewContent');
+{% endblock %}
+
 {% block header %} {% endblock %}
 
 {#{% block logo %}#}
