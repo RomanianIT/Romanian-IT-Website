@@ -145,8 +145,10 @@
   font-style: italic;
 }
 
-/*#celebro-logo img {*/
-  /*max-width: 50%;*/
-  /*height: auto!important;*/
-  /*padding: 10px 0;*/
+/*.logo_celebro {*/
+  /*max-height: 60px;*/
 /*}*/
+
+.logo_celebro img {
+  width: 50%!important;
+}

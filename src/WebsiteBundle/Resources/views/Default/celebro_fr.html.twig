@@ -18,7 +18,12 @@
 
 {% block menu_class %} navbar-shrink {% endblock %}
 
-{% block nav_bar_menu %} {% endblock %}
+{% block nav_bar_menu %}
+    <ul class="one-page-menu">
+        <li><a href="{{ path('website_celebro') }}" class="">RO</a></li>
+        <li><a href="{{ path('website_celebro_fr') }}" class="">FR</a></li>
+    </ul>
+{% endblock %}
 
 {% block custom_styles %}
     {% stylesheets 'bundles/website/font-awesome/css/font-awesome.min.css'
@@ -31,20 +36,20 @@
     fbq('track', 'ViewContent');
 {% endblock %}
 
-{% block header %} {% endblock %}
+{#{% block header %} {% endblock %}#}
 
-{#{% block logo %}#}
-    {#<!-- Logo#}
-    {#============================================= -->#}
-    {#<div id="logo">#}
-        {#<a href="#" class="standard-logo" data-dark-logo="/bundles/website/images/celebro/logo.png">#}
-            {#<img src="/bundles/website/images/celebro/logo.png" alt="Canvas Logo">#}
-        {#</a>#}
-        {#<a href="#" class="retina-logo" data-dark-logo="/bundles/website/images/celebro/logo@2x.png">#}
-            {#<img src="/bundles/website/images/celebro/logo@2x.png" alt="Canvas Logo">#}
-        {#</a>#}
-    {#</div><!-- #logo end -->#}
-{#{% endblock %}#}
+{% block logo %}
+    <!-- Logo
+    ============================================= -->
+    <div class="logo_celebro" id="logo">
+        <a href="#" class="standard-logo" data-dark-logo="/bundles/website/images/celebro/logo.png">
+            <img src="/bundles/website/images/celebro/logo.png" alt="Canvas Logo">
+        </a>
+        <a href="#" class="retina-logo" data-dark-logo="/bundles/website/images/celebro/logo@2x.png">
+            <img src="/bundles/website/images/celebro/logo@2x.png" alt="Canvas Logo">
+        </a>
+    </div><!-- #logo end -->
+{% endblock %}
 
 
 {% block content %}
