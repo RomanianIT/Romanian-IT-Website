@@ -32,11 +32,15 @@
     {% endstylesheets -%}
 {% endblock %}
 
+{% block custom_script %}
+    {% include 'WebsiteBundle::Partials/_twitter_js_async.html.twig' %}
+{% endblock %}
+
 {% block fb_event_tracking %}
     fbq('track', 'ViewContent');
 {% endblock %}
 
-{#{% block header %} {% endblock %}#}
+{% block fb_lang %}<script>var lang="fr_FR"</script>{% endblock %}
 
 {% block logo %}
     <!-- Logo
@@ -53,6 +57,7 @@
 
 
 {% block content %}
+    <div id="twitter-wjs"></div>
 
     <section class="tcenter" style="padding: 150px 0px 120px; background-image: url('/bundles/website/images/celebro/cover_photo.jpg'); background-size: cover; background-position: top center; background-repeat: no-repeat;" data-stellar-background-ratio="0.4">
 
@@ -106,7 +111,7 @@
                 </div>
 
 
-                <div class="col-sm-12 col-md-6  col-lg-6 ">
+                <div class="col-sm-12 col-md-6  col-lg-6 vid-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/amkhTlJvGQ0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
@@ -347,17 +352,35 @@
         <div class="container clearfix text-center bottommargin">
             <h3 class="uppercase"> PARTAGEZ</h3>
 
-            <div class="col-sm-12 col-md-12 col-lg-12 text-center col-md-offset-5 col-lg-offset-5">
-                <a target="_blank" href="https://www.facebook.com/leParisdesRoumains" class="social-icon si-large si-borderless si-facebook">
-                    <i class="icon-facebook"></i>
-                    <i class="icon-facebook"></i>
-                </a>
-
-                <a target="_blank" href="https://twitter.com/romanian_it" class="social-icon si-large si-borderless si-twitter">
-                    <i class="icon-twitter"></i>
-                    <i class="icon-twitter"></i>
-                </a>
+            <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 text-center col-md-offset-4 col-lg-offset-4 text-right">
+                <div class="fb-share-button"
+                     data-href="https://romanianit.com/fr/celebro"
+                     data-layout="button_count"
+                     data-size="large"
+                     data-mobile-iframe="true">
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fromanianit.com%2Ffr%2Fcelebro%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partagez</a>
+                </div>
             </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+                <div>
+                    <a class="twitter-share-button"
+                   href="https://romanianit.com/fr/celebro?text=Celebro - Une histoire de poche sur le Paris des Roumains"
+                   data-size="large">
+                    Tweet</a>
+                </div>
+            </div>
+            {#<div class="col-sm-12 col-md-12 col-lg-12 text-center col-md-offset-5 col-lg-offset-5">#}
+                {#<a target="_blank" href="https://www.facebook.com/leParisdesRoumains" class="social-icon si-large si-borderless si-facebook">#}
+                    {#<i class="icon-facebook"></i>#}
+                    {#<i class="icon-facebook"></i>#}
+                {#</a>#}
+
+                {#<a target="_blank" href="https://twitter.com/romanian_it" class="social-icon si-large si-borderless si-twitter">#}
+                    {#<i class="icon-twitter"></i>#}
+                    {#<i class="icon-twitter"></i>#}
+                {#</a>#}
+            {#</div>#}
         </div>
     </section>
 {% endblock %}
