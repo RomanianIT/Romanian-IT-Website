@@ -36,7 +36,9 @@
     fbq('track', 'ViewContent');
 {% endblock %}
 
-{#{% block header %} {% endblock %}#}
+{% block custom_script %}
+    {% include 'WebsiteBundle::Partials/_twitter_js_async.html.twig' %}
+{% endblock %}
 
 {% block logo %}
     <!-- Logo
@@ -344,16 +346,23 @@
         <div class="container clearfix text-center bottommargin">
             <h3 class="uppercase"> DĂ MAI DEPARTE ȘI VORBEȘTE DESPRE PROIECT</h3>
 
-            <div class="col-sm-12 col-md-12 col-lg-12 text-center col-md-offset-5 col-lg-offset-5">
-                <a target="_blank" href="https://www.facebook.com/leParisdesRoumains" class="social-icon si-large si-borderless si-facebook">
-                    <i class="icon-facebook"></i>
-                    <i class="icon-facebook"></i>
-                </a>
+            <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 text-center col-md-offset-4 col-lg-offset-4 text-right">
+                <div class="fb-share-button"
+                     data-href="https://romanianit.com/celebro"
+                     data-layout="button_count"
+                     data-size="large"
+                     data-mobile-iframe="true">
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fromanianit.com%2Fcelebro%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Distribuie</a>
+                </div>
+            </div>
 
-                <a target="_blank" href="https://twitter.com/romanian_it" class="social-icon si-large si-borderless si-twitter">
-                    <i class="icon-twitter"></i>
-                    <i class="icon-twitter"></i>
-                </a>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+                <div>
+                    <a class="twitter-share-button"
+                       href="https://romanianit.com/celebro?text=Celebro - O istorie de buzunar prin Parisul românilor"
+                       data-size="large">
+                        Tweet</a>
+                </div>
             </div>
         </div>
     </section>
