@@ -1,0 +1,527 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block custom_metas %}
+    <meta property="og:url"           content="http://www.romanianit.com/global-mentor" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Global Mentor - Start shaping your won future; Romaniant IT's mentorship program" />
+    <meta property="og:description"   content="Global Mentor is Romanian IT’s mentorship program designed to connect Romanian students, young professionals, and entrepreneurs with mentors from our community in order to accelerate their personal and professional growth." />
+    <meta property="og:image"         content="http://www.romanianit.com/bundles/website/images/mentorship/global_mentor.png" />
+
+    <meta name="twitter:card" content="Global Mentor - Start shaping your won future; Romaniant IT's mentorship program">
+    <meta name="twitter:site" content="@romanian_it">
+    <meta name="twitter:title" content="Global Mentor - Start shaping your won future">
+    <meta name="twitter:description" content="Global Mentor is Romanian IT’s mentorship program designed to connect Romanian students, young professionals, and entrepreneurs with mentors from our community in order to accelerate their personal and professional growth.">
+    <meta name="twitter:creator" content="@romanian_it">
+    <meta name="twitter:image" content="http://www.romanianit.com/bundles/website/images/mentorship/global_mentor.png">
+    <meta name="twitter:domain" content="www.romanianit.com">
+{% endblock %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+{% block nav_bar_menu %}
+{% endblock %}
+
+{% block content %}
+
+    <section class="tcenter bottommargin" style="height:550px; padding: 0px 0px; background-image: url('/bundles/website/images/mentorship/global_mentor_2.png'); background-size: cover; background-position: center center; background-repeat: no-repeat;" data-stellar-background-ratio="0.4">
+
+        <div class="mentorship-hero">
+            <div class="container clearfix">
+                 <a style="margin-top:400px;" target="_blank" href="{{ path('website_download', {'filename':'Instructiuni-Formular-2001.pdf'}) }}" class="button button-desc button-border button-rounded center">
+                    <div>Apply now</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="why">
+        <div class="container">
+            <div class="heading-block center">
+                <h2>Why?</h2>
+                <span>Our main mission is to connect. We aim to ensure a flow of know how globally throughout the community</span>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-8 col-md-offset-2 ">
+                    <div class="content-why center">
+                        <h4>Global Mentor is Romanian IT’s mentorship program designed to connect Romanian students, young professionals, and entrepreneurs with mentors from our community in order to accelerate their personal and professional growth.</h4>
+                        <h4>The aim of the program is to ensure a know- how transfer among the community members and to create a culture based on knowledge exchange, education and collaboration to consolidate and promote the Romanian specialist and entrepreneur communities</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <div class="container clearfix">
+        <div class="clear"></div>
+        <div class="heading-block center">
+            <h2>Program partners</h2>
+        </div>
+        <ul class="clients-grid grid-6 nobottommargin clearfix">
+            <li><a href="http://logofury.com/logo/enzo.html"><img src="images/clients/1.png" alt="Clients"></a></li>
+            <li><a href="http://logofury.com"><img src="images/clients/2.png" alt="Clients"></a></li>
+            <li><a href="http://logofaves.com/2014/03/grabbt/"><img src="images/clients/3.png" alt="Clients"></a></li>
+            <li><a href="http://logofaves.com/2014/01/ladera-granola/"><img src="images/clients/4.png" alt="Clients"></a></li>
+            <li><a href="http://logofaves.com/2014/02/hershel-farms/"><img src="images/clients/5.png" alt="Clients"></a></li>
+            <li><a href="http://logofury.com/logo/food-fight-radio.html"><img src="images/clients/6.png" alt="Clients"></a></li>
+            <li><a href="http://logofury.com"><img src="images/clients/7.png" alt="Clients"></a></li>
+            <li><a href="http://logofury.com/logo/up-travel.html"><img src="images/clients/8.png" alt="Clients"></a></li>
+            <li><a href="http://logofury.com/logo/caffi-bardi.html"><img src="images/clients/9.png" alt="Clients"></a></li>
+            <li><a href="http://logofury.com/logo/bignix-design.html"><img src="images/clients/10.png" alt="Clients"></a></li>
+            <li><a href="http://logofury.com/"><img src="images/clients/11.png" alt="Clients"></a></li>
+            <li><a href="http://logofury.com/"><img src="images/clients/12.png" alt="Clients"></a></li>
+        </ul>
+        <div class="line"></div>
+    </div>
+
+    <section class="types_of_mentorship">
+        <div class="container">
+            <div class="heading-block center">
+                <h2>Types of mentorship</h2>
+                <span>Each mentorship relationship is unique and our focus is to make sure that the experience of each participant is adapted to his/her’s specific needs</span>
+            </div>
+
+            <div class="row clearfix">
+
+                <div class="col-md-6 ">
+                    <div class="motiv-mentee">
+                        <h3><span>Entrepreneurship</span></h3>
+                        <strong>Target audience:</strong><br>
+                        <span>
+                            Young entrepreneurs, professionals and students that need help kickstarting or scaling their startup.
+                        </span>
+                        <ul class="iconlist">
+                            <li><i class="icon-ok-sign"></i>
+                                <strong>How to Kickstart</strong> - from idea to startup
+                            </li>
+                            <li><i class="icon-ok-sign"></i>
+                                <strong>Going global</strong> - scale your idea at a global level
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 ">
+                    <div class="motiv-mentee">
+                        <h3><span>Technical</span></h3>
+                        <strong>Target audience:</strong><br>
+                        <span>
+                            Students and tech professionals that look to speed up the growth curve and learn growth hacking strategies from experienced developers.
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+    </section>
+
+    <section class="how_it_works">
+
+        <div class="container">
+            <div class="heading-block center">
+                <h2>How it works</h2>
+            </div>
+
+            <div class="row clearfix">
+
+                <div class="col_one_third">
+
+                    <div class="heading-block fancy-title nobottomborder title-bottom-border left">
+                        <h4 style="border-bottom: 2px solid #e82728;"><span class="red">1. </span> You choose a mentor</h4>
+                    </div>
+                    <p>You choose a mentor you like and you apply for his specific profile</p>
+                </div>
+
+                <div class="col_one_third">
+
+                    <div class="heading-block fancy-title nobottomborder title-bottom-border">
+                        <h4 style="border-bottom: 2px solid #e82728;"><span class="red">2. </span>Interview with mentor</h4>
+                    </div>
+                    <p>An interview will be set if the mentor has chosen you</p>
+                </div>
+
+                <div class="col_one_third col_last">
+
+                    <div class="heading-block fancy-title nobottomborder title-bottom-border">
+                        <h4 style="border-bottom: 2px solid #e82728;"><span class="red">3. </span>Start the program</h4>
+                    </div>
+                    <p>You get connected to your mentor and start the program</p>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+
+    </section>
+
+    <section class="structure">
+
+        <div class="container">
+            <div class="heading-block center">
+                <h2>Structure</h2>
+            </div>
+
+            <div class="row clearfix">
+
+                <div class="col_one_third nobottommargin">
+                    <div class="feature-box media-box">
+                        <div class="fbox-desc">
+                            <h2><span class="red">20 mentors</span></h2>
+                            <p>Experienced Romanian entrepreneurs and tech professionals from across the globe</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col_one_third nobottommargin">
+                    <div class="feature-box media-box">
+                        <div class="fbox-desc">
+                            <h2><span class="red">03 months</span></h2>
+                            <p>Set a main objective for the program & split it in smart objectives throughout the 3 months</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col_one_third nobottommargin col_last">
+                    <div class="feature-box media-box">
+                        <div class="fbox-desc">
+                            <h2><span class="red">12 sessions</span></h2>
+                            <p>12 one on one mentoring sessions</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="line"></div>
+
+    </section>
+
+    <section class="mentors">
+        <div class="container">
+            <div class="heading-block center">
+                <h2>Mentors</h2>
+                <span>Our mentors are Romanian experienced entrepreneurs and professionals from across the globe. Take a good look and apply for the mentor that best suits your development needs.</span>
+            </div>
+
+            <div class="center">
+                <h4>Entrepreneurship</h4>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Manuel Costescu.jpg" alt="Manuel Costescu">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Manuel Costescu</h4><span class="red">Managing Director Abney Advisor</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/manuelcostescu/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Erik Barna.jpg" alt="Erik Barna.jpg">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Erik Barna.jpg</h4><span>CEO & FOUNDER at LIFE IS HARD - WORK SOFT</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/erikbarna/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Florin Grosu.jpg" alt="Florin Grosu">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Florin Grosu</h4><span>COO Traderion</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/florin-grosu-b1b2594/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Anda Radu.jpg" alt="Anda Radu">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Anda Radu</h4><span>Tech Entrepreneur & Freelance Consultant</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/anda-radu-23b64b22/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Stefan Koritar.jpg" alt="Stefan Koritar">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Stefan Koritar</h4><span>CEO & Co-founder - Kraian Collective</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/stefankoritar/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Mentor.jpg" alt="Radu Ticiu">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Radu Ticiu</h4><span>CEO @ Timisoara Startup Hub</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/raduticiu/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Mircea-Vadan.jpg" alt="Mircea Vadan">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Mircea Vadan</h4><span>Partner @Activize, Coordinator @ClujStartups</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/mirceavadan/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Victor Vintu.jpg" alt="Victor Vintu">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Victor Vintu</h4><span>Director of Operations at DigitalGenius</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/victorvintu/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Mentor.jpg" alt="Vlad Nistor">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Vlad Nistor</h4><span>Founder Coinflux</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/vnistor/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Vlad Lata.jpg" alt="Vlad Lata">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Vlad Lata</h4><span>CTO & Co-founder, KONUX</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/vladlata/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="center">
+                <h4>Technical</h4>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Radu Stanescu.jpg" alt="Radu Stanescu">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Radu Stanescu</h4><span>Founder Sandline </span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/radustanescu/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Mihai Chiorean.jpg" alt="Mihai Chiorean">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Mihai Chiorean</h4><span>Senior Software Engineer at Uber Freight</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/mihaichiorean/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Mentor.jpg" alt="Andrei Bara">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Andrei Bara</h4><span>Software engineer 2 at Microsoft</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/andrei-b-3691a842/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Mentor.jpg" alt="Mircea Paragina">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Mircea Paragina</h4><span>Android Product Owner at FAMOCO</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/mirceaparagina/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Silviu Serban.jpg" alt="Silviu Serban">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Silviu Serban</h4><span>Founder, Helios Vision</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/silviuserban/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 bottommargin">
+                    <div class="team">
+                        <div class="team-image">
+                            <img src="/bundles/website/images/mentorship/mentors/Mentor.jpg" alt="Denis Tudor">
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title"><h4>Denis Tudor</h4><span>PhD Researcher at Ecole polytechnique fédérale de Lausanne (EPFL)</span></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/denis-tudor-5737a394/" class="social-icon inline-block si-small si-light si-rounded si-linkedid">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+    </section>
+
+    <section class="apply">
+        <div class="container">
+            <div class="heading-block center">
+                <h2>Apply now</h2>
+                <span>In order to apply, please download the application below,  and send it to victor.dobre@romanianit.com untill the 17th of April at 17:00.</span>
+            </div>
+        </div>
+
+        <div class="row center">
+            <a target="_blank" href="{{ path('website_download', {'filename':'Instructiuni-Formular-2001.pdf'}) }}" class="button button-desc button-border button-rounded center">
+                <div>Apply now</div>
+            </a>
+        </div>
+        <div class="line"></div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <div class="heading-block center">
+                <h2>FAQ</h2>
+            </div>
+
+            <div class="row clearfix">
+
+                <div class="col-md-6 col-md-offset-3 left ">
+
+                    <div class="accordion accordion-bg clearfix">
+
+                        <div class="acctitle acctitlec"><i class="acc-closed icon-ok-circle"></i><i class="acc-open icon-remove-circle"></i>1. Can I apply to more than one mentors?</div>
+                        <div class="acc_content clearfix" style="display: block;"><strong>Answer:</strong> Every mentee can apply for a total number of 2 mentors</div>
+
+                        <div class="acctitle"><i class="acc-closed icon-ok-circle"></i><i class="acc-open icon-remove-circle"></i>2. What happenes if the mentos doesn't choose me?</div>
+                        <div class="acc_content clearfix" style="display: none;"><strong>Answer:</strong> f the first mentor you have applied for will not choose you, your file will be evaluated by the mentor chosed as the second option. If none of the mentors will choose you, your profile will be saved in the database and you will be the first one to know when the third edition will begin.</div>
+
+                        <div class="acctitle"><i class="acc-closed icon-ok-circle"></i><i class="acc-open icon-remove-circle"></i>3. Is there a selection process or once I apply I am automatically accepted?</div>
+                        <div class="acc_content clearfix" style="display: none;"><strong>Answer:</strong> there is a selection process. Once you have applied, the mentor will revize you file and will schedule an interview with you provided you will be shortlisted for the second phase of the selection.</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+    </section>
+
+{% endblock %}

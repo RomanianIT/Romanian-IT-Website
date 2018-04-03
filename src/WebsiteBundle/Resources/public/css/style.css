@@ -21178,9 +21178,9 @@ body:not(.device-touch) .clients-grid li a {
 .team-image > a, .team-image img {
   display: block;
   width: auto;
-  max-height: 80px;
-  margin: 0 auto;
-  text-align: center;
+  /*max-height: 80px;*/
+  /*margin: 0 auto;*/
+  /*text-align: center;*/
 }
 
 /* line 24, ../sass/shortcodes/team.scss */
