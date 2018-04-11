@@ -170,3 +170,7 @@
   width: 100%;
   height: 100%;
 }
+
+.mentors .team-title span {
+  color: #e82728;
+}

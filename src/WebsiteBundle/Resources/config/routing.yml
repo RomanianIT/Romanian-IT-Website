@@ -82,6 +82,10 @@ website_mentorship:
     path:   /find-my-mentor
     defaults: { _controller: WebsiteBundle:Default:mentorship }
 
+website_global_mentor:
+    path:   /global-mentor
+    defaults: { _controller: WebsiteBundle:Default:globalMentor }
+
 website_cluj_event:
     path:   /romanianit-2-0
     defaults: { _controller: WebsiteBundle:Default:clujEvent }

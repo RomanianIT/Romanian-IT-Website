@@ -411,6 +411,10 @@ class DefaultController extends Controller
         return $this->render('WebsiteBundle:Default:mentorship.html.twig');
     }
 
+    public function globalMentorAction()
+    {
+        return $this->render('WebsiteBundle:Default:global_mentor.html.twig');
+    }
 
     public function clujEventAction()
     {
