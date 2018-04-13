@@ -20841,6 +20841,7 @@ ul.tab-nav li a i {
 /* line 44, ../sass/shortcodes/clients.scss */
 .clients-grid.grid-6 li {
   width: 16.66%;
+  min-height: 148px;
 }
 /* line 49, ../sass/shortcodes/clients.scss */
 .clients-grid li a {
