@@ -121,6 +121,7 @@
 .sponsored-by-logo {
   max-width: 200px;
   vertical-align: text-bottom;
+  max-height: 40px;
 }
 
 .sponsored-by-text {
@@ -173,4 +174,9 @@
 
 .mentors .team-title span {
   color: #e82728;
+}
+
+.clients-grid li:after, .testimonials-grid li:after
+{
+  border-bottom: 0px;
 }
