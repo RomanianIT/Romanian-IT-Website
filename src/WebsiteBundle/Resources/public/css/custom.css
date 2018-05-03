@@ -180,3 +180,12 @@
 {
   border-bottom: 0px;
 }
+
+#section-ne-sustin .team-image > a,
+#section-ne-sustin .team-image img {
+  display: block;
+  width: auto;
+  max-height: 80px;
+  margin: 0 auto;
+  text-align: center;
+}
