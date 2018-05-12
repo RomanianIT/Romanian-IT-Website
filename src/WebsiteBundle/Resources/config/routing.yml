@@ -98,7 +98,14 @@ website_celebro:
     path: /celebro
     defaults: { _controller: WebsiteBundle:Default:celebro }
 
-
 website_celebro_fr:
     path: /fr/celebro
     defaults: { _controller: WebsiteBundle:Default:celebroFr }
+
+paypal_celebro_cancel:
+    path: /paypal/cancel
+    defaults: { _controller: WebsiteBundle:Default:PaypalCancel }
+
+paypal_celebro_success:
+    path: /paypal/success
+    defaults: { _controller: WebsiteBundle:Default:PaypalSuccess }

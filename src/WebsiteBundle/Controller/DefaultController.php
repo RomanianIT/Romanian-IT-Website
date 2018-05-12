@@ -420,4 +420,15 @@ class DefaultController extends Controller
     {
         return $this->render('WebsiteBundle:Default:cluj_event.html.twig');
     }
+
+    public function PaypalCancelAction()
+    {
+        return $this->render('WebsiteBundle:Default:paypal_cancel.html.twig');
+    }
+
+    public function PaypalSuccessAction()
+    {
+        return $this->render('WebsiteBundle:Default:paypal_success.html.twig');
+    }
+
 }
