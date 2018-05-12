@@ -98,7 +98,6 @@ website_celebro:
     path: /celebro
     defaults: { _controller: WebsiteBundle:Default:celebro }
 
-
 website_celebro_fr:
     path: /fr/celebro
     defaults: { _controller: WebsiteBundle:Default:celebroFr }

@@ -1,0 +1,46 @@
+{% extends "WebsiteBundle::Structure/layout.html.twig" %}
+
+{% block menu_class %} navbar-shrink {% endblock %}
+
+{% block custom_script %}
+    {% include 'WebsiteBundle::Partials/_twitter_js_async.html.twig' %}
+{% endblock %}
+
+{% block nav_bar_menu %}
+    <ul class="one-page-menu">
+        <li>
+            <a class="page-scroll" href="{{ path('website_homepage') }}">{{ 'menu.home' | trans() }}</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_celebro') }}">CELEBRO</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="{{ path('website_global_mentor') }}">GLOBAL MENTOR</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>Oups....</h1>
+            <span>Aparent au apărut niște probleme la realizarea contribuției. Te rugăm să reîncerci.</span>
+            <ol class="breadcrumb">
+                <li><a href="/">{{ 'menu.home' | trans() }}</a></li>
+                <li class="active">Paypal Error</li>
+            </ol>
+        </div>
+    </section>
+
+    <div class="col-sm-12 col-md-12  col-lg-12 center">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="9BJCZPQ2HARZJ">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </div>
+{% endblock %}
+
+{% block footer_scripts %}{% endblock %}
