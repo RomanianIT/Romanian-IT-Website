@@ -189,3 +189,15 @@
   margin: 0 auto;
   text-align: center;
 }
+
+@media (max-width: 479px) {
+  #logo.logo_celebro img {
+    display: block;
+    height: 25px!important;
+    padding: 0px !important;
+  }
+
+  .sponsored-by-text span {
+    display: block;
+  }
+}
