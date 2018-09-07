@@ -356,6 +356,10 @@ class DefaultController extends Controller
         return $this->render('WebsiteBundle:Default:donate.html.twig');
     }
 
+    public function termsAndConditionsAction()
+    {
+        return $this->render('WebsiteBundle:Default:termsAndConditions.html.twig');
+    }
     public function privacyAction()
     {
         return $this->render('WebsiteBundle:Default:privacy.html.twig');

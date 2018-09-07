@@ -70,8 +70,12 @@ website_campaign_2:
     path:   /campania-2-la-suta
     defaults: { _controller: WebsiteBundle:Default:campaignTwo }
 
+website_tc:
+    path:   /terms-and-conditions
+    defaults: { _controller: WebsiteBundle:Default:termsAndConditions }
+
 website_privacy:
-    path:   /termeni-si-conditii
+    path:   /privacy
     defaults: { _controller: WebsiteBundle:Default:privacy }
 
 website_download:

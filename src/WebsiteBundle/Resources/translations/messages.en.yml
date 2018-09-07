@@ -21,13 +21,13 @@ content:
             title: 'Membri Romanian IT'
 
     contact:
-        btn: Trimite
+        btn: Send
         email: 'Email'
-        message: 'Conținutul mesajului'
-        name: 'Nume Prenume'
-        subject: 'Subiect'
-        subtitle: 'Ai o sugestie sau o idee de proiect, sau vrei pur si simplu să te implici? Scrie-ne și revenim în cel mai scurt timp posibil.'
-        title: Contactează-ne
+        message: 'Let us know what you think'
+        name: 'First Name, Last Name'
+        subject: 'Subject'
+        subtitle: 'Do you any suggestions or a project in mind, or do you simply want to get involved? Write us and we will get back to you asap.'
+        title: Contact us
 
     events:
         subtitle: 'Gasesti aici toate meetup-urile si evenimetele Romanian IT din'
@@ -48,20 +48,20 @@ content:
         articles: They wrote about us
         technical: Technical supporter
 
-    register: Devino membru
+    register: Register as a member
     register_extra: Alătură-te comunității noastre
     register_ambasador: Devino ambasador
     register_ambasador_extra: Implică-te în dezvoltarea comunității
     register_volunteer: Devino voluntar
     register_volunteer_extra: Implică-te în dezvoltarea comunității
-    register.subtitle: "Îți mulțumim că te-ai decis să te înregistrezi și te încurajăm să te implici. <br/> Avem nevoie de oameni specialiști, determinați să ia atitudine.\n"
-    register.title: 'Înregistrare membru'
-    register.step_1_title: 'Domenii de expertiză'
+    register.subtitle: "Thank you for choosing to register in our growing community. <br> We encourage you to write us with any idea you might have that could help us further develop. <br> We need smart, talented, open-minded people determined to take action.\n"
+    register.title: 'Register as a new member'
+    register.step_1_title: 'Fields of expertise'
     ambasador.subtitle: "Îți mulțumim că te-ai decis să ne susții și te încurajăm să te implici. <br/> În calitate de ambasador vei avea posibilitatea de a participa la organizarea evenimentelor din centrele Romanian-IT"
     ambasador.title: 'Înregistrare ambasador'
 
     share.title: 'Share'
-    share.subtitle: 'Îți multumim pentru încrederea acordată și te rugăm să ne ajuți să creștem comunitatea.'
+    share.subtitle: 'Thank you for the vote of confidence. Please help us spread the word.'
 
     sections:
         center:
@@ -126,20 +126,20 @@ content:
     donate.button_subtitle: 'Susține dezvoltarea comunității'
 form:
     label:
-        city: 'Oraș *'
-        country: Țară
-        description: 'Descrierea propunerii de proiect. *'
+        city: 'City *'
+        country: Country
+        description: 'Project desctiption. *'
         email: 'Email *'
-        firstname: 'Nume *'
-        lastname: 'Prenume *'
-        phone: Telefon
-        position: 'Profesie *'
-        expertise: Expertiza
-        project_title: 'Nume proiect'
-        reason: 'Motivul pentru care vă înregistrați'
-        contribution: 'Cu ce pot sa contribui'
-        name: 'Denumire'
-        description: 'Descriere'
+        firstname: 'First Name *'
+        lastname: 'Last Name *'
+        phone: Phone
+        position: 'Profession *'
+        expertise: Expertise
+        project_title: 'Project title'
+        reason: 'Reason why you are joining us'
+        contribution: 'How can I contribute'
+        name: 'Title'
+        description: 'Descriptio'
 
 last_events:
     more: '<h4>Vezi<br>lista<br>completă!</h4>'
@@ -149,15 +149,14 @@ last_events:
 menu:
     centers: Centre
     contact: Contact
-    events: Evenimente
-    home: Acasă
-    map: Hartă
-    mission: Misiune
-    projects: Proiecte
-    suggest: Propune
-    partners: NE SUSȚIN
-    members: Membri
-
+    events: Events
+    home: Home
+    map: Maps
+    mission: Mission
+    projects: Projects
+    suggest: Suggestions
+    partners: They helped us
+    members: Membersfirstname
 poi:
     map:
         voir_en_detail: poi.map.voir_en_detail

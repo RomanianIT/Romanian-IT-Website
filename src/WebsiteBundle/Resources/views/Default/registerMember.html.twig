@@ -36,12 +36,12 @@
         <li>
             <a class="page-scroll" href="{{ path('website_homepage') }}">{{ 'menu.home' | trans() }}</a>
         </li>
-        <li>
-            <a class="page-scroll" href="{{ path('website_projects_list') }}">{{ 'menu.projects' | trans() }}</a>
-        </li>
-        <li>
-            <a class="page-scroll" href="{{ path('website_projects_new') }}">{{ 'menu.suggest' | trans() }}</a>
-        </li>
+        {#<li>#}
+            {#<a class="page-scroll" href="{{ path('website_projects_list') }}">{{ 'menu.projects' | trans() }}</a>#}
+        {#</li>#}
+        {#<li>#}
+            {#<a class="page-scroll" href="{{ path('website_projects_new') }}">{{ 'menu.suggest' | trans() }}</a>#}
+        {#</li>#}
     </ul>
 {% endblock %}
 
@@ -57,12 +57,12 @@
                 <span>{{ 'content.register.subtitle' | trans() | raw }}</span>
             {% endif %}
             <ol class="breadcrumb">
-                <li><a href="#">Acasă</a></li>
-                <li><a href="#">Înregistrare</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Register</a></li>
                 {% if is_ambasador is defined %}
-                <li class="active">Ambasador</li>
+                <li class="active">Ambassador</li>
                 {% else %}
-                <li class="active">Membru</li>
+                <li class="active">Member</li>
                 {% endif %}
             </ol>
         </div>
@@ -79,11 +79,11 @@
                     <ul class="process-steps bottommargin clearfix">
                         <li>
                             <a href="#ptab1" class="i-circled i-bordered i-alt divcenter">1</a>
-                            <h5>Ocupație</h5>
+                            <h5>Occupation</h5>
                         </li>
                         <li>
                             <a href="#ptab2" class="i-circled i-bordered i-alt divcenter">2</a>
-                            <h5>Profil</h5>
+                            <h5>Profile</h5>
                         </li>
                         <li>
                             <a href="#ptab3" class="i-circled i-bordered i-alt divcenter inactive-tab" id="step3">3</a>
@@ -91,7 +91,7 @@
                         </li>
                         <li>
                             <a href="#ptab4" class="i-circled i-bordered i-alt divcenter inactive-tab" id="step4">4</a>
-                            <h5>Interese</h5>
+                            <h5>Interests</h5>
                         </li>
                     </ul>
                     <div>
@@ -195,11 +195,11 @@
                             </div>
                             <div class="line"></div>
 
-                            <a href="#" class="button button-3d nomargin fright tab-linker next" rel="2">Mai departe</a>
+                            <a href="#" class="button button-3d nomargin fright tab-linker next" rel="2">Continue</a>
                         </div>
                         <div id="ptab2">
 
-                            <h3 class="center">Spune-ne despre tine</h3>
+                            <h3 class="center">Tell us about you</h3>
 
                             <div class="col-md-6 text-right">
                                 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
@@ -214,27 +214,27 @@
                             <div class="clearfix"></div><br>
                             <div class="col-md-6">
                                 {{ form_row(form.avatar.file, { id: 'inputImage', attr: { accept: 'image/*' }, croppable: true }) }}
-                                {{ form_row(form.firstname, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Te rugăm introduceți numele.'}}) }}
-                                {{ form_row(form.lastname, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Te rugăm introduceți prenumele.'}}) }}
-                                {{ form_row(form.position, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Te rugăm introduceți ocupatia actuala.'}}) }}
+                                {{ form_row(form.firstname, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Please enter your Last Name.'}}) }}
+                                {{ form_row(form.lastname, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Please enter your First Name.'}}) }}
+                                {{ form_row(form.position, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Please enter your current occupation.'}}) }}
                                 {{ form_widget(form.expertise) }}
-                                {{ form_row(form.email, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Te rugăm introduceți emailul.'}}) }}
+                                {{ form_row(form.email, {'attr' : {'class': 'sm-form-control required', 'data-validation-required-message' : 'Please enter your e-mail.'}}) }}
                             </div>
 
                             <div class="col-md-6">
                                 {{ form_row(form.telephone) }}
                                 {{ form_row(form.country, {class: 'form-control' }) }}
-                                {{ form_row(form.city, {attr : {'data-validation-required-message' : 'Te rugăm  să îți introduci orașul.', 'data-country' : 'RO' } }) }}
-                                {{ form_row(form.center, {'label': 'Centru',class: 'form-control' }) }}
+                                {{ form_row(form.city, {attr : {'data-validation-required-message' : 'Please enter your city.', 'data-country' : 'RO' } }) }}
+                                {{ form_row(form.center, {'label': 'Center',class: 'form-control' }) }}
                             </div>
 
                             <div class="line"></div>
                             <a href="#" class="button button-3d nomargin tab-linker" rel="1">Precedent</a>
-                            <a href="#" class="button button-3d nomargin fright tab-linker" rel="3">Continua</a>
+                            <a href="#" class="button button-3d nomargin fright tab-linker" rel="3">Continue</a>
 
                         </div>
                         <div id="ptab3">
-                            <h3 class="center">Unde te putem gasi?</h3>
+                            <h3 class="center">Where can we find you?</h3>
 
                             <div class="col-md-6">
                                 {{ form_row(form.twitter) }}
@@ -251,13 +251,13 @@
 
                             <div class="line"></div>
                             <a href="#" class="button button-3d nomargin tab-linker" rel="2">Precedent</a>
-                            <a href="#" class="button button-3d nomargin fright tab-linker" rel="4">Continua</a>
+                            <a href="#" class="button button-3d nomargin fright tab-linker" rel="4">Continue</a>
                         </div>
                         <div id="ptab4">
-                            <h3 class="center">Cum ne-ai găsit și ce te-ar interesa?</h3>
+                            <h3 class="center">How did you find us and how can we help?</h3>
 
                             <div class="col-md-6">
-                                {{ form_row(form.reason, {class: 'form-control', attr : {'rows': 6, 'data-validation-required-message' : 'Vă rugăm introduceți un motiv.' } }) }}
+                                {{ form_row(form.reason, {class: 'form-control', attr : {'rows': 6, 'data-validation-required-message' : 'Please enter your reason to join us.' } }) }}
                             </div>
 
                             <div class="col-md-6">
@@ -268,11 +268,11 @@
                                     <div class="col-md-6 interests">
                                         <div>
                                             <input id="checkbox-17" class="checkbox-style" name="checkbox-17" type="checkbox" value="17">
-                                            <label for="checkbox-17" class="checkbox-style-1-label">Antreprenoriat</label>
+                                            <label for="checkbox-17" class="checkbox-style-1-label">Entrepreneurship</label>
                                         </div>
                                         <div>
                                             <input id="checkbox-18" class="checkbox-style" name="checkbox-18" type="checkbox" value="18">
-                                            <label for="checkbox-18" class="checkbox-style-1-label">Webinarii</label>
+                                            <label for="checkbox-18" class="checkbox-style-1-label">Business Dev</label>
                                         </div>
                                         <div>
                                             <input id="checkbox-19" class="checkbox-style" name="checkbox-19" type="checkbox" value="19">
@@ -282,7 +282,7 @@
                                     <div class="col-md-6 interests">
                                         <div>
                                             <input id="checkbox-20" class="checkbox-style" name="checkbox-20" type="checkbox" value="20">
-                                            <label for="checkbox-20" class="checkbox-style-1-label">Networking</label>
+                                            <label for="checkbox-20" class="checkbox-style-1-label">Mentoring</label>
                                         </div>
                                         <div>
                                             <input id="checkbox-21" class="checkbox-style" name="checkbox-21" type="checkbox" value="21">
@@ -290,7 +290,7 @@
                                         </div>
                                         <div>
                                             <input id="checkbox-22" class="checkbox-style" name="checkbox-22" type="checkbox" value="22">
-                                            <label for="checkbox-22" class="checkbox-style-1-label">Startups</label>
+                                            <label for="checkbox-22" class="checkbox-style-1-label">Investment</label>
                                         </div>
                                     </div>
                                 </div>
