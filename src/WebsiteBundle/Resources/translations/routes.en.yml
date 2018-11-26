@@ -98,10 +98,18 @@ website_center_members: '/centru/{id}/membri'   # FIXME
 website_homepage: /   # FIXME
 
 # Desc: /membru-nou
-website_register_member: /membru-nou   # FIXME
+website_register_member: /new-member   # FIXME
 
 # Desc: /contact
 website_send_contact: /contact   # FIXME
+
+website_tc:
+    path:   /terms-and-conditions
+    defaults: { _controller: WebsiteBundle:Default:termsAndConditions }
+
+website_privacy:
+    path:   /privacy
+    defaults: { _controller: WebsiteBundle:Default:privacy }
 
 # Desc: /zone/{id}
 zone_delete: '/zone/{id}'   # FIXME

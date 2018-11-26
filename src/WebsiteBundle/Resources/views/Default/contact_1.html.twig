@@ -1,0 +1,57 @@
+<!-- CONTACT -->
+<section id="section-contact" class="page-section dark topmargin padding-section" style="background: url('/bundles/website/images/bgs/contact-bg.jpg')center center;">
+    <div class="heading-block title-center">
+        <h2>{{ 'content.contact.title' | trans() }}</h2>
+        <span>{{ 'content.contact.subtitle' | trans() }}</span>
+    </div>
+
+    <div class="container clearfix">
+
+        <!-- Contact Form
+        ============================================= -->
+        <div class="col_full">
+            <div class="">
+                <form class="nobottommargin" id="contactForm" action="{{ path('website_send_contact') }}" method="post">
+                    <div class="col_one_third">
+                        <label for="contact_name">{{ 'content.contact.name' | trans() }} <small>*</small></label>
+                        {{ form_row(form.name, {'attr' : {'class': 'sm-form-control required', 'placeholder':  'content.contact.name' | trans(), 'data-validation-required-message' : 'Vă rugăm introduceți numele.'}}) }}
+                    </div>
+
+                    <div class="col_one_third">
+                        <label for="contact_email">{{ 'content.contact.email' | trans() }} <small>*</small></label>
+                        {#<input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />#}
+                        {{ form_row(form.email, {'attr' : {'class': 'required email sm-form-control', 'id' : 'email', 'placeholder': 'content.contact.email' | trans(), 'data-validation-required-message' : 'Vă rugăm introduceți adresa de e-mail.'}}) }}
+                    </div>
+
+                    <div class="col_one_third col_last">
+                        <label for="contact_subject">{{ 'content.contact.subject' | trans() }}</label>
+                        {#<input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />#}
+                        {{ form_row(form.subject, {'attr' : {'class': 'sm-form-control', 'id' : 'subject', 'placeholder': 'content.contact.subject' | trans(), 'data-validation-required-message' : 'Vă rugăm introduceți subiectul mesajului.'}}) }}
+                    </div>
+
+                    <div class="clear"></div>
+                    <div class="col_full">
+                        <label for="contact_message">Mesaj <small>*</small></label>
+                        {#<textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>#}
+                        {{ form_row(form.message, {'attr' : {'class': 'required sm-form-control', 'rows' : '6', 'cols': 30, 'placeholder': 'content.contact.message' | trans(), 'data-validation-required-message' : 'Vă rugăm introduceți un mesaj.'}}) }}
+                    </div>
+
+                    <div class="col_one_third col_last">
+                        <!-- Now add the widget with the sitekey that you retrieve in the registration -->
+                        <div class="g-recaptcha" data-sitekey="{{ google_recaptca_site_key }}" data-callback="enableBtn"></div>
+                    </div>
+
+
+                    <div class="col_full hidden">
+                        <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+                    </div>
+
+                    <div class="col_full center">
+                        <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">{{ 'content.contact.btn' | trans() }}</button>
+                    </div>
+                {{form_rest(form) }}
+                </form>
+            </div>
+        </div><!-- Contact Form End -->
+    </div>
+</section>
